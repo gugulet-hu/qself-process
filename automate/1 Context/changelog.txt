@@ -1,0 +1,66 @@
+202223361536: Initial version
+202223551555: Increased location radius to 250m
+202223571557: Increased location radius to 250m
+202223081608: Changed to using wi-fi for location
+202224321232: Added the interface flow to start options
+202220122312: Added timer for Steps unit
+202206221423: Removed initial location check
+202206251945: Added sleep tracker initiate
+202206272255: Moved tile display to context flow. Removed utilities flow
+202206272327: Added new flows to startup stack
+202206280027: Fixed error in start block for sleep
+202206280033: Changed money tile icon
+202207030031: Changed start conditions for sleep tracking.
+202207030034: Changed to check immediately if in sleep time period.
+202207031408: Changed sleep trigger to built-in block.
+202207032334: Some missing connections fixed.
+202207042032: Increased sleep confidence
+202207042134: Changed to using Sleep as Android for tracking when sleep starts.
+202207042135: Forgot a connection.
+202207050026: Added a confirm dialog for sleep tracking
+202207062236: Changed sleep start to Automate block and not Sleep as Android.
+202207062338: Increased sleep confidence to 90%.
+202207072207: Increased sleep confidence to 97%.
+202207072253: Removed starting other flows initialisation and added a pitch test for sleep.
+202207080812: Increased sleep confidence to 98%.
+202207081034: Removed child variable.
+202207092122: Changed sleep tracking agin to include a phone face-up trigger. 
+202207101245: Lowered sleep confidence to 75% and added USB charging check.
+202207110010: Lowered sleep confidence to 60%.
+202207110029: No change. 
+202207112324: Changed to constant sleep tracking, but limited to activation after 19h00.
+202207112332: Used Atomic load and store to shorten flow.
+202207122044: When sleep track launch fails.
+202207122257: Reconnected sleep tracker flow properly.
+202207131323: Added ambient light as a filter for sleep tracking 
+202207132322: Removed power source as a filter for sleep tracking.
+202207162155: Added watch for external devices connection.
+202207181856: Added five-minute HR measure
+202207182239: Added failure catch for heart rate check.
+202207221514: Added intraday step flow.
+202207240016: Increased sensitivity of light meter for sleep tracking.
+202207262308: Fixed the positioning of blocks and removed extraneous blocks.
+202208031426: Simplified fiber, removed location and device flows. 
+202208032340: Numbered flows.
+202208040008: Added log messages for external flow starts.
+202208040024: Removed Display Tiles flow (moving to a KWLP solution for launching flows).
+202208092249: Use automatic sleep tracking from the Sleep app.
+202208211031: Added check for watch on wrist for Sleep flow.
+202208301500: Removed Google API sleep trigger.
+202209031446: Fixed sleep init issues (hopefully!).
+202209280103: Added interactive state check for sleep.
+202210031440: Refactored context flow.
+202210121844: Added test sleep EOD processes.
+202210240915: Added sleep and finance daily updates at 2am.
+202210250107: Adding BOD flow.
+202210300154: Added readme and refactored fibres.
+202211010037: Fixed folder paths...wait.
+202211012307: Fixes here and there.
+202211022110: Use sleep tracker for sleep init.
+202211051945: Added manual sleep tracking start.
+202212112211: Removed sleep start, now using qs tiles.
+202212150010: Added manual sleep start tracking.
+202302071210: Adjusted initialise flow
+202302071214: Added toast to notify that context flows have started
+202302071220: Initial version
+202302071234: Adding init check function

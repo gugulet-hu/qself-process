@@ -1,0 +1,28 @@
+202208191000: Initial version
+202210192344: First draft
+202210201028: Added separate flow for opening dashboard
+202210202228: Experimenting with datalists.
+202210212027: Added exchange rate convertor, finished transaction screen.
+202210220002: Fixed unitCost and dateTime issue for adjusted dates.
+202210220004: Use baseAmount for UnitCost calc.
+202210221311: Changed to fingerprint to authenticate access to fin dashboard.
+202210241625: Fixed issue adding recurring payments to JSON.
+202210262311: Only keep unique values for datalist.
+202210300126: Refactored fibres, added writePath variable and readme.
+202210300201: Updated <datalists> functionality to make it a function.
+202210300310: Correct decimal places for balances fibre.
+202211010039: Added a CSV write module.
+202211010051: Fixing strings with commas in CSV.
+202211012247: Added a Discounts type.
+202211021034: Flip image for failed login.
+202211021610: Added ability to go through recurring payments one by one.
+202211042107: Removed CSV write function and added a history transaction wipe to recalculate summary for transactions from the past.
+202211042219: Added Cash as an account.
+202211042231: Recurring transactions until cancelled.
+202211042311: Added Refund and Employment type. Removed Income type.
+202211050020: Write balance to a daily JSON.
+202211052307: Subtract refunds and discounts from Group totals.
+202211102016: Fixed date and time for consecutive transactions.
+202211102017: Disable parallel dashboard launch.
+202211241450: Added separate subroutine for writePath check. Fails when attached to location subroutine
+202212121207: Fixed bug in disappearing connections.

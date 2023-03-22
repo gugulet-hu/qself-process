@@ -1,0 +1,2 @@
+202208191015: Initial version
+202210300131: Adding a readme and the writePath variable for future development.
