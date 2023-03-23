@@ -33,3 +33,4 @@
 202211011020: Fixed read file error at 442.
 202211011055: Change hardcoded length to #payload["file"].
 202211230027: Disabled period summaries until it can be optimised.
+202303231612: Fixed bug in configuration
