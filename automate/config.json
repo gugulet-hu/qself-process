@@ -1,4 +1,4 @@
 {
-        "processFolder": "/storage/emulated/0/Process/automate/",
-        "dataFolder": "/storage/emulated/0/Data/"
+        "processFolder": "/sdcard/Process/automate/",
+        "dataFolder": "/sdcard/Data/"
 }
