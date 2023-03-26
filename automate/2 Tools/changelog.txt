@@ -54,3 +54,4 @@
 202303261447: Initial version
 202303261447: Initial version
 202303261447: Initial version
+202303261554: Testing summary subflow with arrays to produce averages
