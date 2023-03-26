@@ -29,3 +29,4 @@
 202211062058: Added average set for readings.
 202211062141: Added a few combine function.
 202211071850: Added new combine sessions fibre.
+202303262304: Fixed empty config bug
