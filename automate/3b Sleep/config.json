@@ -1,1 +1,1 @@
-{"name":"sleep","description":"Flow to keep track of sleep data.","version":"202211230026","comment":"Fix issue with clearing updateToken atomic alongside sleep phases tokens.","uri":"content://com.llamalab.automate.provider/flows/49/data"}
+{"name":"sleep","description":"Flow to keep track of sleep data.","version":"202303280005","comment":"Refactored sleep flow","uri":"content://com.llamalab.automate.provider/flows/49/data"}
