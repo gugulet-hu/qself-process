@@ -27,8 +27,6 @@
 202210041943: Added avg measure for period summaries.
 202210121844: Added edit JSON flow.
 202210240915: Removed unique sleep update flow.
-202210292028: Initial version
-202210292044: Initial version
 202210292236: Updating readme.
 202211011020: Fixed read file error at 442.
 202211011055: Change hardcoded length to #payload["file"].
@@ -39,43 +37,11 @@
 202303242141: Testing EOD processes
 202303242309: Fixed hectic delete bug
 202303252333: Reafcatored tools flow and moved some subflows
-202303252334: Initial version
-202303252334: Initial version
-202303252334: Initial version
 202303260147: Refactored missing sessions subflow
-202303260147: Initial version
-202303260147: Initial version
-202303260147: Initial version
 202303261435: Testing the period summary subflow
-202303261435: Initial version
-202303261435: Initial version
-202303261435: Initial version
 202303261447: Testing period summary subflow. Making periodSummary null at the end
-202303261447: Initial version
-202303261447: Initial version
-202303261447: Initial version
 202303261554: Testing summary subflow with arrays to produce averages
-202303261554: Initial version
-202303261554: Initial version
-202303261554: Initial version
 202303261617: Fixed summary averages bug with summaries. Branch done
-202303261617: Initial version
-202303261617: Initial version
-202303261617: Initial version
-202303262304: .
-202303262304: Initial version
-202303262304: Initial version
-202303262304: Initial version
 202303280005: Fixed multiple git commit error(?)
-202303280005: Initial version
-202303280005: Initial version
-202303280005: Initial version
 202303280012: Fixing multiple commit bug
-202303280012: Initial version
-202303280012: Initial version
-202303280012: Initial version
-202303280016: .
-202303280016: Initial version
-202303280016: Initial version
-202303280016: Initial version
 202303280019: Final fix for multiple commit bug
