@@ -36,3 +36,4 @@
 202303262324: .
 202303280013: General fixes
 202303282220: .
+202303282306: Minor fix to heart rate read
