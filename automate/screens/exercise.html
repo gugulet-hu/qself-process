@@ -106,13 +106,14 @@
                         <div class='wrapper'>
                                 <div class='exercise'>
                                         <input type='text' name='exercise' id='exercise'
-                                                value='{currentExercise["exercise"];xmlEncode}' required>
+                                                value='{currentExerciseData["exercise"];xmlEncode}' required>
                                 </div>
                                 <div class='meta'>
                                         <span class='type'>
                                                 <select name='type' id='type' size='1' required>
-                                                        <option value='{currentExercise["type"];xmlEncode}' selected>
-                                                                {currentExercise["type"];xmlEncode}</option>
+                                                        <option value='{currentExerciseData["type"];xmlEncode}'
+                                                                selected>
+                                                                {currentExerciseData["type"];xmlEncode}</option>
                                                         <option value='Cardio'>Cardio</option>
                                                         <option value='Flexibility'>Flexibility</option>
                                                         <option value='Strength'>Strength</option>
@@ -120,8 +121,9 @@
                                         </span>
                                         <span class='group'>
                                                 <select name='group' id='group' size='1' required>
-                                                        <option value='{currentExercise["group"];xmlEncode}' selected>
-                                                                {currentExercise["group"];xmlEncode}</option>
+                                                        <option value='{currentExerciseData["group"];xmlEncode}'
+                                                                selected>
+                                                                {currentExerciseData["group"];xmlEncode}</option>
                                                         <option value='Abdominal'>Abdominal</option>
                                                         <option value='Arms'>Arms</option>
                                                         <option value='Back'>Back</option>
@@ -132,8 +134,8 @@
                                         </span>
                                         <span class='equipment'>
                                                 <select name='equipment' id='equipment' size='1' required>
-                                                        <option value='{currentExercise["equipment"];xmlEncode}'
-                                                                selected>{currentExercise["equipment"];xmlEncode}
+                                                        <option value='{currentExerciseData["equipment"];xmlEncode}'
+                                                                selected>{currentExerciseData["equipment"];xmlEncode}
                                                         </option>
                                                         <option value='Barbell'>Barbell</option>
                                                         <option value='Body'>Body</option>
@@ -169,11 +171,12 @@
                                 <div class='reps'>
                                         <div class='value'>
                                                 <input type='number' id='reps' name='reps' min='0'
-                                                        placeholder='{currentExercise["reps"];xmlEncode}' required>
+                                                        placeholder='{currentExerciseData["reps"];xmlEncode}' required>
                                                 <span class='units'>
                                                         <select name='repsUnit' id='repsUnit' size='1'>
-                                                                <option value='{currentExercise["repsUnit"];xmlEncode}'
-                                                                        selected>{currentExercise["repsUnit"];xmlEncode}
+                                                                <option value='{currentExerciseData["repsUnit"];xmlEncode}'
+                                                                        selected>
+                                                                        {currentExerciseData["repsUnit"];xmlEncode}
                                                                 </option>
                                                                 <option value='x'>x</option>
                                                                 <option value='m'>m</option>
@@ -184,7 +187,8 @@
                                 <div class='quantity'>
                                         <div class='value'>
                                                 <input type='number' id='quantity' step='.01' name='quantity' min='0'
-                                                        placeholder='{currentExercise["quantity"];xmlEncode}' required>
+                                                        placeholder='{currentExerciseData["quantity"];xmlEncode}'
+                                                        required>
                                                 <span class='units'>
                                                         <select name='quantityUnit' id='quantityUnit' size='1'>
                                                                 <option value='{maxWork["quantityUnit"];xmlEncode}'
@@ -201,7 +205,7 @@
                                 <div class='rest'>
                                         <div class='value'>
                                                 <input type='number' name='rest' id='rest' min='0' max='240'
-                                                        placeholder='{currentExercise["rest"];xmlEncode}' required>
+                                                        placeholder='{currentExerciseData["rest"];xmlEncode}' required>
                                                 <span>s</span>
                                         </div>
                                 </div>
