@@ -1,1 +1,1 @@
-{"name":"health","description":"Flow to keep track of health metrics, including exercise and medical details.","version":"202303282306","comment":"Minor fix to heart rate read","uri":"content://com.llamalab.automate.provider/flows/22/data"}
+{"name":"health","description":"Flow to keep track of health metrics, including exercise and medical details.","version":"202303312303","comment":"Add connection command for BT watch actions","uri":"content://com.llamalab.automate.provider/flows/22/data"}
