@@ -66,3 +66,4 @@
 202303300001: .
 202304012126: .
 202304020203: Refactored Exercise and made minor adjustments to Steps flow
+202304020217: Add delete backup once exercise session is saved
