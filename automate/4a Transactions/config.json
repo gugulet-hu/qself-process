@@ -1,1 +1,1 @@
-{"name":"transactions","description":"Flow to run financial transactions.","version":"202212121207","folder":"System/Automate/transactions","comment":"Fixed bug in disappearing connections.","uri":"content://com.llamalab.automate.provider/flows/16/data"}
+{"name":"transactions","description":"Flow to run financial transactions.","version":"202304032220","folder":"System/Automate/transactions","comment":"Testing new type lists for transactions screen","uri":"content://com.llamalab.automate.provider/flows/16/data"}

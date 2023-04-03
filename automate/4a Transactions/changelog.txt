@@ -26,3 +26,4 @@
 202211102017: Disable parallel dashboard launch.
 202211241450: Added separate subroutine for writePath check. Fails when attached to location subroutine
 202212121207: Fixed bug in disappearing connections.
+202304032220: Testing new type lists for transactions screen

@@ -134,63 +134,17 @@
                                         <div class='accountFrom'>
                                                 <select name='accountFrom' id='accountFrom' size='1'
                                                         style='text-align:right' required>
-                                                        <option value='Income'>Income</option>
-                                                        <option value='' disabled='disabled'>----------</option>
-                                                        <option value='Vivid Current' selected>Vivid Current</option>
-                                                        <option value='Vivid Subscriptions'>Vivid Subscriptions</option>
-                                                        <option value='Vivid Monthly'>Vivid Monthly</option>
-                                                        <option value='Revolut Current'>Revolut Current</option>
-                                                        <option value='Revolut Subscriptions'>Revolut Subscriptions
+                                                        <option value='Revolut Current' selected>Revolut Current
                                                         </option>
-                                                        <option value='N26 Current'>N26 Current</option>
-                                                        <option value='FNB Cheque'>FNB Cheque</option>
-                                                        <option value='Cash'>Cash</option>
-                                                        <option value='' disabled='disabled'>----------</option>
-                                                        <option value='Lyxor Pan Africa UCITS'>Lyxor Africa via
-                                                                TradeRepublic</option>
-                                                        <option value='Coronation Global Managed'>Coronation Global via
-                                                                AG Tax Free</option>
-                                                        <option value='Nedgroup Global Equity'>Nedgroup Global via AG
-                                                                Tax Free</option>
-                                                        <option value='Satrix World Equity'>Satrix World via AG Tax Free
-                                                        </option>
-                                                        <option value='Lyxor Europe 600'>Lyxor Europe via MyLife
-                                                        </option>
-                                                        <option value='Lyxor World'>Lyxor World via MyLife</option>
-                                                        <option value='iShares Emerging Markets'>iShares Emerging via
-                                                                MyLife</option>
+                                                        {transactionLists["accounts"]}
                                                 </select>
                                         </div>
-                                        &nbsp;|&nbsp;
+                                        &nbsp; | &nbsp;
                                         <div class='accountTo'>
                                                 <select name='accountTo' id='accountTo' size='1' style='text-align:left'
                                                         required>
                                                         <option value='Expenses' selected>Expenses</option>
-                                                        <option value='' disabled='disabled'>----------</option>
-                                                        <option value='Vivid Current'>Vivid Current</option>
-                                                        <option value='Vivid Subscriptions'>Vivid Subscriptions</option>
-                                                        <option value='Vivid Monthly'>Vivid Monthly</option>
-                                                        <option value='Revolut Current'>Revolut Current</option>
-                                                        <option value='Revolut Subscriptions'>Revolut Subscriptions
-                                                        </option>
-                                                        <option value='N26 Current'>N26 Current</option>
-                                                        <option value='FNB Cheque'>FNB Cheque</option>
-                                                        <option value='Cash'>Cash</option>
-                                                        <option value='' disabled='disabled'>----------</option>
-                                                        <option value='Lyxor Pan Africa UCITS'>Lyxor Africa via
-                                                                TradeRepublic</option>
-                                                        <option value='Coronation Global Managed'>Coronation Global via
-                                                                AG Tax Free</option>
-                                                        <option value='Nedgroup Global Equity'>Nedgroup Global via AG
-                                                                Tax Free</option>
-                                                        <option value='Satrix World Equity'>Satrix World via AG Tax Free
-                                                        </option>
-                                                        <option value='Lyxor Europe 600'>Lyxor Europe via MyLife
-                                                        </option>
-                                                        <option value='Lyxor World'>Lyxor World via MyLife</option>
-                                                        <option value='iShares Emerging Markets'>iShares Emerging via
-                                                                MyLife</option>
-                                                        </option>
+                                                        {transactionLists["accounts"]}
                                                 </select>
                                         </div>
                                 </div>
@@ -205,8 +159,7 @@
                                                 📅 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700'>
                                                         <option value='Once Off' selected>Once off</option>
-                                                        <option value='Weekly'>Every 7 days</option>
-                                                        <option value='Monthly'>Every 30 days</option>
+                                                        {transactionLists["frequency"]}
                                                 </select>
                                         </div>
 
@@ -216,33 +169,13 @@
                                                 <select name='type' id='type' size='1' style='text-align: right'
                                                         required>
                                                         <option value='Food' selected>🍽 Food</option>
-                                                        <option value='Transfer'>💸 Transfer</option>
-                                                        <option value='Supplies'>📦 Supplies</option>
-                                                        <option value='Services'>🛎 Services</option>
-                                                        <option value='' disabled='disabled'>----------</option>
-                                                        <option value='Assets'>💻 Assets</option>
-                                                        <option value='Digital'>🖱 Digital</option>
-                                                        <option value='Discounts'>🏷️ Discounts</option>
-                                                        <option value='Employment'>💼 Employment</option>
-                                                        <option value='Entertainment'>🍿 Entertainment</option>
-                                                        <option value='Fees'>🧾 Fees</option>
-                                                        <option value='Giving'>🫶🏽 Giving</option>
-                                                        <option value='Health'>🩺 Health</option>
-                                                        <option value='Insurance'>🐷 Insurance</option>
-                                                        <option value='Investment'>📈 Investment</option>
-                                                        <option value='Loan'>📉 Loan</option>
-                                                        <option value='Property'>🏠 Property</option>
-                                                        <option value='Refund'>💫 Refund</option>
-                                                        <option value='Tax'>🏢 Tax</option>
-                                                        <option value='Travel'>🏝 Travel</option>
-                                                        <option value='Uncategorised'>❓ Uncategorised</option>
-                                                        <option value='Wardrobe'>👔 Wardrobe</option>
+                                                        {transactionLists["category"]}
                                                 </select>
                                         </span>
                                         <span>:</span>
                                         <span class='group' style='padding-left: 10px'>
                                                 <datalist id='subcat'>
-                                                        {datalist}
+                                                        {transactionLists["subcategory"]}
                                                 </datalist>
 
                                                 <input type='text'
@@ -280,13 +213,7 @@
                                         <span class='quantityUnit'>
                                                 <select name='quantityUnit' size='1' required>
                                                         <option value='x' selected>x</option>
-                                                        <option value='g'>g</option>
-                                                        <option value='ml'>ml</option>
-                                                        <option value='lt'>lt</option>
-                                                        <option value='kg'>kg</option>
-                                                        <option value='nights'>nights</option>
-                                                        <option value='km'>km</option>
-                                                        <option value='mnth'>mnth</option>
+                                                        {transactionLists["quantityUnit"]}
                                                 </select>
                                         </span>
                                 </div>
@@ -295,9 +222,7 @@
                                         <span class='currency'>
                                                 <select name='currency' id='currency' size='1'>
                                                         <option value='EUR' selected>€</option>
-                                                        <option value='ZAR'>R</option>
-                                                        <option value='USD'>$</option>
-                                                        <option value='GBP'>£</option>
+                                                        {currency}
                                                 </select>
                                         </span>
                                         <span class='amount'>
