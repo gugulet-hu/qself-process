@@ -29,3 +29,4 @@
 202304032220: Testing new type lists for transactions screen
 202304032327: .
 202304041459: Write transactionsLists to folder
+202304041503: Removing .json from list keys
