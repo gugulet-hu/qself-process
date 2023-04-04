@@ -1,1 +1,1 @@
-{"name":"transactions","description":"Flow to run financial transactions.","version":"202304042256","folder":"System/Automate/transactions","comment":"Removed \\n and \\t from typelists","uri":"content://com.llamalab.automate.provider/flows/16/data"}
+{"name":"transactions","description":"Flow to run financial transactions.","version":"202304042304","folder":"System/Automate/transactions","comment":".","uri":"content://com.llamalab.automate.provider/flows/16/data"}
