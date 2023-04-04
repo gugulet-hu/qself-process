@@ -1,1 +1,1 @@
-{"name":"transactions","description":"Flow to run financial transactions.","version":"202304032327","folder":"System/Automate/transactions","comment":".","uri":"content://com.llamalab.automate.provider/flows/16/data"}
+{"name":"transactions","description":"Flow to run financial transactions.","version":"202304041459","folder":"System/Automate/transactions","comment":"Write transactionsLists to folder","uri":"content://com.llamalab.automate.provider/flows/16/data"}

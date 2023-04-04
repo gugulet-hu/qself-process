@@ -136,7 +136,7 @@
                                                         style='text-align:right' required>
                                                         <option value='Revolut Current' selected>Revolut Current
                                                         </option>
-                                                        {transactionLists["accounts];xmlEncode}
+                                                        {transactionLists["accounts"];xmlEncode}
                                                 </select>
                                         </div>
                                         &nbsp; | &nbsp;
@@ -144,7 +144,7 @@
                                                 <select name='accountTo' id='accountTo' size='1' style='text-align:left'
                                                         required>
                                                         <option value='Expenses' selected>Expenses</option>
-                                                        {transactionLists["accounts];xmlEncode}
+                                                        {transactionLists["accounts"];xmlEncode}
                                                 </select>
                                         </div>
                                 </div>
@@ -159,7 +159,7 @@
                                                 📅 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700'>
                                                         <option value='Once Off' selected>Once off</option>
-                                                        {transactionLists["frequency];xmlEncode}
+                                                        {transactionLists["frequency"];xmlEncode}
                                                 </select>
                                         </div>
 
@@ -169,19 +169,19 @@
                                                 <select name='type' id='type' size='1' style='text-align: right'
                                                         required>
                                                         <option value='Food' selected>🍽 Food</option>
-                                                        {transactionLists["category];xmlEncode}
+                                                        {transactionLists["category"];xmlEncode}
                                                 </select>
                                         </span>
                                         <span>:</span>
                                         <span class='group' style='padding-left: 10px'>
                                                 <datalist id='subcat'>
-                                                        {transactionLists["subcategory];xmlEncode}
+                                                        {transactionLists["subcategory"];xmlEncode}
                                                 </datalist>
 
-                                                <input type='text'
+                                                <input type='text' /*
                                                         onkeyup='if(this.value.length>=3)this.setAttribute("list","subcat")'
                                                         onkeydown='if(this.value.length<3||event.keyCode==8)this.removeAttribute("list","subcat")'
-                                                        id='group' name='group' size='3' placeholder='Enter group...'
+                                                        */ id='group' name='group' size='3' placeholder='Enter group...'
                                                         style='text-align: left' autocomplete='off' required />
                                         </span>
                                 </div>
@@ -213,7 +213,7 @@
                                         <span class='quantityUnit'>
                                                 <select name='quantityUnit' size='1' required>
                                                         <option value='x' selected>x</option>
-                                                        {transactionLists["quantityUnit];xmlEncode}
+                                                        {transactionLists["quantityUnit"];xmlEncode}
                                                 </select>
                                         </span>
                                 </div>
