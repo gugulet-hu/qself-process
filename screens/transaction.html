@@ -172,11 +172,12 @@
                                                         <option value='x' selected>x</option>
                                                         {transactionLists["quantityUnit"];xmlEncode}
                                                 </select></span></div>
-                                <div class='costs'><span class='currency'><select name='currency' id='currency'
+                                <div class='costs'><span class='currency'>
+                                        <select name='currency' id='currency'
                                                         size='1'>
-                                                        <option value='EUR' selected>🇪🇺 EUR</option>
-                                                        {transactionLists["currency"]; xmlEncode}
-                                                </select></span><span class='amount'><input type='number' id='amount'
+                                                <option value='EUR' selected>🇪🇺 EUR</option>
+                                                {transactionLists["currency"];xmlEncode}
+                                        </select></span><span class='amount'><input type='number' id='amount'
                                                         step='.01' name='amount' min='0.01' placeholder='0.01'
                                                         required></span></div><input type='submit'
                                         action='http://localhost/ok' hidden />
