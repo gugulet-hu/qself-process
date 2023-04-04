@@ -1,1 +1,1 @@
-{"name":"transactions","description":"Flow to run financial transactions.","version":"202304042243","folder":"System/Automate/transactions","comment":".","uri":"content://com.llamalab.automate.provider/flows/16/data"}
+{"name":"transactions","description":"Flow to run financial transactions.","version":"202304042250","folder":"System/Automate/transactions","comment":"Minify the html and remove some double quotes in the header","uri":"content://com.llamalab.automate.provider/flows/16/data"}
