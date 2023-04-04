@@ -36,3 +36,4 @@
 202304042203: .
 202304042215: .
 202304042217: .
+202304042221: Delete trsansactionsList before creating a new list
