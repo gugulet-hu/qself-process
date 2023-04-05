@@ -1,1 +1,1 @@
-{"name":"transactions","description":"Flow to run financial transactions.","version":"202304052233","folder":"System/Automate/transactions","comment":"Testing using fileUri for displaying images","uri":"content://com.llamalab.automate.provider/flows/16/data"}
+{"name":"transactions","description":"Flow to run financial transactions.","version":"202304052237","folder":"System/Automate/transactions","comment":"Using content:/// for image src","uri":"content://com.llamalab.automate.provider/flows/16/data"}
