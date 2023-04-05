@@ -61,3 +61,4 @@
 202304050941: Removed ;xmlEncode from variables in transaction screen
 202304052208: Added disabled line separator to typeLists
 202304052211: Escaped single quotes inside html variables
+202304052221: Removed distinct function in typeLists as it filters multiple disabled items
