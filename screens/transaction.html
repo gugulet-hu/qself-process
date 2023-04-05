@@ -134,29 +134,29 @@
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
                                                         style='text-align:right' required>
                                                         <option value='Revolut Current' selected>Revolut Current
-                                                        </option>{transactionLists["currency"];xmlEncode}
+                                                        </option>{transactionLists["currency"]}
                                                 </select></div>&nbsp;|&nbsp; <div class='accountTo'><select
                                                         name='accountTo' id='accountTo' size='1' style='text-align:left'
                                                         required>
                                                         <option value='Expenses' selected>Expenses</option>
-                                                        {transactionLists["currency"];xmlEncode}
+                                                        {transactionLists["currency"]}
                                                 </select></div>
                                 </div><br><br>
                                 <div class='meta'>
                                         <div class='location'>📍 <input type='text' name='location' id='location'
-                                                        value='{location;xmlEncode}' required><br>📅 <select
-                                                        name='frequency' id='frequency' size='1'
+                                                        value='{location}' required><br>📅 <select name='frequency'
+                                                        id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700'>
                                                         <option value='Once Off' selected>Once off</option>
-                                                        {transactionLists["frequency"];xmlEncode}
+                                                        {transactionLists["frequency"]}
                                                 </select></div><br><span class='type'
                                                 style='padding-right: 10px'><select name='type' id='type' size='1'
                                                         style='text-align: right' required>
                                                         <option value='Food' selected>🍽 Food</option>
-                                                        {transactionLists["category"];xmlEncode}
+                                                        {transactionLists["category"]}
                                                 </select></span><span>:</span><span class='group'
                                                 style='padding-left: 10px'><datalist
-                                                        id='subcat'>{transactionLists["subcategory"];xmlEncode}
+                                                        id='subcat'>{transactionLists["subcategory"]}
                                                 </datalist><input type='text' id='group' name='group' size='3'
                                                         placeholder='Enter group...' style='text-align: left'
                                                         autocomplete='off' required /></span>
@@ -170,17 +170,15 @@
                                                         required></span><span class='quantityUnit'><select
                                                         name='quantityUnit' size='1' required>
                                                         <option value='x' selected>x</option>
-                                                        {transactionLists["quantityUnit"];xmlEncode}
+                                                        {transactionLists["quantityUnit"]}
                                                 </select></span></div>
                                 <div class='costs'><span class='currency'>
-                                        <select name='currency' id='currency'
-                                                        size='1'>
-                                                <option value='EUR' selected>🇪🇺 EUR</option>
-                                                {transactionLists["currency"];xmlEncode}
-                                        </select></span><span class='amount'><input type='number' id='amount'
-                                                        step='.01' name='amount' min='0.01' placeholder='0.01'
-                                                        required></span></div><input type='submit'
-                                        action='http://localhost/ok' hidden />
+                                                <select name='currency' id='currency' size='1'>
+                                                        {transactionLists["currency"]}
+                                                </select>
+                                        </span><span class='amount'><input type='number' id='amount' step='.01'
+                                                        name='amount' min='0.01' placeholder='0.01' required></span>
+                                </div><input type='submit' action='http://localhost/ok' hidden />
                         </div>
                 </form>
         </div>

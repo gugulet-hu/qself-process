@@ -58,3 +58,4 @@
 202304050049: .
 202304050053: .
 202304050055: .
+202304050941: Removed ;xmlEncode from variables in transaction screen
