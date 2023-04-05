@@ -59,3 +59,4 @@
 202304050053: .
 202304050055: .
 202304050941: Removed ;xmlEncode from variables in transaction screen
+202304052208: Added disabled line separator to typeLists
