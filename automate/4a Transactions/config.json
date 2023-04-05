@@ -1,1 +1,1 @@
-{"name":"transactions","description":"Flow to run financial transactions.","version":"202304052207","folder":"System/Automate/transactions","comment":"Added disabled line separator to typeLists","uri":"content://com.llamalab.automate.provider/flows/16/data"}
+{"name":"transactions","description":"Flow to run financial transactions.","version":"202304052210","folder":"System/Automate/transactions","comment":"Escaped single quotes inside html variables","uri":"content://com.llamalab.automate.provider/flows/16/data"}
