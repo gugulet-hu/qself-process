@@ -2,7 +2,7 @@
 202220232123: Ordered blocks and added sets to workout.json
 202220122312: Added Steps unit
 202220332333: Filtered out Steps from sessionList
-202206221350: Fixed setting device to interactive mode and showing heart rate 
+202206221350: Fixed setting device to interactive mode and showing heart rate
 202206250030: Fixed NaN heartrate value that nuked a session
 202206251621: Moved invalid json check to the write function at the end for exercise
 202206272255: Working on splitting this flow into subflows
@@ -30,17 +30,6 @@
 202211062141: Added a few combine function.
 202211071850: Added new combine sessions fibre.
 202303262304: Fixed empty config bug
-202303262304: .
-202303262305: .
-202303262308: .
-202303262324: .
 202303280013: General fixes
-202303282220: .
 202303282306: Minor fix to heart rate read
 202303312303: Add connection command for BT watch actions
-202303312304: .
-202303312310: .
-202303312311: .
-202303312312: .
-202303312313: .
-202303312313: .
