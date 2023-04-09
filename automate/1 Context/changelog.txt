@@ -81,3 +81,4 @@
 202304072248: Checksum the local config file and rewrite if values changed
 202304091214: Subflows now run initialisation every time
 202304092157: Added phone face down check for sleep tracking
+202304092335: Changed recon to monthly
