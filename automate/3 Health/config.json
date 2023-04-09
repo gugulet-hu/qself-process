@@ -1,7 +1,1 @@
-{
-        "name": "health",
-        "description": "Flow to keep track of health metrics, including exercise and medical details.",
-        "version": "202303312313",
-        "comment": ".",
-        "uri": "content://com.llamalab.automate.provider/flows/22/data"
-}
+{"name":"health","description":"Flow to keep track of health metrics, including exercise and medical details.","version":"202304091504","readingTimeout":30,"comment":"Refactored heart rate monitor","uri":"content://com.llamalab.automate.provider/flows/22/data"}
