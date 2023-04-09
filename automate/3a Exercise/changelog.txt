@@ -30,41 +30,12 @@
 202210071617: Added end of workout summary.
 202210122205: Use atomics for keeping track of steps.
 202210291956: Added writePath variable and readme to the initialisation flow.
-202210292001: Initial version
-202210292006: Initial version
-202210292028: Initial version
 202210292220: Added writePath to fibres and refactored.
 202210300026: Replaced custom reverse geolocate function with standard block.
 202211012308: Fixed Steps to send value to KLWP.
 202211022357: Fixed errors in exercise fibre.
-202303282224: .
-202303282225: .
-202303282226: .
-202303282228: .
-202303282237: .
-202303282238: .
-202303282239: .
-202303282242: .
-202303282244: .
 202303282325: Changed to check last 38 sessions
-202303291938: .
-202303292233: .
-202303292235: .
-202303292244: .
-202303292247: .
-202303292318: .
-202303292322: .
-202303292324: .
-202303292325: .
-202303292327: .
 202303292349: Set correct exerciseData
-202303292351: .
-202303292355: .
-202303292357: .
-202303292358: .
-202303292359: .
-202303300001: .
-202304012126: .
 202304020203: Refactored Exercise and made minor adjustments to Steps flow
 202304020217: Add delete backup once exercise session is saved
-202304021002: .
+202304091718: Initial version
