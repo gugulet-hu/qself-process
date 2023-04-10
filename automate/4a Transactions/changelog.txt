@@ -27,37 +27,13 @@
 202211241450: Added separate subroutine for writePath check. Fails when attached to location subroutine
 202212121207: Fixed bug in disappearing connections.
 202304032220: Testing new type lists for transactions screen
-202304032327: .
 202304041459: Write transactionsLists to folder
 202304041503: Removing .json from list keys
-202304041505: .
-202304041507: .
-202304041745: .
-202304042203: .
-202304042215: .
-202304042217: .
 202304042221: Delete trsansactionsList before creating a new list
-202304042229: .
-202304042241: .
-202304042243: .
 202304042250: Minify the html and remove some double quotes in the header
-202304042254: .
 202304042257: Removed \n and \t from typelists
-202304042304: .
-202304042308: .
-202304042313: .
-202304042332: .
 202304042334: The space before xmlEncode!!!
 202304042337: Surround variable with quotation marks
-202304042340: .
-202304042359: .
-202304050030: .
-202304050034: .
-202304050038: .
-202304050047: .
-202304050049: .
-202304050053: .
-202304050055: .
 202304050941: Removed ;xmlEncode from variables in transaction screen
 202304052208: Added disabled line separator to typeLists
 202304052211: Escaped single quotes inside html variables
@@ -65,9 +41,4 @@
 202304052224: Testing img src to icons in storage
 202304052234: Testing using fileUri for displaying images
 202304052237: Using content:/// for image src
-202304052238: .
-202304052239: .
-202304052243: .
-202304052325: .
 202304061057: Added sha check for transaction lists
-202304061124: .
