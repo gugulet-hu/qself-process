@@ -142,12 +142,12 @@
                         <div class='wrapper'>
                                 <div class='accounts'>
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
-                                                        style='text-align:right' required>
+                                                        required>
                                                         <option value='Revolut Current' selected>Revolut Current
                                                         </option>{transactionLists["accounts"]}
                                                 </select></div>|
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
-                                                        style='text-align:left' required>
+                                                        required>
                                                         <option value='Expenses' selected>Expenses</option>
                                                         {transactionLists["accounts"]}
                                                 </select></div>
@@ -167,7 +167,7 @@
                                                         <option value='Once Off' selected>Once off</option>
                                                         {transactionLists["frequency"]}
                                                 </select>
-                                        </div><span class='type' style='padding-right: 10px'><select name='type'
+                                        </div><br><span class='type' style='padding-right: 10px'><select name='type'
                                                         id='type' size='1' style='text-align: right' required>
                                                         <option value='Food' selected>🍽 Food</option>
                                                         {transactionLists["category"]}
@@ -177,7 +177,7 @@
                                                         list='subcategory' required /><datalist
                                                         id='subcategory'>{transactionLists["subcategory"]}
                                                 </datalist></span>
-                                </div><br>
+                                </div><br><br>
                                 <div class='brand'><input type='text' name='brand' id='brand' placeholder='Brand'
                                                 required></div><br><br><br>
                                 <div class='item'><input type='text' name='item' id='item' placeholder='Item Name'

@@ -51,3 +51,4 @@
 202304102222: Added autofill location and auto complete subcategory
 202304102311: Removed old location input, hidden extra fields, increased size of currency and quantity inputs
 202304102338: Removed state as a location field
+202304102349: Fixes for screen alignment
