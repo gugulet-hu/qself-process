@@ -46,3 +46,4 @@
 202304101654: Initial version
 202304101658: Initial version
 202304101707: Updated API key for exchange rate
+202304101854: Exclude emoticons in transactions list values
