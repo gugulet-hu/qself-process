@@ -1,24 +1,87 @@
 [
-        "🍽 Food",
-        "💸 Transfer",
-        "📦 Supplies",
-        "🛎 Services",
+        [
+                "Food",
+                "🍽 Food"
+        ],
+        [
+                "Transfer",
+                "💸 Transfer"
+        ],
+        [
+                "Supplies",
+                "📦 Supplies"
+        ],
+        [
+                "Services",
+                "🛎 Services"
+        ],
         "disabled",
-        "💻 Assets",
-        "🖱 Digital",
-        "🏷️ Discounts",
-        "💼 Employment",
-        "🍿 Entertainment",
-        "🧾 Fees",
-        "🫶🏽 Giving",
-        "🩺 Health",
-        "🐷 Insurance",
-        "📈 Investment",
-        "📉 Loan",
-        "🏠 Property",
-        "💫 Refund",
-        "🏢 Tax",
-        "🏝 Travel",
-        "❓ Uncategorised",
-        "👔 Wardrobe"
+        [
+                "Assets",
+                "💻 Assets"
+        ],
+        [
+                "Digital",
+                "🖱 Digital"
+        ],
+        [
+                "Dsicounts",
+                "🏷️ Discounts"
+        ],
+        [
+                "Employmeny",
+                "💼 Employment"
+        ],
+        [
+                "Entertainment",
+                "🍿 Entertainment"
+        ],
+        [
+                "Fees",
+                "🧾 Fees"
+        ],
+        [
+                "Giving",
+                "🫶🏽 Giving"
+        ],
+        [
+                "Health",
+                "🩺 Health"
+        ],
+        [
+                "Insurance",
+                "🐷 Insurance"
+        ],
+        [
+                "Investment",
+                "📈 Investment"
+        ],
+        [
+                "Loan",
+                "📉 Loan"
+        ],
+        [
+                "Property",
+                "🏠 Property"
+        ],
+        [
+                "Refund",
+                "💫 Refund"
+        ],
+        [
+                "Tax",
+                "🏢 Tax"
+        ],
+        [
+                "Travel",
+                "🏝 Travel"
+        ],
+        [
+                "Uncategorised",
+                "❓ Uncategorised"
+        ],
+        [
+                "Wardrobe",
+                "👔 Wardrobe"
+        ]
 ]
