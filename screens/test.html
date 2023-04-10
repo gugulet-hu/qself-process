@@ -3,135 +3,159 @@
 <link rel='preconnect' href='https://fonts.googleapis.com'>
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
+
 <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js">
 </script>
 <script>
         const script = document.getElementById('search-js');
-        script.onload = function () \{
-                mapboxsearch.autofill(\{
+        script.onload = function () {
+                mapboxsearch.autofill({
                         accessToken: 'pk.eyJ1IjoiZy04IiwiYSI6ImNsN29ubHhnNTA3NjUzcG10emd6OXJ3cHcifQ.qqVFQrIOUI5kX9H4hNJxuA'
                 });
         };
 </script>
+
 <style>
-        body \{ color: #323036;
-        font-family: 'Overpass',
-        sans-serif
+        body {
+                color: #323036;
+                font-family: 'Overpass',
+                        sans-serif
         }
 
-        form \{ text-align: center
+        form {
+                text-align: center
         }
 
-        div.container \{ position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        padding: 0 10px
+        div.container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding: 0 10px
         }
 
-        select \{ border: none;
-        outline: none;
-        background-color: transparent;
-        -moz-appearance: none;
-        -webkit-appearance: none
+        select {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                -moz-appearance: none;
+                -webkit-appearance: none
         }
 
-        select:focus \{ border: none;
-        outline: none
+        select:focus {
+                border: none;
+                outline: none
         }
 
-        input \{ font-weight: 700;
-        font-size: 1em;
-        background-color: transparent;
-        border: none;
-        text-align: center;
-        float: left;
-        width: 80%;
-        -moz-appearance: none;
-        -webkit-appearance: none
+        input {
+                font-weight: 700;
+                font-size: 1em;
+                background-color: transparent;
+                border: none;
+                text-align: center;
+                float: left;
+                width: 80%;
+                -moz-appearance: none;
+                -webkit-appearance: none
         }
 
-        input:focus \{ outline: none
+        input:focus {
+                outline: none
         }
 
-        input::-webkit-calendar-picker-indicator \{ display: none !important;
+        input::-webkit-calendar-picker-indicator {
+                display: none !important;
         }
 
-        dov.accounts \{ text-align: center
+        dov.accounts {
+                text-align: center
         }
 
-        div.accounts>div>select \{ font-weight: 900 !important;
-        font-size: 1em;
-        padding-bottom: 0.5em;
+        div.accounts>div>select {
+                font-weight: 900 !important;
+                font-size: 1em;
+                padding-bottom: 0.5em;
         }
 
-        div.accounts>div[class^='account'] \{ width: 45%;
-        display: inline-block
+        div.accounts>div[class^='account'] {
+                width: 45%;
+                display: inline-block
         }
 
-        div.meta \{ width: 100%
+        div.meta {
+                width: 100%
         }
 
-        div.meta>div.location>input \{ float: none;
-        font-weight: 400 !important;
-        font-size: 0.9em;
-        text-align: center;
-        padding-bottom: 10px
+        div.meta>div.location>input {
+                float: none;
+                font-weight: 400 !important;
+                font-size: 0.9em;
+                text-align: center;
+                padding-bottom: 10px
         }
 
         div.meta>span select,
-        div.meta>span input \{ float: none;
-        font-weight: 400 !important;
-        font-size: 1.2em;
-        width: 45%
+        div.meta>span input {
+                float: none;
+                font-weight: 400 !important;
+                font-size: 1.2em;
+                width: 45%
         }
 
         div.brand input,
-        div.item input \{ font-size: 1.5em;
-        font-weight: 700;
-        text-align: left;
-        border-bottom: 0.5px solid #E6E6E6;
-        width: 100%
+        div.item input {
+                font-size: 1.5em;
+                font-weight: 700;
+                text-align: left;
+                border-bottom: 0.5px solid #E6E6E6;
+                width: 100%
         }
 
-        div.quantity \{ width: 100%;
-        margin-bottom: 0.8em;
-        text-align: right
+        div.quantity {
+                width: 100%;
+                margin-bottom: 0.8em;
+                text-align: right
         }
 
-        div.quantity>span input#quantity \{ float: none;
-        sans-serif;
-        font-weight: 400 !important;
-        font-size: 1.2em;
-        text-align: right;
-        width: 80%
+        div.quantity>span input#quantity {
+                float: none;
+                sans-serif;
+                font-weight: 400 !important;
+                font-size: 1.2em;
+                text-align: right;
+                width: 80%
         }
 
-        div.quantity>span span.quantityUnit \{ float: left;
-        width: 20%;
-        font-size: 0.8em
+        div.quantity>span span.quantityUnit {
+                float: left;
+                width: 20%;
+                font-size: 0.8em
         }
 
-        div.costs \{ width: 100%;
-        text-align: right
+        div.costs {
+                width: 100%;
+                text-align: right
         }
 
-        div.costs>span span.currency \{ float: left;
-        width: 20%
+        div.costs>span span.currency {
+                float: left;
+                width: 20%
         }
 
-        div.costs>span span.currency select \{ font-weight: 900;
-        font-size: 1em
+        div.costs>span span.currency select {
+                font-weight: 900;
+                font-size: 1em
         }
 
-        div.costs>span input#amount \{ float: none;
-        sans-serif;
-        font-weight: 900 !important;
-        font-size: 4em;
-        text-align: right;
-        width: 80%;
-        padding-bottom: 10px
+        div.costs>span input#amount {
+                float: none;
+                sans-serif;
+                font-weight: 900 !important;
+                font-size: 4em;
+                text-align: right;
+                width: 80%;
+                padding-bottom: 10px
         }
 
 </style>

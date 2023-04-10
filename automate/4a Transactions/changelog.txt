@@ -48,3 +48,4 @@
 202304101707: Updated API key for exchange rate
 202304101854: Exclude emoticons in transactions list values
 202304102042: Create arrays for typelists with unicode
+202304102222: Added autofill location and auto complete subcategory
