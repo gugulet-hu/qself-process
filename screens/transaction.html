@@ -155,31 +155,29 @@
                                 <div class='meta'>
                                         <div class='location'>📍
                                                 <input name='address' placeholder='Address' type='text'
-                                                        autocomplete='address-line1' />
-                                                <input name='city' placeholder='City' type='hidden'
-                                                        autocomplete='address-level2' />
-                                                <input name='state' placeholder='State' type='hidden'
-                                                        autocomplete='address-level1' />
-                                                <input name='country' placeholder='Country' type='hidden'
-                                                        autocomplete='country' />
-                                                <input name='postcode' placeholder='Postcode' type='hidden'
-                                                        autocomplete='postal-code' />
+                                                        autocomplete='address-line1' required />
+                                                <input name='city' placeholder='City' type='text'
+                                                        style='visibility:hidden' autocomplete='address-level2' />
+                                                <input name='country' placeholder='Country' type='text'
+                                                        style='visibility:hidden' autocomplete='country' />
+                                                <input name='postcode' placeholder='Postcode' type='text'
+                                                        style='visibility:hidden' autocomplete='postal-code' />
                                                 <br>📅 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700'>
                                                         <option value='Once Off' selected>Once off</option>
                                                         {transactionLists["frequency"]}
                                                 </select>
-                                        </div><br><span class='type' style='padding-right: 10px'><select name='type'
+                                        </div><span class='type' style='padding-right: 10px'><select name='type'
                                                         id='type' size='1' style='text-align: right' required>
                                                         <option value='Food' selected>🍽 Food</option>
                                                         {transactionLists["category"]}
                                                 </select></span><span>:</span><span class='group'
                                                 style='padding-left: 10px'><input type='text' id='group' name='group'
-                                                        size='5' placeholder='Enter group...' style='text-align: left'
+                                                        size='5' placeholder='Enter group' style='text-align: left'
                                                         list='subcategory' required /><datalist
                                                         id='subcategory'>{transactionLists["subcategory"]}
                                                 </datalist></span>
-                                </div><br><br>
+                                </div><br>
                                 <div class='brand'><input type='text' name='brand' id='brand' placeholder='Brand'
                                                 required></div><br><br><br>
                                 <div class='item'><input type='text' name='item' id='item' placeholder='Item Name'
