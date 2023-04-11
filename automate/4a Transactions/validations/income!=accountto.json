@@ -1,0 +1,6 @@
+[
+        {
+                "logic": "transaction["accountTo"] = "Income"",
+                "message": "Income can not be the account used for AccountTo."
+        }
+]

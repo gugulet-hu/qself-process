@@ -1,0 +1,6 @@
+[
+        {
+                "logic": "transaction["quantityUnit"] = "nights" && transaction["group"] != "Accommodation"",
+                "message": "The nights quantityUnit is only for Accommodation."
+        }
+]
