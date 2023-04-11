@@ -58,7 +58,9 @@
         input::-webkit-calendar-picker-indicator \{ display: none !important;
         }
 
-        dov.accounts \{ text-align: center
+        div.accounts \{ margin:auto;
+        font-size: 1.1em;
+        width: 100%;
         }
 
         div.accounts>div>select \{ font-weight: 900 !important;
@@ -66,8 +68,8 @@
         padding-bottom: 0.5em;
         }
 
-        div.accounts>div[class^='account'] \{ width: 45%;
-        display: inline-block
+        div.accounts>div[class^='account'] \{ width: 35%;
+        display: inline-block;
         }
 
         div.meta \{ width: 100%
@@ -142,20 +144,20 @@
                         <div class='wrapper'>
                                 <div class='accounts'>
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
-                                                        required>
+                                                        style='text-align:left; white-space: normal;' required>
                                                         <option value='Revolut Current' selected>Revolut Current
                                                         </option>{transactionLists["accounts"]}
-                                                </select></div>|
+                                                </select></div>&nbsp;➡️&nbsp;
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
-                                                        required>
+                                                        style='text-align:left' required>
                                                         <option value='Expenses' selected>Expenses</option>
                                                         {transactionLists["accounts"]}
                                                 </select></div>
                                 </div><br><br>
                                 <div class='meta'>
                                         <div class='location'>📍
-                                                <input name='address' placeholder='Address' type='text'
-                                                        autocomplete='address-line1' required />
+                                                <input name='address' placeholder='Enter a physical address or a URL'
+                                                        type='text' autocomplete='address-line1' required />
                                                 <input name='city' placeholder='City' type='text'
                                                         style='visibility:hidden' autocomplete='address-level2' />
                                                 <input name='country' placeholder='Country' type='text'

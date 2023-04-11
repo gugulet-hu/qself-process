@@ -52,3 +52,4 @@
 202304102311: Removed old location input, hidden extra fields, increased size of currency and quantity inputs
 202304102338: Removed state as a location field
 202304102349: Fixes for screen alignment
+202304111043: Testing DOM storage for screens
