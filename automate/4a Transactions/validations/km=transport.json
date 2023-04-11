@@ -1,6 +1,6 @@
 [
         {
-                "logic": "transaction["quantityUnit"] = "km" && transaction["group"] != "Transport"",
+                "logic": "transaction[\"quantityUnit\"] = \"km\" && transaction[\"group\"] != \"Transport\"",
                 "message": "The kilometre quantityUnit is only for Transport."
         }
 ]

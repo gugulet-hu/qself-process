@@ -1,6 +1,6 @@
 [
         {
-                "logic": "transaction["accountFrom"] = "Expenses"",
+                "logic": "transaction[\"accountFrom\"] = \"Expenses\"",
                 "message": "Expenses can not be the account used for AccountFrom."
         }
 ]
