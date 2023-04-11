@@ -1,6 +1,0 @@
-[
-        {
-                "logic": "transaction[\"type\"] = \"Employment\" && transaction[\"accountFrom\"] != \"Income\"",
-                "message": "When Employment is the type set, the accountFrom needs to be Income."
-        }
-]

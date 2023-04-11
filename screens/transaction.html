@@ -75,11 +75,12 @@
         div.meta \{ width: 100%
         }
 
-        div.meta>div.location>input \{ float: none;
+        div.meta>div.location input \{ float: none;
         font-weight: 400 !important;
         font-size: 0.9em;
         text-align: center;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+        width: 75%
         }
 
         div.meta>span select,
@@ -165,7 +166,7 @@
                                                 <input name='postcode' placeholder='Postcode' type='text'
                                                         style='visibility:hidden' autocomplete='postal-code' />
                                                 <br>📅 <select name='frequency' id='frequency' size='1'
-                                                        style='font-size:small; font-weight: 700'>
+                                                        style='font-size:small; font-weight: 700; text-transform: uppercase;'>
                                                         <option value='Once Off' selected>Once off</option>
                                                         {transactionLists["frequency"]}
                                                 </select>

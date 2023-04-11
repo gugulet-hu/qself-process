@@ -1,6 +1,0 @@
-[
-        {
-                "logic": "transaction[\"currency\"] = \"ZAR\" && transaction[\"accountFrom\"] != \"FNB Cheque\"",
-                "message": "FNB is a rand-denominated account.."
-        }
-]
