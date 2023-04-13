@@ -146,17 +146,25 @@
                                 <div class='accounts'>
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
                                                         style='text-align:left; white-space: normal;' required>
-                                                        <option value='Revolut Current' selected>Revolut Current
+                                                        <option value='{todayRecurringTransactions["accountFrom"] ? todayRecurringTransactions["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}'
+                                                                selected>{todayRecurringTransactions["accountFrom"] ?
+                                                                todayRecurringTransactions["accountFrom"] :
+                                                                transaction["accountFrom"] ?
+                                                                transaction["accountFrom"] : "Revolut Current"}
                                                         </option>{transactionLists["accounts"]}
                                                 </select></div>&nbsp;➡️&nbsp;
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
                                                         style='text-align:left' required>
-                                                        <option value='Expenses' selected>Expenses</option>
+                                                        <option value='{todayRecurringTransactions["accountTo"] ? todayRecurringTransactions["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
+                                                                selected>{todayRecurringTransactions["accountTo"] ?
+                                                                todayRecurringTransactions["accountTo"] :
+                                                                transaction["accountTo"] ?
+                                                                transaction["accountTo"] : "Expenses"}</option>
                                                         {transactionLists["accounts"]}
                                                 </select></div>
                                 </div><br><br>
                                 <div class='meta'>
-                                        <div class='location'>📍
+                                        <div class='location'>
                                                 <input name='address' placeholder='Enter a physical address or a URL'
                                                         type='text' autocomplete='address-line1' required />
                                                 <input name='city' placeholder='City' type='text'
@@ -167,37 +175,63 @@
                                                         style='visibility:hidden' autocomplete='postal-code' />
                                                 <br>📅 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700; text-transform: uppercase;'>
-                                                        <option value='Once Off' selected>Once off</option>
+                                                        <option value='{todayRecurringTransactions["frequency"] ? todayRecurringTransactions["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
+                                                                selected>{todayRecurringTransactions["frequency"] ?
+                                                                todayRecurringTransactions["frequency"] :
+                                                                transaction["frequency"] ?
+                                                                transaction["frequency"] : "Once Off"}</option>
                                                         {transactionLists["frequency"]}
                                                 </select>
                                         </div><br><span class='type' style='padding-right: 10px'><select name='type'
                                                         id='type' size='1' style='text-align: right' required>
-                                                        <option value='Food' selected>🍽 Food</option>
+                                                        <option value='{todayRecurringTransactions["category"] ? todayRecurringTransactions["category"] : transaction["category"] ? transaction["category"] : "Food"}'
+                                                                selected>{todayRecurringTransactions["category"] ?
+                                                                todayRecurringTransactions["category"] :
+                                                                transaction["category"] ?
+                                                                transaction["category"] : "🍽 Food"}</option>
                                                         {transactionLists["category"]}
                                                 </select></span><span>:</span><span class='group'
                                                 style='padding-left: 10px'><input type='text' id='group' name='group'
-                                                        size='5' placeholder='Enter group' style='text-align: left'
+                                                        size='3' placeholder='Enter group' style='text-align: left'
                                                         list='subcategory' required /><datalist
                                                         id='subcategory'>{transactionLists["subcategory"]}
                                                 </datalist></span>
                                 </div><br><br>
-                                <div class='brand'><input type='text' name='brand' id='brand' placeholder='Brand'
+                                <div class='brand'><input type='text' name='brand' id='brand'
+                                                placeholder='{todayRecurringTransactions["brand"] ? todayRecurringTransactions["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
+                                                value='{todayRecurringTransactions["brand"] ? todayRecurringTransactions["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
                                                 required></div><br><br><br>
-                                <div class='item'><input type='text' name='item' id='item' placeholder='Item Name'
+                                <div class='item'><input type='text' name='item' id='item'
+                                                placeholder='{todayRecurringTransactions["item"] ? todayRecurringTransactions["item"] : transaction["item"] ? transaction["item"] : "Item"}'
+                                                value='{todayRecurringTransactions["item"] ? todayRecurringTransactions["item"] : transaction["item"] ? transaction["item"] : ""}'
                                                 required></div><br><br><br>
                                 <div class='quantity'><span class='quantityNumber'><input type='number' id='quantity'
-                                                        step='.01' name='quantity' min='0.01' placeholder='0.00'
+                                                        step='.01' name='quantity' min='0.01'
+                                                        placeholder='{todayRecurringTransactions["quantity"] ? todayRecurringTransactions["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}'
+                                                        value='{todayRecurringTransactions["quantity"] ? todayRecurringTransactions["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}'
                                                         required></span><span class='quantityUnit'><select
                                                         name='quantityUnit' size='1' required>
-                                                        <option value='x' selected>x</option>
+                                                        <option value='{todayRecurringTransactions["quantityUnit"] ? todayRecurringTransactions["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}'
+                                                                selected>{todayRecurringTransactions["quantityUnit"] ?
+                                                                todayRecurringTransactions["quantityUnit"] :
+                                                                transaction["quantityUnit"] ?
+                                                                transaction["quantityUnit"] : "x"}</option>
                                                         {transactionLists["quantityUnit"]}
                                                 </select></span></div>
                                 <div class='costs'><span class='currency'>
                                                 <select name='currency' id='currency' size='1'>
+                                                        <option value='{todayRecurringTransactions["currency"] ? todayRecurringTransactions["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}'
+                                                                selected>{todayRecurringTransactions["currency"] ?
+                                                                todayRecurringTransactions["currency"] :
+                                                                transaction["currency"] ?
+                                                                transaction["currency"] : "🇪🇺 €"}</option>
                                                         {transactionLists["currency"]}
                                                 </select>
                                         </span><span class='amount'><input type='number' id='amount' step='.01'
-                                                        name='amount' min='0.01' placeholder='0.01' required></span>
+                                                        name='amount' min='0.01'
+                                                        placeholder='{todayRecurringTransactions["amount"] ? todayRecurringTransactions["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}'
+                                                        value='{todayRecurringTransactions["amount"] ? todayRecurringTransactions["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
+                                                        required></span>
                                 </div><input type='submit' action='http://localhost/ok' hidden />
                         </div>
                 </form>
