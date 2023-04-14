@@ -64,3 +64,4 @@
 202304140041: Finished validation block (!) and added dynamic default values
 202304141544: Added more dynamic default values
 202304142232: Updated transaction screen
+202304142254: Clear some transaction fields before another round
