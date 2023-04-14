@@ -68,3 +68,4 @@
 202304142306: Fixed incorrect connection
 202304142308: Clear amount between transaction rounds
 202304142321: If address is URL zero all other location values
+202304150031: Added toast to confirm transaction
