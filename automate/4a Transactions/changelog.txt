@@ -71,3 +71,4 @@
 202304150031: Added toast to confirm transaction
 202304150044: Edited toast message to be one line
 202304150052: Adjusted toast message to include brand
+202304150117: Fixed currency symbol in toast
