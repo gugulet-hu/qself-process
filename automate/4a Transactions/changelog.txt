@@ -61,8 +61,5 @@
 202304111649: Forgot to add read file for validation.
 202304112012: Added validation at the right entry point
 202304112207: Changed to validationFile instead
-202304112211: Initial version
-202304130012: Initial version
-202304131037: Initial version
-202304140040: Initial version
 202304140041: Finished validation block (!) and added dynamic default values
+202304141544: Added more dynamic default values

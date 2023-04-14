@@ -165,13 +165,12 @@
                                 </div><br><br>
                                 <div class='meta'>
                                         <div class='location'>
-                                                <input name='address' placeholder='Enter a physical address or a URL'
-                                                        type='text' autocomplete='address-line1' required />
-                                                <input name='city' placeholder='City' type='text'
+                                                <input name='address' placeholder='{todayRecurringTransactions["address"] ? todayRecurringTransactions["address"] : transaction["address"] ? transaction["address"] : "Enter a physical address or a URL"}' value='{todayRecurringTransactions["address"] ? todayRecurringTransactions["address"] : transaction["address"] ? transaction["address"] : ""}' type='text' autocomplete='address-line1' required />
+                                                <input name='city' placeholder='{todayRecurringTransactions["city"] ? todayRecurringTransactions["city"] : transaction["city"] ? transaction["city"] : "City"}' value='{todayRecurringTransactions["city"] ? todayRecurringTransactions["city"] : transaction["city"] ? transaction["city"] : ""}' type='text'
                                                         style='visibility:hidden' autocomplete='address-level2' />
-                                                <input name='country' placeholder='Country' type='text'
+                                                <input name='country' placeholder='{todayRecurringTransactions["country"] ? todayRecurringTransactions["country"] : transaction["country"] ? transaction["country"] : "Country"}' value='{todayRecurringTransactions["country"] ? todayRecurringTransactions["country"] : transaction["country"] ? transaction["country"] : ""}' type='text'
                                                         style='visibility:hidden' autocomplete='country' />
-                                                <input name='postcode' placeholder='Postcode' type='text'
+                                                <input name='postcode' placeholder='{todayRecurringTransactions["postcode"] ? todayRecurringTransactions["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}' value='{todayRecurringTransactions["postcode"] ? todayRecurringTransactions["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}' type='text'
                                                         style='visibility:hidden' autocomplete='postal-code' />
                                                 <br>📅 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700; text-transform: uppercase;'>
