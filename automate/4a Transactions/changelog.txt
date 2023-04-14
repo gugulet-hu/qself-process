@@ -69,3 +69,4 @@
 202304142308: Clear amount between transaction rounds
 202304142321: If address is URL zero all other location values
 202304150031: Added toast to confirm transaction
+202304150044: Edited toast message to be one line
