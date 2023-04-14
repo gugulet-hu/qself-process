@@ -63,3 +63,4 @@
 202304112207: Changed to validationFile instead
 202304140041: Finished validation block (!) and added dynamic default values
 202304141544: Added more dynamic default values
+202304142232: Updated transaction screen
