@@ -113,23 +113,18 @@
                                                 <select name='type' id='type' size='1' required>
                                                         <option value='{currentExerciseData["type"];xmlEncode}'
                                                                 selected>
-                                                                {currentExerciseData["type"];xmlEncode}</option>
-                                                        <option value='Cardio'>Cardio</option>
-                                                        <option value='Flexibility'>Flexibility</option>
-                                                        <option value='Strength'>Strength</option>
+                                                                {currentExerciseData["type"];xmlEncode}
+                                                        </option>
+                                                        {exerciseLists["type"]}
                                                 </select>
                                         </span>
                                         <span class='group'>
                                                 <select name='group' id='group' size='1' required>
                                                         <option value='{currentExerciseData["group"];xmlEncode}'
                                                                 selected>
-                                                                {currentExerciseData["group"];xmlEncode}</option>
-                                                        <option value='Abdominal'>Abdominal</option>
-                                                        <option value='Arms'>Arms</option>
-                                                        <option value='Back'>Back</option>
-                                                        <option value='Body'>Body</option>
-                                                        <option value='Chest'>Chest</option>
-                                                        <option value='Legs'>Legs</option>
+                                                                {currentExerciseData["group"];xmlEncode}
+                                                        </option>
+                                                        {exerciseLists["group"]}
                                                 </select>
                                         </span>
                                         <span class='equipment'>
@@ -137,15 +132,7 @@
                                                         <option value='{currentExerciseData["equipment"];xmlEncode}'
                                                                 selected>{currentExerciseData["equipment"];xmlEncode}
                                                         </option>
-                                                        <option value='Barbell'>Barbell</option>
-                                                        <option value='Body'>Body</option>
-                                                        <option value='Bosu Ball'>Bosu Ball</option>
-                                                        <option value='Dumbbell'>Dumbbell</option>
-                                                        <option value='Kettlebell'>Kettlebell</option>
-                                                        <option value='Machine'>Machine</option>
-                                                        <option value='Physio Ball'>Physio Ball</option>
-                                                        <option value='Plates'>Plates</option>
-                                                        <option value='Ropes'>Ropes</option>
+                                                        {exerciseLists["equipment"]}
                                                 </select>
                                         </span>
                                 </div>
@@ -178,8 +165,7 @@
                                                                         selected>
                                                                         {currentExerciseData["repsUnit"];xmlEncode}
                                                                 </option>
-                                                                <option value='x'>x</option>
-                                                                <option value='m'>m</option>
+                                                                {exerciseLists["repsUnit"]}
                                                         </select>
                                                 </span>
                                         </div>
@@ -194,10 +180,7 @@
                                                                 <option value='{maxWork["quantityUnit"];xmlEncode}'
                                                                         selected>{maxWork["quantityUnit"];xmlEncode}
                                                                 </option>
-                                                                <option value='kg'>kg</option>
-                                                                <option value='km'>km</option>
-                                                                <option value='s'>s</option>
-                                                                <option value='x'>x</option>
+                                                                {exerciseLists["quantityUnit"]}
                                                         </select>
                                                 </span>
                                         </div>

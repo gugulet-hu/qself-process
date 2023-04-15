@@ -40,3 +40,4 @@
 202304020217: Add delete backup once exercise session is saved
 202304091718: Initial version
 202304091719: Refactored to new config system. All variables are in the first flow
+202304152154: Added typelists for screens
