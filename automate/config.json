@@ -7,5 +7,10 @@
                 "defaultLat": 52.50457,
                 "defaultLong": 13.33684,
                 "defaultLocation": "Tauentzenstraße 9, 10789, Berlin"
+        },
+        "sleep": {
+                "defaultLat": 52.491100,
+                "defaultLong": 13.338020,
+                "defaultLocation": "Haberlandstraße 6, 10779, Berlin"
         }
 }
