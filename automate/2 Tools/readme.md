@@ -8,6 +8,6 @@ The flow currently has the following fibres:
 
 * A fibre to intialise other flows.
 * A fibre to self-initialise using the first fibre.
-* A fibre to add missing sessions to a primary JSON file.
+* A fibre to add missing sessions to a master JSON.
 * A fibre to add a summary to sessions.
 * A fibre to create period summaries.

@@ -1,8 +1,1 @@
-{
-        "name": "tools",
-        "blurb": "Flow containing tools to manipulate JSON files, backup and initialise flows.",
-        "version": "202303280018",
-        "configPath": "/storage/emulated/0/Process/automate/2 Tools/",
-        "comment": "Final fix for multiple commit bug",
-        "uri": "content://com.llamalab.automate.provider/flows/10/data"
-}
+{"name":"tools","blurb":"Flow containing tools to manipulate JSON files, backup and initialise flows.","version":"202304192135","configPath":"/storage/emulated/0/Process/automate/2 Tools/","comment":"Added \"reboot configuration\" comment to replace \"initial version\" for instances where configuration files are deleted","uri":"content://com.llamalab.automate.provider/flows/10/data"}
