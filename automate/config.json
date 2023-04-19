@@ -1,4 +1,6 @@
 {
         "processFolder": "/storage/emulated/0/Process/automate/",
-        "dataFolder": "/storage/emulated/0/Data/"
+        "dataFolder": "/storage/emulated/0/Data/",
+        "mapboxAPIKey": "pk.eyJ1IjoiZy04IiwiYSI6ImNsN29ubHhnNTA3NjUzcG10emd6OXJ3cHcifQ.qqVFQrIOUI5kX9H4hNJxuA",
+        "exchangerateAPIKey": "248818aaeb4f8f3f1272dfb2"
 }
