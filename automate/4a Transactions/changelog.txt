@@ -76,3 +76,4 @@
 202304200012: Rebooting configuration
 202304200014: Updated transaction screen
 202304202234: Added check for transactionLists json before SHA check
+202304202241: Rename SHA check variables correctly
