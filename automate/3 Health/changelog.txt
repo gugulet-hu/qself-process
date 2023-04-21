@@ -38,3 +38,4 @@
 202304091511: Another attempt at a fix for incorrect config file
 202304091539: Initial version
 202304092212: Fixed errant variable
+202304211328: Changed HR coverage to 17 hours max
