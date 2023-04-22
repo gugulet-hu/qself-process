@@ -39,3 +39,4 @@
 202304091539: Initial version
 202304092212: Fixed errant variable
 202304211328: Changed HR coverage to 17 hours max
+202304221901: Simplified config fibre
