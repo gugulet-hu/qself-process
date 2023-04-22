@@ -26,3 +26,4 @@
 202304101009: Initial version
 202304190916: Fixed reverse geolocate
 202304200959: Use smartwatch for ambient light reading 
+202304221917: Simplified config ibre
