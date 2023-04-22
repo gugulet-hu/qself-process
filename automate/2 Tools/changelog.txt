@@ -47,3 +47,4 @@
 202303280019: Final fix for multiple commit bug
 202304192135: Added "reboot configuration" comment to replace "initial version" for instances where configuration files are deleted
 202304202321: Added a latest.flo copy at the top level
+202304221813: Set flowConfig as a variable
