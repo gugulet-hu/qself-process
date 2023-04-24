@@ -49,3 +49,4 @@
 202304202321: Added a latest.flo copy at the top level
 202304221813: Set flowConfig as a variable
 202304241547: Removed read/write process for config.json, rather just overwrite
+202304241723: Force write new config
