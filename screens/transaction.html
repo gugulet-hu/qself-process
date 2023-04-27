@@ -166,6 +166,9 @@
                                 <div class='meta'>
                                         <div class='dateTime'>
                                                 <input type='datetime-local' id='dateTime' name='dateTime'
+                                                        onfocus="(this.type='{todayRecurringTransaction[" dateTime"] ?
+                                                        todayRecurringTransaction["dateTime"] : transaction["dateTime"]
+                                                        ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd")}')"
                                                         value='{todayRecurringTransaction["dateTime"] ? todayRecurringTransaction["dateTime"] : transaction["dateTime"] ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd")}'
                                                         max='dateFormat(Now,"yyyy-MM-dd")'>
                                         </div>
