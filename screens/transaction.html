@@ -9,7 +9,7 @@
         const script = document.getElementById('search-js');
         script.onload = function () \{
                 mapboxsearch.autofill(\{
-                        accessToken: '{config["mapboxAPIKey"]}'
+                        accessToken: '{flowConfig["mapboxAPIKey"]}'
                 });
         };
 </script>
@@ -146,57 +146,62 @@
                                 <div class='accounts'>
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
                                                         style='text-align:left; white-space: normal;' required>
-                                                        <option value='{todayRecurringTransactions["accountFrom"] ? todayRecurringTransactions["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}'
-                                                                selected>{todayRecurringTransactions["accountFrom"] ?
-                                                                todayRecurringTransactions["accountFrom"] :
+                                                        <option value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}'
+                                                                selected>{todayRecurringTransaction["accountFrom"] ?
+                                                                todayRecurringTransaction["accountFrom"] :
                                                                 transaction["accountFrom"] ?
                                                                 transaction["accountFrom"] : "Revolut Current"}
                                                         </option>{transactionLists["accounts"]}
                                                 </select></div>&nbsp;➡️&nbsp;
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
                                                         style='text-align:left' required>
-                                                        <option value='{todayRecurringTransactions["accountTo"] ? todayRecurringTransactions["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
-                                                                selected>{todayRecurringTransactions["accountTo"] ?
-                                                                todayRecurringTransactions["accountTo"] :
+                                                        <option value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
+                                                                selected>{todayRecurringTransaction["accountTo"] ?
+                                                                todayRecurringTransaction["accountTo"] :
                                                                 transaction["accountTo"] ?
                                                                 transaction["accountTo"] : "Expenses"}</option>
                                                         {transactionLists["accounts"]}
                                                 </select></div>
-                                </div><br><br>
+                                </div><br>
                                 <div class='meta'>
+                                        <div class='dateTime'>
+                                                <input type='datetime-local' id='dateTime' name='dateTime'
+                                                        value='{todayRecurringTransaction["dateTime"] ? todayRecurringTransaction["dateTime"] : transaction["dateTime"] ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd")}'
+                                                        max='dateFormat(Now,"yyyy-MM-dd")'>
+                                        </div>
                                         <div class='location'>
                                                 <input name='address'
-                                                        placeholder='{todayRecurringTransactions["address"] ? todayRecurringTransactions["address"] : transaction["address"] ? transaction["address"] : "Enter a physical address or a URL"}'
-                                                        value='{todayRecurringTransactions["address"] ? todayRecurringTransactions["address"] : transaction["address"] ? transaction["address"] : ""}'
+                                                        placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Enter a physical address or a URL"}'
+                                                        value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'
                                                         type='text' autocomplete='address-line1' required />
                                                 <input name='city'
-                                                        placeholder='{todayRecurringTransactions["city"] ? todayRecurringTransactions["city"] : transaction["city"] ? transaction["city"] : "City"}'
-                                                        value='{todayRecurringTransactions["city"] ? todayRecurringTransactions["city"] : transaction["city"] ? transaction["city"] : ""}'
+                                                        placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}'
+                                                        value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}'
                                                         type='text' style='visibility:hidden'
                                                         autocomplete='address-level2' />
                                                 <input name='country'
-                                                        placeholder='{todayRecurringTransactions["country"] ? todayRecurringTransactions["country"] : transaction["country"] ? transaction["country"] : "Country"}'
-                                                        value='{todayRecurringTransactions["country"] ? todayRecurringTransactions["country"] : transaction["country"] ? transaction["country"] : ""}'
+                                                        placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}'
+                                                        value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}'
                                                         type='text' style='visibility:hidden' autocomplete='country' />
                                                 <input name='postcode'
-                                                        placeholder='{todayRecurringTransactions["postcode"] ? todayRecurringTransactions["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}'
-                                                        value='{todayRecurringTransactions["postcode"] ? todayRecurringTransactions["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}'
+                                                        placeholder='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}'
+                                                        value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}'
                                                         type='text' style='visibility:hidden'
                                                         autocomplete='postal-code' />
                                                 <br>📅 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700; text-transform: uppercase;'>
-                                                        <option value='{todayRecurringTransactions["frequency"] ? todayRecurringTransactions["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
-                                                                selected>{todayRecurringTransactions["frequency"] ?
-                                                                todayRecurringTransactions["frequency"] :
+                                                        <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
+                                                                selected>{todayRecurringTransaction["frequency"] ?
+                                                                todayRecurringTransaction["frequency"] :
                                                                 transaction["frequency"] ?
                                                                 transaction["frequency"] : "Once Off"}</option>
                                                         {transactionLists["frequency"]}
                                                 </select>
                                         </div><br><span class='type' style='padding-right: 10px'><select name='type'
                                                         id='type' size='1' style='text-align: right' required>
-                                                        <option value='{todayRecurringTransactions["category"] ? todayRecurringTransactions["category"] : transaction["category"] ? transaction["category"] : "Food"}'
-                                                                selected>{todayRecurringTransactions["category"] ?
-                                                                todayRecurringTransactions["category"] :
+                                                        <option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}'
+                                                                selected>{todayRecurringTransaction["category"] ?
+                                                                todayRecurringTransaction["category"] :
                                                                 transaction["category"] ?
                                                                 transaction["category"] : "🍽 Food"}</option>
                                                         {transactionLists["category"]}
@@ -208,39 +213,39 @@
                                                 </datalist></span>
                                 </div><br><br>
                                 <div class='brand'><input type='text' name='brand' id='brand'
-                                                placeholder='{todayRecurringTransactions["brand"] ? todayRecurringTransactions["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
-                                                value='{todayRecurringTransactions["brand"] ? todayRecurringTransactions["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
+                                                placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
+                                                value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
                                                 required></div><br><br><br>
                                 <div class='item'><input type='text' name='item' id='item'
-                                                placeholder='{todayRecurringTransactions["item"] ? todayRecurringTransactions["item"] : transaction["item"] ? transaction["item"] : "Item"}'
-                                                value='{todayRecurringTransactions["item"] ? todayRecurringTransactions["item"] : transaction["item"] ? transaction["item"] : ""}'
+                                                placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}'
+                                                value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}'
                                                 required></div><br><br><br>
                                 <div class='quantity'><span class='quantityNumber'><input type='number' id='quantity'
                                                         step='.01' name='quantity' min='0.01'
-                                                        placeholder='{todayRecurringTransactions["quantity"] ? todayRecurringTransactions["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}'
-                                                        value='{todayRecurringTransactions["quantity"] ? todayRecurringTransactions["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}'
+                                                        placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}'
+                                                        value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}'
                                                         required></span><span class='quantityUnit'><select
                                                         name='quantityUnit' size='1' required>
-                                                        <option value='{todayRecurringTransactions["quantityUnit"] ? todayRecurringTransactions["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}'
-                                                                selected>{todayRecurringTransactions["quantityUnit"] ?
-                                                                todayRecurringTransactions["quantityUnit"] :
+                                                        <option value='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}'
+                                                                selected>{todayRecurringTransaction["quantityUnit"] ?
+                                                                todayRecurringTransaction["quantityUnit"] :
                                                                 transaction["quantityUnit"] ?
                                                                 transaction["quantityUnit"] : "x"}</option>
                                                         {transactionLists["quantityUnit"]}
                                                 </select></span></div>
                                 <div class='costs'><span class='currency'>
                                                 <select name='currency' id='currency' size='1'>
-                                                        <option value='{todayRecurringTransactions["currency"] ? todayRecurringTransactions["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}'
-                                                                selected>{todayRecurringTransactions["currency"] ?
-                                                                todayRecurringTransactions["currency"] :
+                                                        <option value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}'
+                                                                selected>{todayRecurringTransaction["currency"] ?
+                                                                todayRecurringTransaction["currency"] :
                                                                 transaction["currency"] ?
                                                                 transaction["currency"] : "🇪🇺 €"}</option>
                                                         {transactionLists["currency"]}
                                                 </select>
                                         </span><span class='amount'><input type='number' id='amount' step='.01'
                                                         name='amount' min='0.01'
-                                                        placeholder='{todayRecurringTransactions["amount"] ? todayRecurringTransactions["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}'
-                                                        value='{todayRecurringTransactions["amount"] ? todayRecurringTransactions["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
+                                                        placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}'
+                                                        value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
                                                         required></span>
                                 </div><input type='submit' action='http://localhost/ok' hidden />
                         </div>
