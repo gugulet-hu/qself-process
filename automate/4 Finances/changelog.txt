@@ -4,3 +4,4 @@
 202210300013: Added writePath and readme variables, also refactored.
 202211011529: Added monthlies function.
 202211012211: Make the number format two decimal points.
+202304272005: Updated balances fibre
