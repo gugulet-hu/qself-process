@@ -86,3 +86,4 @@
 202304192125: Renamed jobs task and hopefully fixed it now
 202304221805: Simplified config flow (no more SHA check there) and added delay for intraday launch fails
 202304241722: Minor changes 
+202304271044: Added last data process store in root config
