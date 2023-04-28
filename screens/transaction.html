@@ -75,8 +75,7 @@
         div.meta \{ width: 100%
         }
 
-        div.meta>div.location input,
-        div.meta>div.dateTime input \{ float: none;
+        div.meta>div.dateTime input, div.meta>div.location input,div.meta>div.location select \{ float: none;
         font-weight: 400 !important;
         font-size: 0.9em;
         text-align: center;
@@ -167,7 +166,7 @@
                                 </div><br>
                                 <div class='meta'>
                                         <div class='dateTime'><input type='datetime-local' id='dateTime' name='dateTime'
-                                                        value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' style='color:#323036' required>
+                                                        value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' style='color:#323036; padding-left: 65px !important' required>
                                         </div>
                                         <div class='location'>
                                                 <input name='address'
@@ -189,7 +188,7 @@
                                                         type='text' style='visibility:hidden'
                                                         autocomplete='postal-code' />
                                                 <select name='frequency' id='frequency' size='1'
-                                                        style='font-size:small; font-weight: 700; text-transform: uppercase;'>
+                                                        style='font-size:small; font-weight: 700 !important; text-transform: uppercase;'>
                                                         <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
                                                                 selected>{todayRecurringTransaction["frequency"] ?
                                                                 todayRecurringTransaction["frequency"] :
