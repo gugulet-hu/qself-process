@@ -58,8 +58,7 @@
         input::-webkit-calendar-picker-indicator \{ display: none !important;
         }
 
-        input[type=date]:invalid::-webkit-datetime-edit {
-                color: #323036;
+        input[type=date]:invalid::-webkit-datetime-edit \{ color: #323036;
         }
 
         div.accounts \{ margin:auto;
@@ -168,10 +167,8 @@
                                                 </select></div>
                                 </div><br>
                                 <div class='meta'>
-                                        <div class='dateTime'>🕒
-                                                <input type='datetime-local' id='dateTime' name='dateTime'
-                                                        value='{todayRecurringTransaction["dateTime"] ? todayRecurringTransaction["dateTime"] : transaction["dateTime"] ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd")}'
-                                                        max='dateFormat(Now,"yyyy-MM-dd")' required>
+                                        <div class='dateTime'><input type='datetime-local' id='dateTime' name='dateTime'
+                                                        value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm")}' max='dateFormat(Now,"yyyy-MM-dd")' required>
                                         </div>
                                         <div class='location'>
                                                 <input name='address'

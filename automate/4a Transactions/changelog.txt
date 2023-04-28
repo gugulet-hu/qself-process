@@ -78,3 +78,4 @@
 202304202234: Added check for transactionLists json before SHA check
 202304202241: Rename SHA check variables correctly
 202304282254: Fix placeholder for dateTime
+202304282357: Fixed minor issues
