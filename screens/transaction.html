@@ -58,6 +58,10 @@
         input::-webkit-calendar-picker-indicator \{ display: none !important;
         }
 
+        input[type=date]:invalid::-webkit-datetime-edit {
+                color: #323036;
+        }
+
         div.accounts \{ margin:auto;
         font-size: 1.1em;
         width: 100%;
@@ -164,13 +168,10 @@
                                                 </select></div>
                                 </div><br>
                                 <div class='meta'>
-                                        <div class='dateTime'>
+                                        <div class='dateTime'>🕒
                                                 <input type='datetime-local' id='dateTime' name='dateTime'
-                                                        onfocus="(this.type='{todayRecurringTransaction[" dateTime"] ?
-                                                        todayRecurringTransaction["dateTime"] : transaction["dateTime"]
-                                                        ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd")}')"
                                                         value='{todayRecurringTransaction["dateTime"] ? todayRecurringTransaction["dateTime"] : transaction["dateTime"] ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd")}'
-                                                        max='dateFormat(Now,"yyyy-MM-dd")'>
+                                                        max='dateFormat(Now,"yyyy-MM-dd")' required>
                                         </div>
                                         <div class='location'>
                                                 <input name='address'
@@ -191,7 +192,7 @@
                                                         value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}'
                                                         type='text' style='visibility:hidden'
                                                         autocomplete='postal-code' />
-                                                <br>📅 <select name='frequency' id='frequency' size='1'
+                                                <br>🗓️ <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700; text-transform: uppercase;'>
                                                         <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
                                                                 selected>{todayRecurringTransaction["frequency"] ?
