@@ -1,1 +1,0 @@
-{"name":"health","blurb":"Flow to keep track of health metrics and medical details.","version":"202304241522","processFolder":"/storage/emulated/0/Process/automate/3 Health/","writePath":"/storage/emulated/0/Data/health/metrics/sessions/","readingTimeout":60,"comment":"","uri":"content://com.llamalab.automate.provider/flows/11/data"}
