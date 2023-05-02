@@ -28,3 +28,4 @@
 202304200959: Use smartwatch for ambient light reading 
 202304221917: Simplified config ibre
 202305020034: Use Awake event to end flow
+202305020922: 60% sleep confidence for awake.
