@@ -29,3 +29,4 @@
 202304221917: Simplified config ibre
 202305020034: Use Awake event to end flow
 202305020922: 60% sleep confidence for awake.
+202305040944: Allow parallel launches for the sleepPhases fibre.
