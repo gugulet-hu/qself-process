@@ -34,3 +34,4 @@
 202305102223: Use Android alarm dismisser
 202305110713: Disable sleepPhase parallel launches. Possible reason for zero sleep phases.
 202305110715: Minor fixes
+202305112233: Set work to only deepSleep
