@@ -41,3 +41,4 @@
 202304211328: Changed HR coverage to 17 hours max
 202304221901: Simplified config fibre
 202305112127: Sort HR series after every read
+202305112215: Send maxHr value to KLWP after each reading
