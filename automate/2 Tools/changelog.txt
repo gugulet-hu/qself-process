@@ -51,3 +51,4 @@
 202304241547: Removed read/write process for config.json, rather just overwrite
 202304241723: Force write new config
 202304272313: Removed connection to self initialisation 
+202305181759: Adding template support for summaries
