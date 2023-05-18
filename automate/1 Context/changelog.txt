@@ -89,3 +89,4 @@
 202304271044: Added last data process store in root config
 202304290111: Disabled EOD jobs
 202305142139: Fix for NaN and Infinity errors 
+202305181759: Adding template for financial summaries
