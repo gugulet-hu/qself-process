@@ -36,3 +36,4 @@
 202305110715: Minor fixes
 202305112233: Set work to only deepSleep
 202305171901: Send KLWP parameters before writing file
+202305201151: Fix tracking stop event
