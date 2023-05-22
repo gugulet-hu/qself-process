@@ -84,3 +84,4 @@
 202304290106: Removed continue variable.
 202304301646: Fixed duplicated transactions.
 202305151018: Fallback to g-main dashboard
+202305221403: Check for recurring payments before running.
