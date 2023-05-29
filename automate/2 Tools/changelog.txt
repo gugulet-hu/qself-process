@@ -52,3 +52,17 @@
 202304241723: Force write new config
 202304272313: Removed connection to self initialisation 
 202305181759: Adding template support for summaries
+202305290008: Push to remote after every commit.
+202305290010: Self push flows.
+202305290012: .
+202305291554: Trying to fix commit behaviour.
+202305291603: Testing
+202305291606: Test2
+202305291614: Testing
+202305291614: Testing
+202305291623: Add export fix for GPG signing.
+202305291625: Test 
+202305291628: Test
+202305291630: Test
+202305291632: Test
+202305291632: Test

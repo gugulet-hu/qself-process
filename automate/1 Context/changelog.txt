@@ -91,3 +91,4 @@
 202305142139: Fix for NaN and Infinity errors 
 202305181759: Adding template for financial summaries
 202305201054: Removed extra error catching (?)
+202305291550: Silly fixes
