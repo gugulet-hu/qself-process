@@ -85,3 +85,5 @@
 202304301646: Fixed duplicated transactions.
 202305151018: Fallback to g-main dashboard
 202305221403: Check for recurring payments before running.
+202305301320: Fix recurring payments starting if there are no recurring payments 
+202305301322: .

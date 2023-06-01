@@ -67,3 +67,6 @@
 202305291632: Test
 202305291632: Test
 202305291655: Added .zshrc file in Process folder
+202306020135: Push to Git
+202306020140: Push to git
+202306020142: Reset git commit -am
