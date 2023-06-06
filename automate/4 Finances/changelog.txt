@@ -1,7 +1,0 @@
-202208182012: Initial version
-202210251931: Added reconciliation flow.
-202210252013: Finished reconciliation beta.
-202210300013: Added writePath and readme variables, also refactored.
-202211011529: Added monthlies function.
-202211012211: Make the number format two decimal points.
-202304272005: Updated balances fibre
