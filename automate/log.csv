@@ -1,2 +1,6 @@
 type, process, message
 🚀 202308140018 1 Updated error handling.
+⚙️ 202308140018 1 Pushed to remote repo: Updated error handling.
+2023-08-14, 00:18:59, 2023-08-14T00:18:59, Now, 🚨 Warning, 1.4, Unable to establish a connection with the smartwatch.
+🚧 202308140019 3 Failed to get heartrate reading
+🚀 202308140027 1 Atomising parts of the error messages.
