@@ -1,2 +1,5 @@
 date, time, dateTime, unixDateTime, type, process, message, link
 , ,, , 0, ,🚀 202308140950 1 Minor fixes and updates., 
+2023-08-14, 09:50:47,2023-08-14T09:50:47, 1.691999447489E9, ⚙️ Info, 1,Pushed to remote repo: Minor fixes and updates., 
+2023-08-14, 09:50:47,2023-08-14T09:50:47, 1.691999447845E9, 🚧 Error, 1.4,Unable to establish a connection with the smartwatch., 
+, ,, , 0, ,🚀 202308140951 3 Overhauled metrics reading to be more streamlined., 
