@@ -102,3 +102,4 @@ date, time, dateTime, unixDateTime, type, process, message, link
 2023-08-15, 17:43:03,2023-08-15T17:43:03, 1.692114183258E9, 🚧 Error, 3.2,Failed to get retrieve heartrate reading., 
 2023-08-15, 17:43:03,2023-08-15T17:43:03, 1.69211418331E9, 🚨 Warning, 3.2,Failed to retrieve steps reading., 
 2023-08-15, 21:48:49,2023-08-15T21:48:49, 1.692128929367E9, ⚙️ Info, 3,Pushed to remote repo: Check if watch is on wrist., 
+2023-08-15, 21:55:41,2023-08-15T21:55:41, 1.692129341499E9, ⚙️ Info, 3,Pushed to remote repo: Skip Steps if reading is off., 
