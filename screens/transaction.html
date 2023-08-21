@@ -138,6 +138,9 @@
         padding-bottom: 10px
         }
 
+        .pre-filled \{
+                border: 1px white solid !important;
+        }
 </style>
 
 <body>
@@ -146,7 +149,7 @@
                         <div class='wrapper'>
                                 <div class='accounts'>
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
-                                                        style='text-align:left; white-space: normal;' required>
+                                                        style='text-align:left; white-space: normal;' class='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? "pre-filled" : ""}' required>
                                                         <option value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}'
                                                                 selected>{todayRecurringTransaction["accountFrom"] ?
                                                                 todayRecurringTransaction["accountFrom"] :
@@ -155,7 +158,7 @@
                                                         </option>{transactionLists["accounts"]}
                                                 </select></div>&nbsp;➡️&nbsp;
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
-                                                        style='text-align:left' required>
+                                                        style='text-align:left' class='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? "pre-filled" : ""}'  required>
                                                         <option value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
                                                                 selected>{todayRecurringTransaction["accountTo"] ?
                                                                 todayRecurringTransaction["accountTo"] :
@@ -172,7 +175,7 @@
                                                 <input name='address'
                                                         placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Enter a physical address or a URL"}'
                                                         value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'
-                                                        type='text' autocomplete='address-line1' required />
+                                                        type='text' autocomplete='address-line1' class='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}' required />
                                                 <input name='city'
                                                         placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}'
                                                         value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}'
@@ -188,7 +191,7 @@
                                                         type='text' style='visibility:hidden'
                                                         autocomplete='postal-code' />
                                                 <select name='frequency' id='frequency' size='1'
-                                                        style='font-size:small; font-weight: 700 !important; text-transform: uppercase;'>
+                                                        style='font-size:small; font-weight: 700 !important;' class='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? "pre-filled" : ""}'>
                                                         <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
                                                                 selected>{todayRecurringTransaction["frequency"] ?
                                                                 todayRecurringTransaction["frequency"] :
@@ -197,7 +200,7 @@
                                                         {transactionLists["frequency"]}
                                                 </select>
                                         </div><br><span class='type' style='padding-right: 10px'><select name='type'
-                                                        id='type' size='1' style='text-align: right' required>
+                                                        id='type' size='1' style='text-align: right' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
                                                         <option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}'
                                                                 selected>{todayRecurringTransaction["category"] ?
                                                                 todayRecurringTransaction["category"] :
@@ -206,8 +209,8 @@
                                                         {transactionLists["category"]}
                                                 </select></span><span>:</span><span class='group'
                                                 style='padding-left: 10px'><input type='text' id='group' name='group'
-                                                        size='3' placeholder='Enter group' style='text-align: left'
-                                                        list='subcategory' required /><datalist
+                                                        size='3' value='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? transaction["group"] : "Enter group"}' style='text-align: left'
+                                                        list='subcategory' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}'  required /><datalist
                                                         id='subcategory'>{transactionLists["subcategory"]}
                                                 </datalist></span>
                                 </div><br><br>
