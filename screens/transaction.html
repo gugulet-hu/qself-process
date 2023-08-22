@@ -139,7 +139,7 @@
         }
 
         .pre-filled \{
-                border: 1px white solid !important;
+                text-decoration: underline dotted #CECCD2;
         }
 </style>
 
@@ -169,7 +169,7 @@
                                 </div><br>
                                 <div class='meta'>
                                         <div class='dateTime'><input type='datetime-local' id='dateTime' name='dateTime'
-                                                        value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' style='color:#323036; padding-left: 70px !important' required>
+                                                        value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' style='color:#323036; padding-left: 70px !important' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}'  required>
                                         </div>
                                         <div class='location'>
                                                 <input name='address'
@@ -191,7 +191,7 @@
                                                         type='text' style='visibility:hidden'
                                                         autocomplete='postal-code' />
                                                 <select name='frequency' id='frequency' size='1'
-                                                        style='font-size:small; font-weight: 700 !important;' class='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? "pre-filled" : ""}'>
+                                                        style='font-size:small; font-weight: 700 !important;' >
                                                         <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
                                                                 selected>{todayRecurringTransaction["frequency"] ?
                                                                 todayRecurringTransaction["frequency"] :
@@ -209,8 +209,8 @@
                                                         {transactionLists["category"]}
                                                 </select></span><span>:</span><span class='group'
                                                 style='padding-left: 10px'><input type='text' id='group' name='group'
-                                                        size='3' value='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? transaction["group"] : "Enter group"}' style='text-align: left'
-                                                        list='subcategory' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}'  required /><datalist
+                                                        size='3' value='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? transaction["group"] : " "}' placeholder='Enter group' style='text-align: left'
+                                                        list='subcategory' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' required /><datalist
                                                         id='subcategory'>{transactionLists["subcategory"]}
                                                 </datalist></span>
                                 </div><br><br>
