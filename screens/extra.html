@@ -58,10 +58,6 @@
         padding-bottom: 0.5em;
         }
 
-        div.accounts>div[class^='account'] \{ width: 35%;
-        display: inline-block;
-        }
-
         div.meta \{ width: 100%
         }
 
@@ -161,7 +157,7 @@
                                                 </select></span><span>:</span><span class='assetType'
                                                 style='padding-left: 10px'><select id='assetType' name='assetType'
                                                         size='3' placeholder='{transaction["category"] = "Assets" ? "": "Enter asset type"}' style='text-align: left' required >
-                                                        <option value='{transaction["category"] = "Assets" ? transaction["group"]: ""}' selected>{transaction["category"] = "Assets" ? transaction["group"]: ""}</option>
+                                                        <option value='{transaction["category"] = "Assets" ? transaction["subcategory"]: ""}' selected>{transaction["category"] = "Assets" ? transaction["subcategory"]: ""}</option>
                                                         {transactionLists["assetType"]}
                                                         </select>
                                                 </span>
