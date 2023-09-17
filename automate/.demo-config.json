@@ -1,0 +1,19 @@
+{
+        "processFolder": "location-of-process-folder-on-android-device", // The process folder holds all the logic
+        "tmpFolder": "location-of-temporary-data-folder-on-android-device", // The folder for recently overwriietn copies of the db and the tempData file
+        "primaryDB": "location-of-main-db-on-android-device", // Direct location of the SQLite database
+        "dbPassphrase": "passpahrase-to-open-db", // The db is encrypted using SQLCipher and this passphrase opens it
+        "log": "location-of-log-file-on-android-device", // The location of the log file to collect errors and warnings
+        "mapboxAPIKey": "api-key-from-mapbox", // The API key for mapbox, which is used for location calls and map graphics
+        "exchangerateAPIKey": "api-key-forexchange-rates", // The API key for getting excvhange rates when parsing transactions
+        "exercise": { // Some default values for exercise-related tasks
+                "defaultLat": 1.00000, // The default latitude to use for exercises in case location services are unavailable
+                "defaultLong": 1.00000, // The default longitude to use for exercises in case location services are unavailable
+                "defaultLocation": "124 Conch Street, Bikini Bottom, Pacific Ocean" // The default address in case reverse geolocation services are unavailable
+        },
+        "sleep": { // Some default values for sleep-related tasks
+                "defaultLat": 1.00000, // The default latitude to use for sleep in case location services are unavailable
+                "defaultLong": 1.00000, // The default longitude to use for sleep in case location services are unavailable
+                "defaultLocation": "124 Conch Street, Bikini Bottom, Pacific Ocean" // The default address in case reverse geolocation services are unavailable
+        }
+}

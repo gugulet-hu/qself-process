@@ -1,0 +1,3 @@
+date, time, dateTime, unixDateTime, type, process, message, link
+2023-08-14, 15:49:54,2023-08-14T15:49:54, 1.692020994799E9, 🚧 Error, 1.4,Unable to establish a connection with the smartwatch.,
+2023-08-14, 15:54:17,2023-08-14T15:54:17, 1.692021257467E9, ⚙️ Info, 3,Pushed to remote repo: Proper null check for values in savedReadings.,

@@ -1,0 +1,4 @@
+{
+        "mapboxAPIKey": "api-key-from-mapbox", // The API key for mapbox, which is used for location calls and map graphics
+        "matomoAPIKey": "api-key-for-web-analytics\n" // The API key to access web analytics
+}
