@@ -25,6 +25,7 @@
         div.meta>span \{ float: none;
         font-weight: 400;
         font-size: 0.8em;
+        padding-left: 1em
         }
 
         select \{ border: none;
@@ -115,17 +116,17 @@
                                                                 selected>
                                                                 {currentExerciseData["category"];xmlEncode}
                                                         </option>
-                                                        {exerciseLists["type"]}
+                                                        {exerciseLists["category"]}
                                                 </select>
-                                        </span> |
+                                        </span>
                                         <span class='subcategory'>
                                                 <select name='subcategory' id='subcategory' size='1' required>
                                                         <option value='{currentExerciseData["subcategory"];xmlEncode}'
                                                                 selected>
                                                                 {currentExerciseData["subcategory"];xmlEncode}
                                                         </option>
-                                                        {exerciseLists["group"]}
-                                                </select> |
+                                                        {exerciseLists["subcategory"]}
+                                                </select>
                                         </span>
                                         <span class='equipment'>
                                                 <select name='equipment' id='equipment' size='1' required>
