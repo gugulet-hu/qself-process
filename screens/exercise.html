@@ -105,8 +105,9 @@
                 <form method='get' action='http://localhost/ok' name='exercise'>
                         <div class='wrapper'>
                                 <div class='item'>
-                                        <input type='text' name='item' id='item'
-                                                value='{currentExerciseData["item"];xmlEncode}' required>
+                                        {typeLists["item"] ?
+                                        "<select name='item' id='item' size='1' required>{typeLists["item"]}</select>" :
+                                        "<input type='text' name='item' id='item' value='{currentExerciseData["item"];xmlEncode}' required>"}
                                 </div>
                                 <div class='meta'>
                                         <span class='category'>
