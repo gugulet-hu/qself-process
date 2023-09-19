@@ -105,33 +105,22 @@
                 <form method='get' action='http://localhost/ok' name='exercise'>
                         <div class='wrapper'>
                                 <div class='item'>
-                                        <input type='text' name='item' id='item'
-                                                value='{currentExerciseData["item"];xmlEncode}' required>
+                                        <input type='text' id='item' name='item' size='3' placeholder='Enter exercise' style='text-align: left' list='items' required />
+                                        <datalist id='items'>{typeLists["items"]}</datalist>
                                 </div>
                                 <div class='meta'>
                                         <span class='category'>
-                                                <select name='category' id='category' size='1' required>
-                                                        <option value='{currentExerciseData["category"];xmlEncode}'
-                                                                selected>
-                                                                {currentExerciseData["category"];xmlEncode}
-                                                        </option>
+                                                <select name='category' id='category' placeholder='Enter category' size='1' required>
                                                         {typeLists["category"]}
                                                 </select>
                                         </span>
                                         <span class='subcategory'>
-                                                <select name='subcategory' id='subcategory' size='1' required>
-                                                        <option value='{currentExerciseData["subcategory"];xmlEncode}'
-                                                                selected>
-                                                                {currentExerciseData["subcategory"];xmlEncode}
-                                                        </option>
+                                                <select name='subcategory' id='subcategory' placeholder='Enter subcategory' size='1' required>
                                                         {typeLists["subcategory"]}
                                                 </select>
                                         </span>
                                         <span class='equipment'>
-                                                <select name='equipment' id='equipment' size='1' required>
-                                                        <option value='{currentExerciseData["equipment"];xmlEncode}'
-                                                                selected>{currentExerciseData["equipment"];xmlEncode}
-                                                        </option>
+                                                <select name='equipment' id='equipment' placeholder='Enter equipment' size='1' required>
                                                         {typeLists["equipment"]}
                                                 </select>
                                         </span>
@@ -153,13 +142,9 @@
                                 <div class='amount'>
                                         <div class='value'>
                                                 <input type='number' id='amount' name='amount' min='0'
-                                                        placeholder='{currentExerciseData["amount"];xmlEncode}' required>
+                                                        placeholder='Enter rep' required>
                                                 <span class='units'>
-                                                        <select name='amountUnit' id='amountUnit' size='1'>
-                                                                <option value='{currentExerciseData["amountUnit"];xmlEncode}'
-                                                                        selected>
-                                                                        {currentExerciseData["amountUnit"];xmlEncode}
-                                                                </option>
+                                                        <select name='amountUnit' id='amountUnit' placeholder='Enter rep unit' size='1'>
                                                                 {typeLists["amountUnit"]}
                                                         </select>
                                                 </span>
@@ -168,12 +153,9 @@
                                 <div class='quantity'>
                                         <div class='value'>
                                                 <input type='number' id='quantity' step='.01' name='quantity' min='0'
-                                                        placeholder='{currentExerciseData["quantity"];xmlEncode}' >
+                                                        placeholder='Enter quantity' >
                                                 <span class='units'>
-                                                        <select name='quantityUnit' id='quantityUnit' size='1'>
-                                                                <option value='{currentExerciseData["quantityUnit"];xmlEncode}'
-                                                                        selected>{currentExerciseData["quantityUnit"];xmlEncode}
-                                                                </option>
+                                                        <select name='quantityUnit' id='quantityUnit' placeholder='Enter quantity unit' size='1'>
                                                                 {typeLists["quantityUnit"]}
                                                         </select>
                                                 </span>
@@ -182,7 +164,7 @@
                                 <div class='rest'>
                                         <div class='value'>
                                                 <input type='number' name='rest' id='rest' min='0' max='240'
-                                                        placeholder='{currentExerciseData["rest"];xmlEncode}' required>
+                                                        placeholder='Enter rest time' required>
                                                 <span>s</span>
                                         </div>
                                 </div>
