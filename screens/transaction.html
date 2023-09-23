@@ -155,7 +155,7 @@
                                                                 todayRecurringTransaction["accountFrom"] :
                                                                 transaction["accountFrom"] ?
                                                                 transaction["accountFrom"] : "Revolut Current"}
-                                                        </option>{transactionLists["accounts"]}
+                                                        </option>{transactionLists["accountFrom"]}
                                                 </select></div>&nbsp;➡️&nbsp;
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
                                                         style='text-align:left' class='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? "pre-filled" : ""}'  required>
@@ -164,7 +164,7 @@
                                                                 todayRecurringTransaction["accountTo"] :
                                                                 transaction["accountTo"] ?
                                                                 transaction["accountTo"] : "Expenses"}</option>
-                                                        {transactionLists["accounts"]}
+                                                        {transactionLists["accountTo"]}
                                                 </select></div>
                                 </div><br>
                                 <div class='meta'>
@@ -242,7 +242,7 @@
                                                                 todayRecurringTransaction["currency"] :
                                                                 transaction["currency"] ?
                                                                 transaction["currency"] : "🇪🇺 €"}</option>
-                                                        {transactionLists["currency"]}
+                                                        {transactionLists["amountUnit"]}
                                                 </select>
                                         </span><span class='amount'><input type='number' id='amount' step='.01'
                                                         name='amount' min='0.01'

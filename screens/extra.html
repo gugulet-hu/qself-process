@@ -153,12 +153,12 @@
                                         </div><br><span class='type' style='padding-right: 10px'><select name='region'
                                                         id='region' size='1' placeholder='Enter region' style='text-align: right' required>
                                                         <option value='{transaction["category"] = "Assets" ? "Assets": ""}' selected>{transaction["category"] = "Assets" ? "Assets": ""}</option>
-                                                        {transactionLists["region"]}
+                                                        {extraLists["location"]}
                                                 </select></span><span>:</span><span class='assetType'
                                                 style='padding-left: 10px'><select id='assetType' name='assetType'
                                                         size='3' placeholder='{transaction["category"] = "Assets" ? "": "Enter asset type"}' style='text-align: left' required >
                                                         <option value='{transaction["category"] = "Assets" ? transaction["subcategory"]: ""}' selected>{transaction["category"] = "Assets" ? transaction["subcategory"]: ""}</option>
-                                                        {transactionLists["subcategory"]}
+                                                        {extraLists["subcategory"]}
                                                         </select>
                                                 </span>
                                 </div><br><br>
