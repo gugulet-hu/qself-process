@@ -218,12 +218,13 @@
                                                 placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
                                                 value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
                                                 required></div><br><br><br>
-                                <div class='item'><input type='text' name='item' id='item' size="3"
+                                <div class='item'>
+                                        <input type='text' name='item' id='item' size='3' list='itemsList'
                                                 placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}'
                                                 value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}'
                                                 required>
-                                                <datalist
-                                                        id='subcategory'>{transactionLists["item"]}
+                                                <datalist id='itemsList'>
+                                                        {transactionLists['item']}
                                                 </datalist></div><br><br><br>
                                 <div class='quantity'><span class='quantityNumber'><input type='number' id='quantity'
                                                         step='.01' name='quantity' min='0.01'
