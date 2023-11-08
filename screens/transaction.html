@@ -192,12 +192,9 @@
                                                         autocomplete='postal-code' />
                                                 <select name='frequency' id='frequency' size='1'
                                                         style='font-size:small; font-weight: 700 !important;' >
-                                                        <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
-                                                                selected>{todayRecurringTransaction["frequency"] ?
-                                                                todayRecurringTransaction["frequency"] :
-                                                                transaction["frequency"] ?
-                                                                transaction["frequency"] : "Once Off"}</option>
-                                                        {transactionLists["frequency"]}
+                                                        <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}' selected>Once Off</option>
+                                                        <option value='Weekly'>Weekly</option>
+                                                        <option value='Monthly'>Monthly</option>
                                                 </select>
                                         </div><br><span class='type' style='padding-right: 10px'><select name='type'
                                                         id='type' size='1' style='text-align: right' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
