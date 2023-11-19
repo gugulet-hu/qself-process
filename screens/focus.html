@@ -107,6 +107,9 @@
                                 </div>
                                 <div class='item'>
                                         <input type='text' name='item' id='item' list='itemsList' placeholder='Enter activity description...' onkeyup='copytext()' required>
+                                        <datalist id='itemsList'>
+                                                {focusLists["item"]}
+                                        </datalist>
                                 </div>
                         </div>
                         <input type='submit' action='http://localhost/ok' hidden />
