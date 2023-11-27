@@ -1,0 +1,86 @@
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;900&display=swap' rel='stylesheet'>
+<style>
+        body \{
+                color: #323036;
+                font-family: 'Overpass Mono', monospace;
+        }
+
+        form \{ text-align: left
+        }
+
+        h2 \{
+                font-weight: 900 !important;
+        }
+
+        div.container \{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding: 0 10px
+        }
+
+        div#itemCopy \{
+                text-align: center;
+                color: #E6E6E6;
+        }
+
+        textarea \{
+                border: 1px solid #CECCD2;
+                border-radius: 0.3em;
+                width: 65vw;
+                font-size: 0.8em;
+                outline: none;
+        }
+
+        input \{
+                border: 1px solid #CECCD2;
+                border-radius: 0.3em;
+                outline: none;
+                font-size: 1em;
+                padding: 0.5em;
+                background-color: transparent;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                text-align: left;
+                width: 65vw;
+                font-family: 'Overpass Mono', monospace !important;
+        }
+
+        textarea:focus, input:focus \{
+                border: 1px solid #828089;
+                outline: none;
+                border-radius: 0.3em;
+        }
+
+        input::-webkit-calendar-picker-indicator \{
+                display: none;
+        }
+</style>
+<script>
+        function copytext() \{document.getElementById('itemCopy').innerHTML = document.getElementById('title').value}
+</script>
+<body>
+        <div class='container'>
+                <form method='get' action='http://localhost/ok' name='github' >
+                        <div class='wrapper'>
+                                <div id='itemCopy'>
+                                </div>
+                                <div class='description'>
+                                        <h2>Description</h2>
+                                        <textarea id='description' name='description' rows='10' cols='30' placeholder='Enter a short description of the issue.'>{payload["description"] ? payload["description"] : ""}</textarea>
+                                </div>
+                                <div class='title'>
+                                        <h2>Title</h2>
+                                        <input type='text' name='title' id='title' placeholder='Enter issue title' onkeyup='copytext()' required>
+                                </div>
+                        </div>
+                        <input type='submit' action='http://localhost/ok' hidden />
+                </form>
+        </div>
+</body>

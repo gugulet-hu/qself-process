@@ -1,0 +1,111 @@
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
+<style>
+        body \{
+                color: #323036;
+                font-family: 'Overpass',
+                sans-serif
+        }
+
+        form \{ text-align: center
+        }
+
+        div.container \{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding: 0 10px
+        }
+
+        div#itemCopy \{
+                text-align: center;
+                color: #E6E6E6;
+        }
+
+        select, input \{
+                border: none;
+                font-size: 1em;
+                padding: 2em;
+                outline: none;
+                background-color: transparent;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                text-align: center;
+                text-align-last: center;
+        }
+
+        input:focus \{
+                outline: none;
+        }
+
+        input::-webkit-calendar-picker-indicator \{
+                display: none !important;
+        }
+
+        .options \{
+                colour: #323036;
+                font-size: 1em;
+                border: none;
+                text-align: center;
+                width: 100%;
+        }
+</style>
+<script>
+        function copytext() \{document.getElementById('itemCopy').innerHTML = document.getElementById('item').value}
+</script>
+<body>
+        <div class='container'>
+                <form method='get' action='http://localhost/ok' name='focus' >
+                        <div class='wrapper'>
+                                <div id='itemCopy'>
+                                </div>
+                                <div class='time'>
+                                        <h2>Time</h2>
+                                        <select name='time' id='time' size='3' placeholder='Enter session time' required >
+                                                <option value='{focus["time"] ? focus["time"] : "15"}' selected>{focus["time"] ? focus["time"] : "15"}m</option>
+                                                <option value='15'>15m</option>
+                                                <option value='20'>20m</option>
+                                                <option value='25'>25m</option>
+                                                <option value='30'>30m</option>
+                                        </select>
+                                </div>
+                                <div class='rest'>
+                                        <h2>Rest</h2>
+                                        <select name='rest' id='rest' size='3' placeholder='Enter sessionrest' required >
+                                                <option value='{focus["rest"] ? focus["rest"] : "5"}' selected>{focus["rest"] ? focus["rest"] : "5"}m</option>
+                                                <option value='5' selected>5m</option>
+                                                <option value='10'>10m</option>
+                                                <option value='15'>15m</option>
+                                        </select>
+                                </div>
+                                <div class='subcategory'>
+                                        <select name='subcategory' id='subcategory' placeholder='Enter subcategory' required >
+                                                <option value='{focus["subcategory"] ? focus["subcategory"] : "Technical"}' selected>{focus["subcategory"] ? focus["subcategory"] : "🖱️ Technical"}</option>
+                                                <option value='Art'>🎨 Art</option>
+                                                <option value='Design'>🍥 Design</option>
+                                                <option value='Games'>🎮 Games</option>
+                                                <option value='Learning'>🎓 Learning</option>
+                                                <option value='Media'>📷 Media</option>
+                                                <option value='Meditation'>🧘🏽 Meditation</option>
+                                                <option value='Piano'>🎹 Piano</option>
+                                                <option value='Reading'>📖 Reading</option>
+                                                <option value='Technical'>🖱️ Technical</option>
+                                                <option value='Writing'>🖋️ Writing</option>
+                                        </select>
+                                </div>
+                                <div class='item'>
+                                        <input type='text' name='item' id='item' list='itemsList' placeholder='Enter activity description...' onkeyup='copytext()' value='{focus["item"] ? focus["item"] : ""}' required>
+                                        <datalist id='itemsList'>
+                                                {focusLists["item"]}
+                                        </datalist>
+                                </div>
+                        </div>
+                        <input type='submit' action='http://localhost/ok' hidden />
+                </form>
+        </div>
+</body>
