@@ -31,7 +31,7 @@
                 list-style-type: none;
         }
 
-        li \{
+        ul#categoryMenu li div \{
                 display: inline !important;
         }
 
@@ -82,11 +82,16 @@
                                 <div id='itemCopy'>
                                 </div>
                                 <div class='category'>
-                                        <ul>
+                                        <ul id='categoryMenu'>
                                                 <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Books'>📚</div></label></li>
                                                 <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Film'><label for='category'>🎬</div></label></li>
+                                                <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Music'><label for='category'>🎧</label></div></label></li>
+                                                <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Performance'><label for='category'>🎭</label></div></label></li>
                                         </ul>
                                 </div>
+
+                                <div class="font-awesome">
+
                                 <div class='subcategory'>
                                         <span class='label'>Subcategory</span>
                                         <select name='rest' id='rest' size='3' placeholder='Enter sessionrest' required >
