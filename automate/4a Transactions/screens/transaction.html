@@ -142,11 +142,14 @@
                 text-decoration: underline dotted #CECCD2;
         }
 </style>
-
+<script>
+        function copytext() \{document.getElementById('itemCopy').innerHTML = document.getElementById('amout').value}
+</script>
 <body>
         <div class='container'>
                 <form method='get' action='http://localhost/ok' name='transactions' autocomplete='off'>
                         <div class='wrapper'>
+                                <div id='itemCopy'></div>
                                 <div class='accounts'>
                                         <div class='accountFrom'><select name='accountFrom' id='accountFrom' size='1'
                                                         style='text-align:left; white-space: normal;' class='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? "pre-filled" : ""}' required>
@@ -155,7 +158,7 @@
                                                                 todayRecurringTransaction["accountFrom"] :
                                                                 transaction["accountFrom"] ?
                                                                 transaction["accountFrom"] : "Revolut Current"}
-                                                        </option>{transactionLists["accountFrom"]}
+                                                        </option>{transactionLists["accountTo"]}
                                                 </select></div>&nbsp;➡️&nbsp;
                                         <div class='accountTo'><select name='accountTo' id='accountTo' size='1'
                                                         style='text-align:left' class='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? "pre-filled" : ""}'  required>
@@ -221,7 +224,7 @@
                                                 value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}'
                                                 required>
                                                 <datalist id='itemsList'>
-                                                        {transactionLists['item']}
+                                                        {transactionLists["item"]}
                                                 </datalist></div><br><br><br>
                                 <div class='quantity'><span class='quantityNumber'><input type='number' id='quantity'
                                                         step='.01' name='quantity' min='0.01'
@@ -246,7 +249,7 @@
                                                         {transactionLists["amountUnit"]}
                                                 </select>
                                         </span><span class='amount'><input type='number' id='amount' step='.01'
-                                                        name='amount' min='0.01'
+                                                        name='amount' min='0.01' onkeyup='copytext()'
                                                         placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}'
                                                         value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
                                                         required></span>
