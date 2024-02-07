@@ -4,11 +4,17 @@
 <link rel='preconnect' href='https://fonts.googleapis.com'>
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
-<link rel="stylesheet" href="awesomplete.css" />
+<link rel='stylesheet' href='https://leaverou.github.io/awesomplete/awesomplete.css' />
 
-<script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js">
+<script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'>
 </script>
-<script src="awesomplete.js" async></script>
+<script src='https://leaverou.github.io/awesomplete/awesomplete.js' async></script>
+<script>
+        new Awesomplete('#item', \{
+	minChars: 5,
+	maxItems: 3,
+        });
+</script>
 
 <style>
         body \{
@@ -183,10 +189,10 @@
                         <div class='wrapper'>
                                 <div id='itemCopy'></div>
                                         <div class='item'>
-                                                <input class='awesomplete' list='transactionItem' name='item' id='item' size='1' placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' required>
+                                                <input class='awesomplete' list='transactionItem' name='item' id='item' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' required>
                                                         <datalist id='transactionItem'>{transactionLists["item"]}</datalist>
                                         </div><br><br><br>
-                                        <div class='brand'><input type='text' name='brand' id='brand'
+                                        <div class='brand'><input type='text' name='brand' id='brand' data-maxitems='3'
                                                         placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
                                                         value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
                                                         required></div><br><br><br>
