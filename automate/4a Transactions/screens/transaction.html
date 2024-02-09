@@ -1,187 +1,201 @@
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width'>
+<head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width'>
 
-<link rel='preconnect' href='https://fonts.googleapis.com'>
-<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-<link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
-<link rel='stylesheet' href='https://leaverou.github.io/awesomplete/awesomplete.css' />
+        <link rel='preconnect' href='https://fonts.googleapis.com'>
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
 
-<script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'>
-</script>
-<script src='https://leaverou.github.io/awesomplete/awesomplete.js' async></script>
-<script>
-        new Awesomplete('#item', \{
-	minChars: 5,
-	maxItems: 3,
-        });
-</script>
+        <link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
+        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js'></script>
+        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js'></script>
+        <style>
+                div.awesomplete \{
+                        display: block
+                }
 
-<style>
-        body \{
-                color: #323036;
-                font-family: 'Overpass',
-                sans-serif
-        }
+                div.awesomplete ul li p \{
+                        display: block; font-size: small; margin-left: 1em
+                }
 
-        form \{
-                text-align: center
-        }
+                div.awesomplete .awe-found \{
+                        border: 2px solid red
+                }
 
-        div.container \{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-        }
+                .hide-not-found div.awesomplete .awe-not-found \{
+                        border-color: lightblue
+                }
 
-        select \{
-                border: none;
-                outline: none;
-                background-color: transparent;
-                -moz-appearance: none;
-                -webkit-appearance: none;
-                text-overflow: ellipsis;
-                overflow: hidden
-        }
+                div.awesomplete .awe-not-found \{
+                        border: 2px solid red
+                }
 
-        select:focus \{
-                border: none;
-                outline: none
-        }
+                body \{
+                        color: #323036;
+                        font-family: 'Overpass',
+                        sans-serif
+                }
 
-        input \{
-                font-weight: 700;
-                font-size: 1em;
-                background-color: transparent;
-                border: none;
-                text-align: center;
-                float: left;
-                width: 80%;
-                /* -moz-appearance: none;
-                -webkit-appearance: none */
-        }
+                form \{
+                        text-align: center
+                }
 
-        input:focus \{
-                outline: none
-        }
+                div.container \{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin-right: -50%;
+                        transform: translate(-50%, -50%);
+                }
 
-        input::-webkit-calendar-picker-indicator \{
-                display: none !important;
-        }
+                select \{
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+                        text-overflow: ellipsis;
+                        overflow: hidden
+                }
 
-        div#itemCopy \{
-                text-align: center;
-                color: #E6E6E6;
-        }
+                select:focus \{
+                        border: none;
+                        outline: none
+                }
 
-        div.accounts \{
-                font-weight: bold;
-                width: 100%;
-        }
+                input \{
+                        font-weight: 700;
+                        font-size: 1em;
+                        background-color: transparent;
+                        border: none;
+                        text-align: center;
+                        float: left;
+                        width: 80%;
+                        /* -moz-appearance: none;
+                        -webkit-appearance: none */
+                }
 
-        div.accounts>div>select \{
-                font-weight: 900;
-                font-size: 1em;
-                padding-bottom: 0.5em;
-        }
+                input:focus \{
+                        outline: none
+                }
 
-        div.meta \{
-                width: 100%
-        }
+                input::-webkit-calendar-picker-indicator \{
+                        display: none !important;
+                }
+
+                div#itemCopy \{
+                        text-align: center;
+                        color: #E6E6E6;
+                }
+
+                div.accounts \{
+                        font-weight: bold;
+                        width: 100%;
+                }
+
+                div.accounts>div>select \{
+                        font-weight: 900;
+                        font-size: 1em;
+                        padding-bottom: 0.5em;
+                }
+
+                div.meta \{
+                        width: 100%
+                }
 
 
-        #dateTime \{
-                float: none;
-                font-weight: 400 !important;
-                font-size: 0.9em;
-                width: 45%;
-        }
+                #dateTime \{
+                        float: none;
+                        font-weight: 400 !important;
+                        font-size: 0.9em;
+                        width: 45%;
+                }
 
-        div.details>span select,
-        div.details>span input, div.accounts>span select \{
-                float: none;
-                font-weight: 400 !important;
-                font-size: 1.2em;
-                width: 45%
-        }
+                div.details>span select,
+                div.details>span input, div.accounts>span select \{
+                        float: none;
+                        font-weight: 400 !important;
+                        font-size: 1.2em;
+                        width: 45%
+                }
 
-        div.accounts>span select \{
-                float: none;
-                font-weight: bold !important;
-                font-size: 1;
-                width: 45%
-        }
+                div.accounts>span select \{
+                        float: none;
+                        font-weight: bold !important;
+                        font-size: 1;
+                        width: 45%
+                }
 
-        div.brand, div.item, div.location \{
-                width: 100%;
-                padding-left: 10%;
+                div.brand, div.item, div.location \{
+                        width: 100%;
+                        padding-left: 10%;
 
-        }
+                }
 
-        div.brand input,
-        div.item input, div.location input \{
-                font-size: 1.5em;
-                font-weight: 700;
-                text-align: left;
-                border-bottom: 0.5px solid #E6E6E6;
-                padding: none;
-                margin: none;
-                border-left: none;
-                border-right: none;
-                width: 80% !important;
-        }
+                div.brand input,
+                div.item input, div.location input \{
+                        font-size: 1.5em;
+                        font-weight: 700;
+                        text-align: left;
+                        border-bottom: 0.5px solid #E6E6E6;
+                        padding: none;
+                        margin: none;
+                        border-left: none;
+                        border-right: none;
+                        width: 80% !important;
+                }
 
-        div.quantity \{
-                width: 100%;
-                margin-bottom: 0.8em;
-                text-align: right
-        }
+                div.quantity \{
+                        width: 100%;
+                        margin-bottom: 0.8em;
+                        text-align: right
+                }
 
-        div.quantity>span input#quantity \{
-                float: none;
-                sans-serif;
-                font-weight: 400 !important;
-                font-size: 1.2em;
-                text-align: right;
-                width: 80%
-        }
+                div.quantity>span input#quantity \{
+                        float: none;
+                        sans-serif;
+                        font-weight: 400 !important;
+                        font-size: 1.2em;
+                        text-align: right;
+                        width: 80%
+                }
 
-        div.quantity>span span.quantityUnit \{
-                float: left;
-                width: 20%;
-                font-size: 1em
-        }
+                div.quantity>span span.quantityUnit \{
+                        float: left;
+                        width: 20%;
+                        font-size: 1em
+                }
 
-        div.costs \{
-                width: 100%;
-                text-align: right
-        }
+                div.costs \{
+                        width: 100%;
+                        text-align: right
+                }
 
-        div.costs>span span.currency \{
-                float: left;
-                width: 20%
-        }
+                div.costs>span span.currency \{
+                        float: left;
+                        width: 20%
+                }
 
-        div.costs>span span.currency select \{
-                font-weight: 900;
-                font-size: 1.5em
-        }
+                div.costs>span span.currency select \{
+                        font-weight: 900;
+                        font-size: 1.5em
+                }
 
-        div.costs>span input#amount \{
-                float: none;
-                sans-serif;
-                font-weight: 900 !important;
-                font-size: 4em;
-                text-align: right;
-                width: 80%;
-                padding-bottom: 10px
-        }
+                div.costs>span input#amount \{
+                        float: none;
+                        sans-serif;
+                        font-weight: 900 !important;
+                        font-size: 4em;
+                        text-align: right;
+                        width: 80%;
+                        padding-bottom: 10px
+                }
 
-        .pre-filled \{
-                text-decoration: underline dotted #CECCD2;
-        }
-</style>
+                .pre-filled \{
+                        text-decoration: underline dotted #CECCD2;
+                }
+        </style>
+</head>
 
 <body>
         <div class='container'>
