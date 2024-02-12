@@ -31,6 +31,31 @@ This screen is for manually entering financial transactions. Inline styling is u
                 };
         </script>
 
+        <!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API -->
+        <script>
+                function setCurrency() \{
+                        let countryCode = document.getElementById('country').value;
+                        const currencyElement = document.getElementById('currency');
+
+                        fetch('https://restcountries.com/v3.1/alpha/' + countryCode)
+                                .then(response => \{
+                                        if (response.ok) \{
+                                                return response.json();
+                                        } else \{
+                                                throw new Error('API request failed');
+                                        }
+                                })
+                                .then(data => \{
+                                        let keys = Object.keys(data[0].currencies)
+                                        currencyElement.value = countryCode;
+                                })
+                                .catch(error => \{
+                                        currencyElement.value = "FUCK";
+                                        console.error(error);
+                                });
+                }
+        </script>
+
         <style>
                 /* Standard page styling for multiple elements, inline styling for specific elements */
                 body \{
@@ -74,28 +99,17 @@ This screen is for manually entering financial transactions. Inline styling is u
                         display: none !important;
                 }
 
-                div.accounts>div>select \{
-                        font-weight: 900;
-                        font-size: 1em;
-                        padding-bottom: 0.5em;
+                div.main \{
+                        width: 100%
                 }
 
-                #dateTime \{
-                        float: none;
-                        font-weight: 400 !important;
-                        font-size: 0.9em;
-                        width: 45%;
-                }
-
-                div.brand, div.item, div.location \{
-                        width: 100%;
+                div#details > div \{
                         padding-left: 10%;
-
+                        width: 110%;
                 }
 
-                div.brand input,
-                div.item input, div.location input \{
-                        font-size: 1.3em;
+                div#details > div input \{
+                        font-size: 1.2em;
                         font-weight: 400;
                         text-align: left;
                         border-bottom: 0.5px solid #E6E6E6;
@@ -103,53 +117,10 @@ This screen is for manually entering financial transactions. Inline styling is u
                         margin: none;
                         border-left: none;
                         border-right: none;
-                        width: 80% !important;
                 }
 
-                div.quantity \{
-                        width: 100%;
-                        margin-bottom: 0.8em;
-                        text-align: right
-                }
-
-                div.quantity>span input#quantity \{
-                        float: none;
-                        sans-serif;
-                        font-weight: 400 !important;
-                        font-size: 1.2em;
-                        text-align: right;
-                        width: 70%
-                }
-
-                div.quantity>span span.quantityUnit \{
-                        float: left;
-                        width: 30%;
-                        font-size: 1em
-                }
-
-                div.costs \{
-                        width: 100%;
-                        text-align: right
-                }
-
-                div.costs>span span.currency \{
-                        float: left;
-                        width: 20%
-                }
-
-                div.costs>span span.currency select \{
-                        font-weight: 900;
-                        font-size: 1.5em
-                }
-
-                div.costs>span input#amount \{
-                        float: none;
-                        sans-serif;
-                        font-weight: 900 !important;
-                        font-size: 4em;
-                        text-align: right;
-                        width: 80%;
-                        padding-bottom: 10px
+                div#numbers > div \{
+                        width: 90%;
                 }
 
                 .pre-filled \{
@@ -249,12 +220,12 @@ This screen is for manually entering financial transactions. Inline styling is u
         </style>
 </head>
 
-<body style='font-family: 'Overpass' !important;'>
-        <div class='container' style='font-family: 'Overpass' !important;'>
-                <div class='container' style='position: absolute; top: 42%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+<body>
+        <div class='container'>
+                <div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
                         <form method='get' action='http://localhost/ok' name='transactions' autocomplete='off' >
 
-                                <div class='meta' style='width: 100%'>
+                                <div class='main' id='meta'>
                                         <div class='dateTime'>
                                                 <span class='frequency' style='float: left; width:46%'>
                                                         <select style='font-weight: 900; text-align: right; text-transform: uppercase; width: 100%' name='frequency' id='frequency' >
@@ -266,7 +237,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                                                         </select>
                                                 </span><span style='float: left; width: 8%; font-size: 1em; color: #CECCD2'>::</span>
                                                 <span class='dateTime' style='float: left; width:46%' >
-                                                        <input style='border: none; text-align: left; width: 100%' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
+                                                        <input style='border: none; text-align: left; width: 100%; font-weight: 400; margin-bottom: 0.8em;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
                                                 </span>
                                         </div>
                                         <br>
@@ -301,7 +272,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                                                 </span>
                                                 <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2'>::</span>
                                                 <span class='group' style='float: left; width: 46%' >
-                                                        <input class='awesomplete' list='transactionGroup' style='text-align: left; font-size: 1em; font-weight: 400 !important' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
+                                                        <input name='group' id='group' class='awesomplete' list='transactionGroup' style='text-align: left; font-size: 1em; font-weight: 400 !important' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
                                                                 <datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
                                                 </span>
                                         </div>
@@ -309,8 +280,9 @@ This screen is for manually entering financial transactions. Inline styling is u
                                 <br>
                                 <br>
                                 <br>
+                                <br>
 
-                                <div class='itemDetails' style='width: 100%' >
+                                <div id='details' class='main'>
                                         <div class='brand'>
                                                 <input class='awesomplete' list='transactionBrand' name='brand' id='brand' placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}' value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
                                                         <datalist id='transactionBrand'>{transactionLists["brand"]}</datalist>
@@ -325,19 +297,19 @@ This screen is for manually entering financial transactions. Inline styling is u
                                         <br>
                                         <br>
                                         <br>
-                                        <div class='location'>
-                                                <input name='address' placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Address"}' value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'type='text' class='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}' autocomplete='address-line1' required />
+                                        <div class='location' style='text-align: left'>
+                                                <input name='address' placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Address"}' value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'type='text' class='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}' autocomplete='address-line1' onblur='setCurrency()' required />
                                                 <input name='city' placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}' value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}' type='text' style='visibility:hidden' autocomplete='address-level2' />
-                                                <input name='country' placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}' value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}' type='text' style='visibility:hidden' autocomplete='country' />
+                                                <input name='country' id='country' placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}' value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}' type='text' style='visibility:hidden' autocomplete='country' />
                                                 <input name='postcode' placeholder='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}' value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}' type='text' style='visibility:hidden' autocomplete='postal-code' />
                                         </div>
                                 </div>
                                 <br>
 
-                                <div class='numbers'>
-                                        <div class='quantity' style='width: 90%'>
+                                <div id='numbers' class='main' >
+                                        <div class='quantity' style='margin-bottom: 0.8em; text-align: right'>
                                                 <span class='quantityNumber'>
-                                                        <input type='number' id='quantity' step='.01' name='quantity' min='0.01' placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}' value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}' required>
+                                                        <input type='number' id='quantity' style='float: none; font-weight: 400 !important; font-size: 1.2em; text-align: right;width: 70%' step='.01' name='quantity' min='0.01' placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}' value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}' required>
                                                 </span>
                                                 <span class='quantityUnit'>
                                                         <select name='quantityUnit' required>
@@ -348,15 +320,12 @@ This screen is for manually entering financial transactions. Inline styling is u
                                                         </select>
                                                 </span>
                                         </div>
-                                        <div class='costs' style='width: 90%'>
-                                                <span class='currency'>
-                                                        <select name='currency' id='currency' style='font-weight: 900' >
-                                                                <option value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}' selected>{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}</option>
-                                                                {transactionLists["amountUnit"]}
-                                                        </select>
+                                        <div class='costs'>
+                                                <span class='currency' style='float: left; width: 20%;' >
+                                                        <input name='currency' id='currency' style='font-weight: 700; font-size: 0.8em; text-transform: uppercase' value= 'EUR' >
                                                 </span>
                                                 <span class='amount'>
-                                                        <input type='number' id='amount' step='.01' name='amount' min='0.01' placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}' value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}' required>
+                                                        <input type='number' id='amount' style='float: none; font-weight: 900; font-size: 3.5em; text-align: right; width: 80%;padding-bottom: 10px' step='.01' name='amount' min='0.01' placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}' value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}' required>
                                                 </span>
                                         </div>
                                         <input type='submit' action='http://localhost/ok' hidden />
