@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<head>
 <!--
 Transaction screen for qSelf project
 Creator: Gugulethu Hlekwayo
@@ -7,7 +6,6 @@ URL: qself.gugulet.hu
 This screen is for manually entering financial transactions. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses the mapbox API, Google Fonts, and awesomplete as external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML.
 -->
 
-<head>
         <!-- Meta data to set the viewport on mobile -->
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width'>
@@ -21,7 +19,7 @@ This screen is for manually entering financial transactions. Inline styling is u
         <link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
         <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
         <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
-Ed
+
         <!-- Mapbox location search script -->
         <script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'></script>
         <script>
@@ -33,15 +31,131 @@ Ed
                 };
         </script>
 
-        <!-- Scroll into view script -->
-        <script>
-                function scrollDown() \{
-                        const element = document.getElementById('amount');
-                        element.scrollIntoView();
-                }
-        </script>
-
         <style>
+                /* Standard page styling for multiple elements, inline styling for specific elements */
+                body \{
+                        color: #323036;
+                        font-family: 'Overpass' !important;
+                        text-align: center
+                }
+
+                select \{
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+                        text-overflow: ellipsis;
+                        overflow: hidden
+                }
+
+                select:focus \{
+                        border: none;
+                        outline: none
+                }
+
+                input \{
+                        font-weight: 700;
+                        font-size: 1em;
+                        background-color: transparent;
+                        border: none;
+                        text-align: center;
+                        float: left;
+                        width: 80%;
+                        -moz-appearance: none;
+                        -webkit-appearance: none
+                }
+
+                input:focus \{
+                        outline: none
+                }
+
+                input::-webkit-calendar-picker-indicator \{
+                        display: none !important;
+                }
+
+                div.accounts>div>select \{
+                        font-weight: 900;
+                        font-size: 1em;
+                        padding-bottom: 0.5em;
+                }
+
+                #dateTime \{
+                        float: none;
+                        font-weight: 400 !important;
+                        font-size: 0.9em;
+                        width: 45%;
+                }
+
+                div.brand, div.item, div.location \{
+                        width: 100%;
+                        padding-left: 10%;
+
+                }
+
+                div.brand input,
+                div.item input, div.location input \{
+                        font-size: 1.3em;
+                        font-weight: 400;
+                        text-align: left;
+                        border-bottom: 0.5px solid #E6E6E6;
+                        padding: none;
+                        margin: none;
+                        border-left: none;
+                        border-right: none;
+                        width: 80% !important;
+                }
+
+                div.quantity \{
+                        width: 100%;
+                        margin-bottom: 0.8em;
+                        text-align: right
+                }
+
+                div.quantity>span input#quantity \{
+                        float: none;
+                        sans-serif;
+                        font-weight: 400 !important;
+                        font-size: 1.2em;
+                        text-align: right;
+                        width: 70%
+                }
+
+                div.quantity>span span.quantityUnit \{
+                        float: left;
+                        width: 30%;
+                        font-size: 1em
+                }
+
+                div.costs \{
+                        width: 100%;
+                        text-align: right
+                }
+
+                div.costs>span span.currency \{
+                        float: left;
+                        width: 20%
+                }
+
+                div.costs>span span.currency select \{
+                        font-weight: 900;
+                        font-size: 1.5em
+                }
+
+                div.costs>span input#amount \{
+                        float: none;
+                        sans-serif;
+                        font-weight: 900 !important;
+                        font-size: 4em;
+                        text-align: right;
+                        width: 80%;
+                        padding-bottom: 10px
+                }
+
+                .pre-filled \{
+                        text-decoration: underline dotted #CECCD2;
+                }
+
                 /* Awesomplete styling */
                 .awesomplete [hidden] \{
                         display: none;
@@ -132,206 +246,80 @@ Ed
                         font-size: 0.8em;
                         margin-left: 0.5em
                 }
-
-                /* Standard page styling for multiple elements, inline styling for specific elements */
-                select \{
-                        border: none;
-                        outline: none;
-                        background-color: transparent;
-                        -moz-appearance: none;
-                        -webkit-appearance: none;
-                        text-overflow: ellipsis;
-                        overflow: hidden
-                }
-
-                select:focus \{g
-                        border: none;
-                        outline: none
-                }
-
-                input \{
-                        font-weight: 700;
-                        font-size: 1em;
-                        background-color: transparent;
-                        border: none;
-                        text-align: center;
-                        float: left;
-                        width: 80%;
-                        -moz-appearance: none;
-                        -webkit-appearance: none
-                }
-
-                input:focus \{
-                        outline: none
-                }
-
-                input::-webkit-calendar-picker-indicator \{
-                        display: none !important;
-                }
-
-                div.accounts>div>select \{
-                        font-weight: 900;
-                        font-size: 1em;
-                        padding-bottom: 0.5em;
-                }
-
-                div.meta \{
-                        width: 100%
-                }
-
-                #dateTime \{
-                        float: none;
-                        font-weight: 400 !important;
-                        font-size: 0.9em;
-                        width: 45%;
-                }
-
-                div.brand, div.item, div.location \{
-                        width: 100%;
-                        padding-left: 10%;
-
-                }
-
-                div.brand input,
-                div.item input, div.location input \{
-                        font-size: 1.3em;
-                        font-weight: 400;
-                        text-align: left;
-                        border-bottom: 0.5px solid #E6E6E6;
-                        padding: none;
-                        margin: none;
-                        border-left: none;
-                        border-right: none;
-                        width: 80% !important;
-                }
-
-                div.quantity \{
-                        width: 100%;
-                        margin-bottom: 0.8em;
-                        text-align: right
-                }
-
-                div.quantity>span input#quantity \{
-                        float: none;
-                        sans-serif;
-                        font-weight: 400 !important;
-                        font-size: 1.2em;
-                        text-align: right;
-                        width: 80%
-                }
-
-                div.quantity>span span.quantityUnit \{
-                        float: left;
-                        width: 20%;
-                        font-size: 1em
-                }
-
-                div.costs \{
-                        width: 100%;
-                        text-align: right
-                }
-
-                div.costs>span span.currency \{
-                        float: left;
-                        width: 20%
-                }
-
-                div.costs>span span.currency select \{
-                        font-weight: 900;
-                        font-size: 1.5em
-                }
-
-                div.costs>span input#amount \{
-                        float: none;
-                        sans-serif;
-                        font-weight: 900 !important;
-                        font-size: 4em;
-                        text-align: right;
-                        width: 80%;
-                        padding-bottom: 10px
-                }
-
-                .pre-filled \{
-                        text-decoration: underline dotted #CECCD2;
-                }
         </style>
 </head>
 
-<body>
-        <div class='container' style='color: #323036; text-align: center; margin: 0; font-family: "Overpass", sans-serif;' >
-                <div class='container' style='position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+<body style='font-family: 'Overpass' !important;'>
+        <div class='container' style='font-family: 'Overpass' !important;'>
+                <div class='container' style='position: absolute; top: 42%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
                         <form method='get' action='http://localhost/ok' name='transactions' autocomplete='off' >
 
-                                <div class='meta'>
+                                <div class='meta' style='width: 100%'>
                                         <div class='dateTime'>
-                                                <span class='frequency'>
-                                                        <select style='font-weight: 900; text-align: right; text-transform: uppercase; margin-right: 10px' name='frequency' id='frequency' >
+                                                <span class='frequency' style='float: left; width:46%'>
+                                                        <select style='font-weight: 900; text-align: right; text-transform: uppercase; width: 100%' name='frequency' id='frequency' >
                                                                         <option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}' selected >
                                                                                 Once
                                                                         </option>
                                                                         <option value='Weekly'>Weekly</option>
                                                                         <option value='Monthly'>Monthly</option>
                                                         </select>
-                                                </span>
-                                                <span class='dateTime' >
-                                                        <input style='border: none; text-align: left; margin: 0; padding: 0;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
+                                                </span><span style='float: left; width: 8%; font-size: 1em; color: #CECCD2'>::</span>
+                                                <span class='dateTime' style='float: left; width:46%' >
+                                                        <input style='border: none; text-align: left; width: 100%' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
                                                 </span>
                                         </div>
                                         <br>
-                                        <div class='accounts' style='float: none'>
-                                                <span class='accountFrom' style='width:45%' >
-                                                        <select name='accountFrom' id='accountFrom' style='text-align:right; font-weight: 700 !important' class='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? "pre-filled" : ""}' required>
+                                        <br>
+                                        <div class='accounts'>
+                                                <span class='accountFrom' style='float: left; width:46%' >
+                                                        <select name='accountFrom' id='accountFrom' style='text-align:right; font-weight: 700 !important; font-size: 1em; width: 100%' class='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? "pre-filled" : ""}' required>
                                                                 <option value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}' selected>
                                                                         {todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}
-                                                                </option>{transactionLists["accountTo"]}
+                                                                </option>
+                                                                {transactionLists["accountTo"]}
                                                         </select>
                                                 </span>
-                                                <span style='margin: 0 10px 0 10px; font-weight: 400 !important; font-size: 0.8em'>to</span>
-                                                <span class='accountTo' style='width:45%'>
-                                                        <select name='accountTo' id='accountTo' style='text-align:left; font-weight: 700 !important' class='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? "pre-filled" : ""}'  required>
-                                                                <option value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
-                                                                        selected>{todayRecurringTransaction["accountTo"] ?
-                                                                        todayRecurringTransaction["accountTo"] :
-                                                                        transaction["accountTo"] ?
-                                                                        transaction["accountTo"] : "Expenses"}</option>
+                                                <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2'>::</span>
+                                                <span class='accountTo' style='float: left; width:46%'>
+                                                        <select name='accountTo' id='accountTo' style='text-align:left; font-weight: 700 !important; font-size: 1em' class='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? "pre-filled" : ""}'  required>
+                                                                <option value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}' selected>
+                                                                        {todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}
+                                                                </option>
                                                                 {transactionLists["accountTo"]}
                                                         </select>
                                                 </span>
                                         </div>
                                         <br>
+                                        <br>
                                         <div class='details'>
-                                                <span class='type' style='padding-right: 10px'>
-                                                        <select name='type' id='type' size='1' style='text-align: right' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
+                                                <span class='type' style='float: left; width: 46%' >
+                                                        <select name='type' id='type' style='text-align: right; font-size: 1em; width: 100%; padding: 0' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
                                                                 <option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}' selected>{todayRecurringTransaction["category"] ?todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}</option>
                                                                 {transactionLists["category"]}
                                                         </select>
                                                 </span>
-                                                <span>:</span>
-                                                <span class='group' style='padding-left: 10px'>
-                                                        <select name='group' id='group' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' required />
-                                                                <option value='{todayRecurringTransaction["subcategory"] ? todayRecurringTransaction["subcategory"] : transaction["subcategory"] ? transaction["subcategory"] : "Junk"}' selected>
-                                                                        {todayRecurringTransaction["subcategory"] ?
-                                                                                todayRecurringTransaction["subcategory"] :
-                                                                                transaction["subcategory"] ?
-                                                                                transaction["subcategory"] : "Junk"}</option>
-                                                                        {transactionLists["subcategory"]}
-                                                        </select>
+                                                <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2'>::</span>
+                                                <span class='group' style='float: left; width: 46%' >
+                                                        <input class='awesomplete' list='transactionGroup' style='text-align: left; font-size: 1em; font-weight: 400 !important' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
+                                                                <datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
                                                 </span>
                                         </div>
                                 </div>
                                 <br>
                                 <br>
+                                <br>
 
                                 <div class='itemDetails' style='width: 100%' >
                                         <div class='brand'>
-                                                <input class='awesomplete' list='transactionBrand' name='brand' id='brand' placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}' value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}' data-maxitems='1' data-tabSelect='true' required>
+                                                <input class='awesomplete' list='transactionBrand' name='brand' id='brand' placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}' value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
                                                         <datalist id='transactionBrand'>{transactionLists["brand"]}</datalist>
                                         </div>
                                         <br>
                                         <br>
                                         <br>
                                         <div class='item'>
-                                                <input class='awesomplete' list='transactionItem' name='item' id='item' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}' data-maxitems='5' data-tabSelect='true' required>
+                                                <input class='awesomplete' list='transactionItem' name='item' id='item' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}' data-maxitems='5' data-autofirst='true' data-tabSelect='true' required>
                                                         <datalist id='transactionItem'>{transactionLists["item"]}</datalist>
                                         </div>
                                         <br>
@@ -347,9 +335,9 @@ Ed
                                 <br>
 
                                 <div class='numbers'>
-                                        <div class='quantity'>
+                                        <div class='quantity' style='width: 90%'>
                                                 <span class='quantityNumber'>
-                                                        <input type='number' onfocus='scrollDown()' id='quantity' step='.01' name='quantity' min='0.01' placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}' value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}' required>
+                                                        <input type='number' id='quantity' step='.01' name='quantity' min='0.01' placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}' value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}' required>
                                                 </span>
                                                 <span class='quantityUnit'>
                                                         <select name='quantityUnit' required>
@@ -360,9 +348,9 @@ Ed
                                                         </select>
                                                 </span>
                                         </div>
-                                        <div class='costs'>
+                                        <div class='costs' style='width: 90%'>
                                                 <span class='currency'>
-                                                        <select name='currency' id='currency' >
+                                                        <select name='currency' id='currency' style='font-weight: 900' >
                                                                 <option value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}' selected>{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : "EUR"}</option>
                                                                 {transactionLists["amountUnit"]}
                                                         </select>
@@ -377,4 +365,3 @@ Ed
                 </div>
         </div>
 </body>
-</html>
