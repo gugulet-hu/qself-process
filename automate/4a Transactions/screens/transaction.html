@@ -31,7 +31,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                 };
         </script>
 
-        <!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API -->
+        <!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. -->
         <script>
                 function setCurrency() \{
                         let countryCode = document.getElementById('country').value;
@@ -70,7 +70,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                 /* Standard page styling for multiple elements, inline styling for specific elements */
                 body \{
                         color: #323036;
-                        font-family: 'Overpass' !important;
+                        font-family: 'Overpass', sans-serif;
                 }
 
                 select \{
