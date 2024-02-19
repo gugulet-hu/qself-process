@@ -31,13 +31,15 @@ This screen is for manually entering financial transactions. Inline styling is u
                 };
         </script>
 
-        <!-- Script that shows the Investment details section -->
+        <!-- Script that shows the Investment details section or the serial number input  -->
         <script>
                 function showInvestment() \{
                         let category = document.getElementById('type').value;
 
-                        if (category = "Investment") \{
+                        if (category = 'Investment') \{
                                 document.getElementById('investmentDetails').style.visibility = 'visible';
+                        } else if (category = 'Assets') \{
+                                document.getElementById('serialNumber').style.visibility = 'visible';
                         }
                 }
         </script>
@@ -290,18 +292,17 @@ This screen is for manually entering financial transactions. Inline styling is u
                                                                 <datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
                                                 </span>
                                         </div>
-                                        <div id='investmentDetails' style='visibility: hidden>
+                                        <div id='investmentDetails' style='visibility: hidden' >
                                                 <br>
                                                 <br>
                                                 <span class='group' style='float: left; width: 46%' >
-                                                        <input name='group' id='group' class='awesomplete' list='transactionGroup' style='text-align: right; font-size: 1em; font-weight: 400 !important' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
-                                                                <datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
+                                                        <input name='investmentRegion' id='investmentRegion' class='awesomplete' list='investmentRegions' style='text-align: right; font-size: 1em; font-weight: 400 !important' placeholder='Enter region' data-maxitems='1' data-autofirst='true' data-tabSelect='true' />
+                                                                <datalist id='investmentRegions'>{investmentLists["location"]}</datalist>
                                                 </span>
                                                 <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
                                                  <span class='type' style='float: left; width: 46%' >
-                                                        <select name='type' id='type' onblur='showInvestment()' style='text-align: right; font-size: 1em; width: 100%; padding: 0' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
-                                                                <option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}' selected>{todayRecurringTransaction["category"] ?todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}</option>
-                                                                {transactionLists["category"]}
+                                                        <select name='investmentType' class='awesomplete' list='investmentTypes' id='investmentType' style='text-align: left; font-size: 1em; width: 100%; padding: 0' value='Equity' >
+                                                                <datalist id='investmentTypes'>{investmentLists["subcategory"]}</datalist>
                                                         </select>
                                                 </span>
                                         </div>
@@ -322,6 +323,12 @@ This screen is for manually entering financial transactions. Inline styling is u
                                         <div class='item'>
                                                 <input class='awesomplete' list='transactionItem' name='item' id='item' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}' data-maxitems='5' data-autofirst='true' data-tabSelect='true' required>
                                                         <datalist id='transactionItem'>{transactionLists["item"]}</datalist>
+                                        </div>
+                                        <div id='serialNumber' style='visibility: hidden'>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <input name='serial' id='serial' placeholder='Enter serial number'>
                                         </div>
                                         <br>
                                         <br>
