@@ -17,77 +17,6 @@ This screen is for manually entering financial transactions. Inline styling is u
 
         <!-- Awesomplete plugin -->
         <link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
-        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
-        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
-
-        <!-- Mapbox location search script -->
-        <script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'></script>
-        <script>
-                const script = document.getElementById('search-js');
-                script.onload = function () \{
-                        mapboxsearch.autofill(\{
-                                accessToken: '{flowConfig["mapboxAPIKey"]}'
-                        });
-                };
-        </script>
-
-        <!-- Script that shows the Investment details section or the serial number input field when Assets or Investment categories are selected -->
-        <script>
-                function showInvestment() \{
-                        let category = document.getElementById('type').value;
-                        const investmentDetails = document.getElementById('investmentDetails');
-                        const serialNumber = document.getElementById('serialNumber');
-
-                        if (category === 'Investment') \{
-                                investmentDetails.style.display = 'block';
-                                serialNumber.style.display = 'none'
-                        } else if (category === 'Assets') \{
-                                serialNumber.style.display = 'block';
-                                investmentDetails.style.display = 'none';
-                        } else \{
-                                investmentDetails.style.display = 'none';
-                                serialNumber.style.display = 'none';
-                        }
-                }
-        </script>
-
-        <!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. -->
-        <script>
-                function setCurrency() \{
-                        let countryCode = document.getElementById('country').value;
-                        let accountFrom = document.getElementById('accountFrom').value;
-                        const zarAccount = 'FNB Cheque';
-                        const currencyElement = document.getElementById('currency');
-                        const availableElement = document.getElementById('availableLabel');
-
-                        availableElement.style.display = 'none';
-
-                        fetch('https://restcountries.com/v3.1/alpha/' + countryCode)
-                                .then(response => \{
-                                        if (response.ok) \{
-                                                return response.json();
-                                        } else \{
-                                                throw new Error('API request failed');
-                                        }
-                                })
-                                .then(data => \{
-                                        if (accountFrom != zarAccount) \{
-                                                let keys = Object.keys(data[0].currencies)
-                                                currencyElement.value = keys[0];
-                                                currencyElement.style.color = '#323036';
-                                        } else \{
-                                                currencyElement.value = '{flowConfig["currencies"][1]}';
-                                                currencyElement.style.color = '#323036';
-                                        }
-                                })
-                                .catch(error => \{
-                                        currencyElement.value = 'ERR';
-                                        currencyElement.style.color = 'red';
-                                        console.error(error);
-                                });
-                }
-        </script>
-
         <style>
                 /* Standard page styling for multiple elements, inline styling for specific elements */
                 body \{
@@ -392,4 +321,76 @@ This screen is for manually entering financial transactions. Inline styling is u
                         </form>
                 </div>
         </div>
+
+	/* SCRIPTS */
+	<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
+        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
+
+        /* Mapbox location search script */
+        <script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'></script>
+        <script>
+                const script = document.getElementById('search-js');
+                script.onload = function () \{
+                        mapboxsearch.autofill(\{
+                                accessToken: '{flowConfig["mapboxAPIKey"]}'
+                        });
+                };
+        </script>
+
+        /* Script that shows the Investment details section or the serial number input field when Assets or Investment categories are selected */
+        <script>
+                function showInvestment() \{
+                        let category = document.getElementById('type').value;
+                        const investmentDetails = document.getElementById('investmentDetails');
+                        const serialNumber = document.getElementById('serialNumber');
+
+                        if (category === 'Investment') \{
+                                investmentDetails.style.display = 'block';
+                                serialNumber.style.display = 'none'
+                        } else if (category === 'Assets') \{
+                                serialNumber.style.display = 'block';
+                                investmentDetails.style.display = 'none';
+                        } else \{
+                                investmentDetails.style.display = 'none';
+                                serialNumber.style.display = 'none';
+                        }
+                }
+        </script>
+
+        /* Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. */
+        <script>
+                function setCurrency() \{
+                        let countryCode = document.getElementById('country').value;
+                        let accountFrom = document.getElementById('accountFrom').value;
+                        const zarAccount = 'FNB Cheque';
+                        const currencyElement = document.getElementById('currency');
+                        const availableElement = document.getElementById('availableLabel');
+
+                        availableElement.style.display = 'none';
+
+                        fetch('https://restcountries.com/v3.1/alpha/' + countryCode)
+                                .then(response => \{
+                                        if (response.ok) \{
+                                                return response.json();
+                                        } else \{
+                                                throw new Error('API request failed');
+                                        }
+                                })
+                                .then(data => \{
+                                        if (accountFrom != zarAccount) \{
+                                                let keys = Object.keys(data[0].currencies)
+                                                currencyElement.value = keys[0];
+                                                currencyElement.style.color = '#323036';
+                                        } else \{
+                                                currencyElement.value = '{flowConfig["currencies"][1]}';
+                                                currencyElement.style.color = '#323036';
+                                        }
+                                })
+                                .catch(error => \{
+                                        currencyElement.value = '{flowConfig["currencies"][0]}';
+                                        currencyElement.style.color = 'red';
+                                        console.error(error);
+                                });
+                }
+        </script>
 </body>
