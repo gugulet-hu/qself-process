@@ -18,10 +18,10 @@ This screen is for manually entering financial transactions. Inline styling is u
         <!-- Awesomplete plugin -->
         <link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
         <style>
-                /* Standard page styling for multiple elements, inline styling for specific elements */
+                <!-- Standard page styling for multiple elements, inline styling for specific elements -->
                 body \{
                         color: #323036;
-                        font-family: 'Overpass', sans-serif;
+                        font-family: "Overpass", sans-serif;
                 }
 
                 .visuallyhidden \{
@@ -97,7 +97,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                         text-decoration: underline dotted #CECCD2;
                 }
 
-                /* Awesomplete styling */
+                <!-- Awesomplete styling -->
                 .awesomplete [hidden] \{
                         display: none;
                 }
@@ -322,11 +322,11 @@ This screen is for manually entering financial transactions. Inline styling is u
                 </div>
         </div>
 
-	/* SCRIPTS */
+	<!-- SCRIPTS -->
 	<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
         <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
 
-        /* Mapbox location search script */
+        <!-- Mapbox location search script -->
         <script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'></script>
         <script>
                 const script = document.getElementById('search-js');
@@ -337,7 +337,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                 };
         </script>
 
-        /* Script that shows the Investment details section or the serial number input field when Assets or Investment categories are selected */
+        <!-- Script that shows the Investment details section or the serial number input field when Assets or Investment categories are selected -->
         <script>
                 function showInvestment() \{
                         let category = document.getElementById('type').value;
@@ -357,7 +357,7 @@ This screen is for manually entering financial transactions. Inline styling is u
                 }
         </script>
 
-        /* Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. */
+        <!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. -->
         <script>
                 function setCurrency() \{
                         let countryCode = document.getElementById('country').value;
