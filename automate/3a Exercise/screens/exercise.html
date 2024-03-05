@@ -1,121 +1,136 @@
-<head>
-<!--
-Exercise screen for qSelf project
-Creator: Gugulethu Hlekwayo
-URL: qself.gugulet.hu
-This screen is for manually entering exercises. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses a weather API, Google Fonts, and awesomplete as external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML. Please note, the minified version of this page breaks functionality.
--->
+<html>
+	<head>
+	<!--
+	Exercise screen for qSelf project
+	Creator: Gugulethu Hlekwayo
+	URL: qself.gugulet.hu
+	This screen is for manually entering exercises. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses a weather API, Google Fonts, and awesomplete as external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML. Please note, the minified version of this page breaks functionality.
+	-->
 
-	<!-- Meta data to set the viewport on mobile -->
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width'>
+		<!-- Meta data to set the viewport on mobile -->
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width'>
 
-	<!-- Google Fonts: import Overpass -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<!-- Google Fonts: import Overpass -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-	<!-- Styling and stylesheets -->
-	<link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
-	<style>
-		body \{
-			color: #323036;
-			font-family: Overpass, sans-serif;
-		}
+		<!-- Styling and stylesheets -->
+		<link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
+		<style>
+			body \{
+				color: #323036;
+				font-family: 'Overpass', sans-serif;
+			}
 
-		div.container \{ position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-right: -50%;
-		transform: translate(-50%, -50%);
-		padding: 0 10px;
-		}
+			div.container \{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-right: -50%;
+				transform: translate(-50%, -50%);
+				padding: 0 10px;
+			}
 
-		div.item>input \{ font-weight: 700;
-		font-size: 2.2em;
-		text-align: center;
-		float: none;
-		padding-bottom: 0.5em;
-		}
+			div.item>input \{
+				font-weight: 700;
+				font-size: 2.2em;
+				text-align: center;
+				float: none;
+				padding-bottom: 0.5em;
+			}
 
-		div.meta>span \{ float: none;
-		font-weight: 400;
-		font-size: 0.8em;
-		padding-left: 1em
-		}
+			div.meta>span \{
+				float: none;
+				font-weight: 400;
+				font-size: 0.8em;
+				padding-left: 1em
+			}
 
-		select \{ border: none;
-		outline: none;
-		background-color: transparent;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		}
+			select \{
+				border: none;
+				outline: none;
+				background-color: transparent;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+			}
 
-		select:focus \{ border: none;
-		outline: none;
-		}
+			select:focus \{
+				border: none;
+				outline: none;
+			}
 
-		hr \{ width: 80%;
-		text-align: center;
-		border: 0.5px solid #E6E6E6;
-		margin-top: 3em;
-		margin-bottom: 3em;
-		}
+			hr \{
+				width: 80%;
+				text-align: center;
+				border: 0.5px solid #E6E6E6;
+				margin-top: 3em;
+				margin-bottom: 3em;
+			}
 
-		form \{ text-align: center;
-		}
+			form \{
+				text-align: center;
+			}
 
-		div.amount,
-		div.quantity,
-		div.rest \{ width: 30%;
-		display: inline-block;
-		}
+			div.amount, div.quantity, div.rest \{
+				width: 30%;
+				display: inline-block;
+			}
 
-		div.label \{ text-align: center;
-		}
+			div.label \{
+				text-align: center;
+			}
 
-		div.value \{ display: inline-block;
-		font-size: 2em;
-		color: #323036;
-		}
+			div.value \{
+				display: inline-block;
+				font-size: 2em;
+				color: #323036;
+			}
 
-		input \{ font-weight: 700;
-		font-size: 1em;
-		background-color: transparent;
-		border: none;
-		text-align: center;
-		float: left;
-		width: 80%;
-		}
+			input \{
+				font-weight: 700;
+				font-size: 1em;
+				background-color: transparent;
+				border: none;
+				text-align: center;
+				float: left;
+				width: 80%;
+			}
 
-		input:focus \{ outline: none;
-		}
+			input:focus \{
+				outline: none;
+			}
 
-		div.value input \{ text-align: center;
-		}
+			div.value input \{
+				text-align: center;
+			}
 
-		div.value span \{ float: left;
-		width: 20%;
-		font-weight: 700;
-		font-size: 0.6em;
-		text-align: left;
-		}
+			div.value span \{
+				float: left;
+				width: 20%;
+				font-weight: 700;
+				font-size: 0.6em;
+				text-align: left;
+			}
 
-		img \{ width: 45px;
-		}
+			img \{
+				width: 45px;
+			}
 
-		div.data-box>div \{
-		font-weight: 700;
-		font-size: 1.1em;
-		text-align: center;
-		display: inline-block;
-		}
+			div.data-box>div \{
+				font-weight: 700;
+				font-size: 1.1em;
+				text-align: center;
+				display: inline-block;
+			}
 
-		div.data-box>div>div \{ font-size: 1.5em;
-		}
+			div.data-box>div>div \{
+				font-size: 1.5em;
+			}
 
-	</style>
-</head>
+		</style>
+	</head>
 
 	<body>
 		<div class='container'>
@@ -208,3 +223,4 @@ This screen is for manually entering exercises. Inline styling is used intention
 			</form>
 		</div>
 	</body>
+</html>
