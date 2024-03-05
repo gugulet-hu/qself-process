@@ -199,7 +199,7 @@
 					<div class='main' id='meta'>
 						<div class='dateTime'>
 							<span class='frequency' style='float: left; width:46%'>
-								<select style='font-weight: 900; text-align: right; text-transform: uppercase; width: 100%' name='frequency' id='frequency' >
+								<select style='font-weight: 900; text-align: right; font-size: 1em; text-transform: uppercase; width: 100%' name='frequency' id='frequency' >
 										<option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}' selected >
 											Once
 										</option>
@@ -208,7 +208,7 @@
 								</select>
 							</span><span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
 							<span class='dateTime' style='float: left; width:46%' >
-								<input style='border: none; text-align: left; width: 100%; font-weight: 400; margin-bottom: 0.8em;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
+								<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
 							</span>
 						</div>
 						<br>
