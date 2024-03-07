@@ -24,28 +24,36 @@
 				font-family: 'Overpass', sans-serif;
 			}
 
-			input, select \{
+			.wrapper \{
+				text-align: center;
+			}
+
+			input \{
+				font-weight: 700;
+				background-color: transparent;
+				border: none;
+				float: left;
+				text-overflow: ellipsis;
+				text-align: center;
+				wdith: 80%;
+				overflow: hidden;
+				-moz-appearance: none;
+				-webkit-appearance: none;
 				font-family: inherit;
 			}
 
-			div.container \{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				margin-right: -50%;
-				transform: translate(-50%, -50%);
-				padding: 0 10px;
+			input:focus \{
+				outline: none;
 			}
 
-			div.item>input \{
-				font-weight: 700;
-				font-size: 2.2em;
+			select \{
+				-moz-appearance: none;
+				-webkit-appearance: none;
 				text-align: center;
-				float: none;
-				padding-bottom: 0.5em;
+				font-family: inherit;
 			}
 
-			div.meta>span \{
+			div.meta > span \{
 				float: none;
 				font-weight: 400;
 				font-size: 0.8em;
@@ -65,18 +73,6 @@
 				outline: none;
 			}
 
-			hr \{
-				width: 80%;
-				text-align: center;
-				border: 0.5px solid #E6E6E6;
-				margin-top: 3em;
-				margin-bottom: 3em;
-			}
-
-			form \{
-				text-align: center;
-			}
-
 			div.amount, div.quantity, div.rest \{
 				width: 30%;
 				display: inline-block;
@@ -90,20 +86,6 @@
 				display: inline-block;
 				font-size: 2em;
 				color: #323036;
-			}
-
-			input \{
-				font-weight: 700;
-				font-size: 1em;
-				background-color: transparent;
-				border: none;
-				text-align: center;
-				float: left;
-				width: 80%;
-			}
-
-			input:focus \{
-				outline: none;
 			}
 
 			div.value input \{
@@ -226,91 +208,95 @@
 	</head>
 
 	<body>
-		<div class='container'>
+		<div class='container' style='position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);'>
 			<form method='get' action='http://localhost/ok' name='exercise'>
-				<div class='item'>
-					<input type='text' class='awesomplete' name='item' id='item' list='exerciseItem' value='{currentExerciseData["item"]}' placeholder='Enter exercise name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
-						<datalist id='exerciseItem'>{exerciseLists["item"]}</datalist>
-				</div>
-				<div class='meta'>
-					<span class='category'>
-						<select name='category' id='category' size='1' required>
-							<option value='{currentExerciseData["category"]}'
-								selected>
-								{currentExerciseData["category"]}
-							</option>
-							{exerciseLists["category"]}
-						</select>
-					</span>
-					<span class='subcategory'>
-						<select name='subcategory' id='subcategory' size='1' required>
-							<option value='{currentExerciseData["subcategory"]}'
-								selected>
-								{currentExerciseData["subcategory"]}
-							</option>
-							{exerciseLists["subcategory"]}
-						</select>
-					</span>
-					<span class='equipment'>
-						<select name='equipment' id='equipment' size='1' required>
-							<option value='{currentExerciseData["equipment"]}'
-								selected>{currentExerciseData["equipment"]}
-							</option>
-							{exerciseLists["equipment"]}
-						</select>
-					</span>
-				</div>
 
-				<br>
-
-				<div class='data-box'>
-					<div class='heartRate'>
-						<div>&#129728;</div>
-						<br>
-						{heartrate} bpm
+				<div class='wrapper'>
+					<div class='item' >
+						<input type='text' style='font-size: 2.5em; text-align: center' class='awesomplete' name='item' id='item' list='exerciseItem' value='{currentExerciseData["item"]}' placeholder='Enter exercise name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
+							<datalist id='exerciseItem'>{exerciseLists["item"]}</datalist>
 					</div>
-				</div>
-
-				<hr>
-				<br>
-
-				<div class='amount'>
-					<div class='value'>
-						<input type='number' id='amount' step='.01' name='amount' min='0'
-							placeholder='{currentExerciseData["amount"]}' required>
-						<span class='units'>
-							<select name='amountUnit' id='amountUnit' size='1'>
-								<option value='{currentExerciseData["amountUnit"]}'
+					<div class='meta'>
+						<span class='category'>
+							<select name='category' id='category' size='1' required>
+								<option value='{currentExerciseData["category"]}'
 									selected>
-									{currentExerciseData["amountUnit"]}
+									{currentExerciseData["category"]}
 								</option>
-								{exerciseLists["amountUnit"]}
+								{exerciseLists["category"]}
+							</select>
+						</span>
+						<span class='subcategory'>
+							<select name='subcategory' id='subcategory' size='1' required>
+								<option value='{currentExerciseData["subcategory"]}'
+									selected>
+									{currentExerciseData["subcategory"]}
+								</option>
+								{exerciseLists["subcategory"]}
+							</select>
+						</span>
+						<span class='equipment'>
+							<select name='equipment' id='equipment' size='1' required>
+								<option value='{currentExerciseData["equipment"]}'
+									selected>{currentExerciseData["equipment"]}
+								</option>
+								{exerciseLists["equipment"]}
 							</select>
 						</span>
 					</div>
-				</div>
-				<div class='quantity'>
-					<div class='value'>
-						<input type='number' id='quantity' step='.01' name='quantity' min='0'
-							placeholder='{currentExerciseData["quantity"]}' >
-						<span class='units'>
-							<select name='quantityUnit' id='quantityUnit' size='1'>
-								<option value='{currentExerciseData["quantityUnit"]}'
-									selected>{currentExerciseData["quantityUnit"]}
-								</option>
-								{exerciseLists["quantityUnit"]}
-							</select>
-						</span>
+
+					<br>
+
+					<div class='data-box'>
+						<div class='heartRate'>
+							<div>&#129728;</div>
+							<br>
+							{heartrate} bpm
+						</div>
 					</div>
-				</div>
-				<div class='rest'>
-					<div class='value'>
-						<input type='number' name='rest' id='rest' min='0' max='240'
-							placeholder='{currentExerciseData["rest"]}' required>
-						<span>s</span>
+
+					<br>
+					<br>
+					<br>
+
+					<div class='amount'>
+						<div class='value'>
+							<input type='number' id='amount' step='.01' name='amount' min='0'
+								placeholder='{currentExerciseData["amount"]}' required>
+							<span class='units'>
+								<select name='amountUnit' id='amountUnit' size='1'>
+									<option value='{currentExerciseData["amountUnit"]}'
+										selected>
+										{currentExerciseData["amountUnit"]}
+									</option>
+									{exerciseLists["amountUnit"]}
+								</select>
+							</span>
+						</div>
 					</div>
+					<div class='quantity'>
+						<div class='value'>
+							<input type='number' id='quantity' step='.01' name='quantity' min='0'
+								placeholder='{currentExerciseData["quantity"]}' >
+							<span class='units'>
+								<select name='quantityUnit' id='quantityUnit' size='1'>
+									<option value='{currentExerciseData["quantityUnit"]}'
+										selected>{currentExerciseData["quantityUnit"]}
+									</option>
+									{exerciseLists["quantityUnit"]}
+								</select>
+							</span>
+						</div>
+					</div>
+					<div class='rest'>
+						<div class='value'>
+							<input type='number' name='rest' id='rest' min='0' max='240'
+								placeholder='{currentExerciseData["rest"]}' required>
+							<span>s</span>
+						</div>
+					</div>
+					<input type='submit' action='http://localhost/ok' hidden />
 				</div>
-				<input type='submit' action='http://localhost/ok' hidden />
 			</form>
 		</div>
 
