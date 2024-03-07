@@ -192,135 +192,133 @@
 	</head>
 
 	<body>
-		<div class='container'>
-			<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
-				<form method='get' action='http://localhost/ok' name='transactions' autocomplete='off' >
+		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+			<form method='get' action='http://localhost/ok' name='transactions' autocomplete='off' >
 
-					<div class='main' id='meta'>
-						<div class='dateTime'>
-							<span class='frequency' style='float: left; width:46%'>
-								<select style='font-weight: 900; text-align: right; font-size: 1em; text-transform: uppercase; width: 100%' name='frequency' id='frequency' >
-										<option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}' selected >
-											Once
-										</option>
-										<option value='Weekly'>Weekly</option>
-										<option value='Monthly'>Monthly</option>
-								</select>
-							</span><span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-							<span class='dateTime' style='float: left; width:46%' >
-								<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
-							</span>
-						</div>
-						<br>
-						<br>
-						<div class='accounts'>
-							<span class='accountFrom' style='float: left; width:46%' >
-								<input name='accountFrom' id='accountFrom' class='awesomplete' list='accountTo' style='text-align:right; font-weight: 700 !important; font-size: 1em; width: 100%; text-decoration: underline dotted #CECCD2' value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
-									<datalist id='accountTo'>{transactionLists["accountTo"]}</datalist>
-							</span>
-							<span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-							<span class='accountTo' style='float: left; width:46%'>
-								<input name='accountTo' id='accountTo' class='awesomplete' list='accountTo' style='text-align:left; font-weight: 700 !important; font-size: 1em; text-decoration: underline dotted #CECCD2' value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
-									<datalist id='accountTo'>{transactionLists["accountTo"]}</datalist>
-							</span>
-						</div>
-						<br>
-						<br>
-						<div class='details'>
-							<span class='type' style='float: left; width: 46%' >
-								<select name='type' id='type' onblur='showInvestment()' style='text-align: right; font-size: 1em; width: 100%; padding: 0' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
-									<option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}' selected>{todayRecurringTransaction["category"] ?todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}</option>
-									{transactionLists["category"]}
-								</select>
-							</span>
-							<span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-							<span class='group' style='float: left; width: 46%' >
-								<input name='group' id='group' class='awesomplete' list='transactionGroup' style='text-align: left; font-size: 1em; font-weight: 400 !important' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
-									<datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
-							</span>
-						</div>
-						<br>
-						<br>
-						<div id='investmentDetails' style='display: none' >
-							<span class='group' style='float: left; width: 46%' >
-								<input name='investmentRegion' id='investmentRegion' class='awesomplete' list='investmentRegions' style='text-align: right; font-size: 1em; width: 100%; font-weight: 400 !important' placeholder='Enter region' data-maxitems='1' data-autofirst='true' data-tabSelect='true' />
-									<datalist id='investmentRegions'>{investmentLists["location"]}</datalist>
-							</span>
-							<span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-							<span class='type' style='float: left; width: 46%' >
-								<select name='investmentType' class='awesomplete' id='investmentType' style='text-align: left; font-size: 1em; padding: 0' >
-									<option value='Equity' selected>Equity</option>
-									{investmentLists["subcategory"]}
-								</select>
-							</span>
-						</div>
-					</div>
-					<br>
-					<br>
-					<br>
-					<br>
-
-					<div id='details' class='main'>
-						<div class='brand'>
-							<input class='awesomplete' class='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? "pre-filled" : ""}' list='transactionBrand' name='brand' id='brand' placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}' value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
-								<datalist id='transactionBrand'>{transactionLists["brand"]}</datalist>
-						</div>
-						<br>
-						<br>
-						<br>
-						<div class='item'>
-							<input class='awesomplete' class='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? "pre-filled" : ""}' list='transactionItem' name='item' id='item' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}' data-maxitems='5' data-autofirst='true' data-tabSelect='true' required>
-								<datalist id='transactionItem'>{transactionLists["item"]}</datalist>
-						</div>
-						<br>
-						<br>
-						<br>
-						<div class='location'>
-							<input name='address' placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Address"}' value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'type='text' class='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}' autocomplete='address-line1' onblur='setCurrency()' required />
-							<input name='city' placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}' value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}' type='text' class='visuallyhidden' autocomplete='address-level2' />
-							<input name='country' id='country' placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}' value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}' type='text' class='visuallyhidden' autocomplete='country' />
-							<input name='postcode' placeholder='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}' value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}' type='text' class='visuallyhidden' autocomplete='postal-code' />
-						</div>
-						<br>
-						<br>
-						<br>
-						<div id='serialNumber' style='display: none'>
-							<input name='serial' id='serial' style='text-transform: uppercase' placeholder='Enter serial number'>
-							<br>
-							<br>
-						</div>
-					</div>
-					<br>
-
-					<div id='numbers' class='main' >
-						<div class='quantity' style='margin-bottom: 0.8em; text-align: right'>
-							<span class='quantityNumber'>
-								<input type='number' id='quantity' class='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? "pre-filled" : ""}' style='float: none; font-weight: 400 !important; font-size: 1.2em; text-align: right;width: 70%' step='.01' name='quantity' min='0.01' placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}' value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}' required>
-							</span>
-							<span class='quantityUnit'>
-								<select name='quantityUnit' required>
-									<option value='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}' class='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? "pre-filled" : ""}' selected>
-										{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}
+				<div class='main' id='meta'>
+					<div class='dateTime'>
+						<span class='frequency' style='float: left; width:46%'>
+							<select style='font-weight: 900; text-align: right; font-size: 1em; text-transform: uppercase; width: 100%' name='frequency' id='frequency' >
+									<option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}' selected >
+										Once
 									</option>
-									{transactionLists["quantityUnit"]}
-								</select>
-							</span>
-						</div>
-						<div class='costs' style='width: 100%' >
-							<span class='currency' style='float: left; width: 30%' >
-								<input name='currency' id='currency' class='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? "pre-filled" : ""}' style='font-weight: 700; font-size: 0.8em; text-transform: uppercase; text-align: right' value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : flowConfig["currencies"][0]}' >
-							</span>
-							<span class='amount' style='float: left; width: 70%' >
-								<input type='number' id='amount' class='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? "pre-filled" : ""}' style='font-weight: 900; font-size: 2.8em; text-align: right; padding-bottom: 10px' step='.01' name='amount' min='0.01' placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : numberFormat(available, "#.00")}' value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}' required>
-							</span>
-							<div id='availableLabel' style='width: 85%; text-align: right; text-transform: uppercase; font-size: 0.5em; color: #e6e6e6' >
-								Available
-							</div>
-						</div>
-						<input type='submit' action='http://localhost/ok' hidden />
+									<option value='Weekly'>Weekly</option>
+									<option value='Monthly'>Monthly</option>
+							</select>
+						</span><span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='dateTime' style='float: left; width:46%' >
+							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
+						</span>
 					</div>
-				</form>
-			</div>
+					<br>
+					<br>
+					<div class='accounts'>
+						<span class='accountFrom' style='float: left; width:46%' >
+							<input name='accountFrom' id='accountFrom' class='awesomplete' list='accountTo' style='text-align:right; font-weight: 700 !important; font-size: 1em; width: 100%; text-decoration: underline dotted #CECCD2' value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
+								<datalist id='accountTo'>{transactionLists["accountTo"]}</datalist>
+						</span>
+						<span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='accountTo' style='float: left; width:46%'>
+							<input name='accountTo' id='accountTo' class='awesomplete' list='accountTo' style='text-align:left; font-weight: 700 !important; font-size: 1em; text-decoration: underline dotted #CECCD2' value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
+								<datalist id='accountTo'>{transactionLists["accountTo"]}</datalist>
+						</span>
+					</div>
+					<br>
+					<br>
+					<div class='details'>
+						<span class='type' style='float: left; width: 46%' >
+							<select name='type' id='type' onblur='showInvestment()' style='text-align: right; font-size: 1em; width: 100%; padding: 0' class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'  required>
+								<option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}' selected>{todayRecurringTransaction["category"] ?todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}</option>
+								{transactionLists["category"]}
+							</select>
+						</span>
+						<span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='group' style='float: left; width: 46%' >
+							<input name='group' id='group' class='awesomplete' list='transactionGroup' style='text-align: left; font-size: 1em; font-weight: 400 !important' class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}' placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
+								<datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
+						</span>
+					</div>
+					<br>
+					<br>
+					<div id='investmentDetails' style='display: none' >
+						<span class='group' style='float: left; width: 46%' >
+							<input name='investmentRegion' id='investmentRegion' class='awesomplete' list='investmentRegions' style='text-align: right; font-size: 1em; width: 100%; font-weight: 400 !important' placeholder='Enter region' data-maxitems='1' data-autofirst='true' data-tabSelect='true' />
+								<datalist id='investmentRegions'>{investmentLists["location"]}</datalist>
+						</span>
+						<span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='type' style='float: left; width: 46%' >
+							<select name='investmentType' class='awesomplete' id='investmentType' style='text-align: left; font-size: 1em; padding: 0' >
+								<option value='Equity' selected>Equity</option>
+								{investmentLists["subcategory"]}
+							</select>
+						</span>
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<div id='details' class='main'>
+					<div class='brand'>
+						<input class='awesomplete' class='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? "pre-filled" : ""}' list='transactionBrand' name='brand' id='brand' placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}' value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
+							<datalist id='transactionBrand'>{transactionLists["brand"]}</datalist>
+					</div>
+					<br>
+					<br>
+					<br>
+					<div class='item'>
+						<input class='awesomplete' class='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? "pre-filled" : ""}' list='transactionItem' name='item' id='item' value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}' placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}' data-maxitems='5' data-autofirst='true' data-tabSelect='true' required>
+							<datalist id='transactionItem'>{transactionLists["item"]}</datalist>
+					</div>
+					<br>
+					<br>
+					<br>
+					<div class='location'>
+						<input name='address' placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Address"}' value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'type='text' class='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}' autocomplete='address-line1' onblur='setCurrency()' required />
+						<input name='city' placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}' value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}' type='text' class='visuallyhidden' autocomplete='address-level2' />
+						<input name='country' id='country' placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}' value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}' type='text' class='visuallyhidden' autocomplete='country' />
+						<input name='postcode' placeholder='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}' value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}' type='text' class='visuallyhidden' autocomplete='postal-code' />
+					</div>
+					<br>
+					<br>
+					<br>
+					<div id='serialNumber' style='display: none'>
+						<input name='serial' id='serial' style='text-transform: uppercase' placeholder='Enter serial number'>
+						<br>
+						<br>
+					</div>
+				</div>
+				<br>
+
+				<div id='numbers' class='main' >
+					<div class='quantity' style='margin-bottom: 0.8em; text-align: right'>
+						<span class='quantityNumber'>
+							<input type='number' id='quantity' class='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? "pre-filled" : ""}' style='float: none; font-weight: 400 !important; font-size: 1.2em; text-align: right;width: 70%' step='.01' name='quantity' min='0.01' placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}' value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}' required>
+						</span>
+						<span class='quantityUnit'>
+							<select name='quantityUnit' required>
+								<option value='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}' class='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? "pre-filled" : ""}' selected>
+									{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}
+								</option>
+								{transactionLists["quantityUnit"]}
+							</select>
+						</span>
+					</div>
+					<div class='costs' style='width: 100%' >
+						<span class='currency' style='float: left; width: 30%' >
+							<input name='currency' id='currency' class='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? "pre-filled" : ""}' style='font-weight: 700; font-size: 0.8em; text-transform: uppercase; text-align: right' value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : flowConfig["currencies"][0]}' >
+						</span>
+						<span class='amount' style='float: left; width: 70%' >
+							<input type='number' id='amount' class='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? "pre-filled" : ""}' style='font-weight: 900; font-size: 2.8em; text-align: right; padding-bottom: 10px' step='.01' name='amount' min='0.01' placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : numberFormat(available, "#.00")}' value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}' required>
+						</span>
+						<div id='availableLabel' style='width: 85%; text-align: right; text-transform: uppercase; font-size: 0.5em; color: #e6e6e6' >
+							Available
+						</div>
+					</div>
+					<input type='submit' action='http://localhost/ok' hidden />
+				</div>
+			</form>
 		</div>
 
 		<!-- SCRIPTS -->
