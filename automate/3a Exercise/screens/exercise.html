@@ -208,95 +208,93 @@
 	</head>
 
 	<body>
-		<div class='container' style='position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);'>
-			<form method='get' action='http://localhost/ok' name='exercise'>
+		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+			<form method='get' action='http://localhost/ok' name='exercise' autocomplete='off'>
 
-				<div class='wrapper'>
-					<div class='item' >
-						<input type='text' style='font-size: 2.5em; text-align: center' class='awesomplete' name='item' id='item' list='exerciseItem' value='{currentExerciseData["item"]}' placeholder='Enter exercise name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
-							<datalist id='exerciseItem'>{exerciseLists["item"]}</datalist>
-					</div>
-					<div class='meta'>
-						<span class='category'>
-							<select name='category' id='category' size='1' required>
-								<option value='{currentExerciseData["category"]}'
-									selected>
-									{currentExerciseData["category"]}
-								</option>
-								{exerciseLists["category"]}
-							</select>
-						</span>
-						<span class='subcategory'>
-							<select name='subcategory' id='subcategory' size='1' required>
-								<option value='{currentExerciseData["subcategory"]}'
-									selected>
-									{currentExerciseData["subcategory"]}
-								</option>
-								{exerciseLists["subcategory"]}
-							</select>
-						</span>
-						<span class='equipment'>
-							<select name='equipment' id='equipment' size='1' required>
-								<option value='{currentExerciseData["equipment"]}'
-									selected>{currentExerciseData["equipment"]}
-								</option>
-								{exerciseLists["equipment"]}
-							</select>
-						</span>
-					</div>
-
-					<br>
-
-					<div class='data-box'>
-						<div class='heartRate'>
-							<div>&#129728;</div>
-							<br>
-							{heartrate} bpm
-						</div>
-					</div>
-
-					<br>
-					<br>
-					<br>
-
-					<div class='amount'>
-						<div class='value'>
-							<input type='number' id='amount' step='.01' name='amount' min='0'
-								placeholder='{currentExerciseData["amount"]}' required>
-							<span class='units'>
-								<select name='amountUnit' id='amountUnit' size='1'>
-									<option value='{currentExerciseData["amountUnit"]}'
-										selected>
-										{currentExerciseData["amountUnit"]}
-									</option>
-									{exerciseLists["amountUnit"]}
-								</select>
-							</span>
-						</div>
-					</div>
-					<div class='quantity'>
-						<div class='value'>
-							<input type='number' id='quantity' step='.01' name='quantity' min='0'
-								placeholder='{currentExerciseData["quantity"]}' >
-							<span class='units'>
-								<select name='quantityUnit' id='quantityUnit' size='1'>
-									<option value='{currentExerciseData["quantityUnit"]}'
-										selected>{currentExerciseData["quantityUnit"]}
-									</option>
-									{exerciseLists["quantityUnit"]}
-								</select>
-							</span>
-						</div>
-					</div>
-					<div class='rest'>
-						<div class='value'>
-							<input type='number' name='rest' id='rest' min='0' max='240'
-								placeholder='{currentExerciseData["rest"]}' required>
-							<span>s</span>
-						</div>
-					</div>
-					<input type='submit' action='http://localhost/ok' hidden />
+				<div class='item' >
+					<input type='text' style='font-size: 2.5em; text-align: center' class='awesomplete' name='item' id='item' list='exerciseItem' value='{currentExerciseData["item"]}' placeholder='Enter exercise name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
+						<datalist id='exerciseItem'>{exerciseLists["item"]}</datalist>
 				</div>
+				<div class='meta'>
+					<span class='category'>
+						<select name='category' id='category' size='1' required>
+							<option value='{currentExerciseData["category"]}'
+								selected>
+								{currentExerciseData["category"]}
+							</option>
+							{exerciseLists["category"]}
+						</select>
+					</span>
+					<span class='subcategory'>
+						<select name='subcategory' id='subcategory' size='1' required>
+							<option value='{currentExerciseData["subcategory"]}'
+								selected>
+								{currentExerciseData["subcategory"]}
+							</option>
+							{exerciseLists["subcategory"]}
+						</select>
+					</span>
+					<span class='equipment'>
+						<select name='equipment' id='equipment' size='1' required>
+							<option value='{currentExerciseData["equipment"]}'
+								selected>{currentExerciseData["equipment"]}
+							</option>
+							{exerciseLists["equipment"]}
+						</select>
+					</span>
+				</div>
+
+				<br>
+
+				<div class='data-box'>
+					<div class='heartRate'>
+						<div>&#129728;</div>
+						<br>
+						{heartrate} bpm
+					</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+
+				<div class='amount'>
+					<div class='value'>
+						<input type='number' id='amount' step='.01' name='amount' min='0'
+							placeholder='{currentExerciseData["amount"]}' required>
+						<span class='units'>
+							<select name='amountUnit' id='amountUnit' size='1'>
+								<option value='{currentExerciseData["amountUnit"]}'
+									selected>
+									{currentExerciseData["amountUnit"]}
+								</option>
+								{exerciseLists["amountUnit"]}
+							</select>
+						</span>
+					</div>
+				</div>
+				<div class='quantity'>
+					<div class='value'>
+						<input type='number' id='quantity' step='.01' name='quantity' min='0'
+							placeholder='{currentExerciseData["quantity"]}' >
+						<span class='units'>
+							<select name='quantityUnit' id='quantityUnit' size='1'>
+								<option value='{currentExerciseData["quantityUnit"]}'
+									selected>{currentExerciseData["quantityUnit"]}
+								</option>
+								{exerciseLists["quantityUnit"]}
+							</select>
+						</span>
+					</div>
+				</div>
+				<div class='rest'>
+					<div class='value'>
+						<input type='number' name='rest' id='rest' min='0' max='240'
+							placeholder='{currentExerciseData["rest"]}' required>
+						<span>s</span>
+					</div>
+				</div>
+				<input type='submit' action='http://localhost/ok' hidden />
 			</form>
 		</div>
 
