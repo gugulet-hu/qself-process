@@ -76,26 +76,6 @@
 				text-align: center;
 			}
 
-			div.value \{
-
-			}
-
-			div.value input \{
-				text-align: center;
-			}
-
-			div.value span \{
-				float: left;
-				width: 20%;
-				font-weight: 700;
-				font-size: 0.6em;
-				text-align: left;
-			}
-
-			img \{
-				width: 45px;
-			}
-
 			div.data-box>div \{
 				font-weight: 700;
 				font-size: 1.1em;
@@ -252,12 +232,12 @@
 				<br>
 
 				<div class='main' >
-					<div class='amount' style='width: 30vw; display: inline-block;' >
+					<div class='amount' style='width: 30vw; display: inline-block; text-align: left' >
 						<div style='display: inline-block'>
-							<input type='number' id='amount' step='.01' name='amount' min='0' placeholder='{currentExerciseData["amount"] ? currentExerciseData["amount"] : 12}' style='font-size: 1.8em; width: 22vw; text-align: right' required>
+							<input type='number' id='amount' step='.01' name='amount' min='0' placeholder='{currentExerciseData["amount"] ? currentExerciseData["amount"] : 12}' style='font-size: 1.8em; width: 23vw; text-align: right' required>
 						</div>
 						<div class='units' style='display: inline-block'>
-							<select name='amountUnit' id='amountUnit' size='1' style='font-size: 1.2em; width: 6vw; text-align: left'>
+							<select name='amountUnit' id='amountUnit' size='1' style='font-size: 1.2em; width: 5vw; text-align: left'>
 								<option value='{currentExerciseData["amountUnit"] ? currentExerciseData["amountUnit"] : "x"}' selected>
 									{currentExerciseData["amountUnit"] ? currentExerciseData["amountUnit"] : "x"}
 								</option>
@@ -265,12 +245,12 @@
 							</select>
 						</div>
 					</div>
-					<div class='quantity' style='width: 30vw; display: inline-block;'>
+					<div class='quantity' style='width: 30vw; display: inline-block; text-align: left'>
 						<div style='display: inline-block'>
-							<input type='number' id='quantity' step='.01' name='quantity' min='0' placeholder='{currentExerciseData["quantity"] ? currentExerciseData["quantity"] : 10}' style='font-size: 1.8em; width: 22vw; text-align: right' >
+							<input type='number' id='quantity' step='.01' name='quantity' min='0' placeholder='{currentExerciseData["quantity"] ? currentExerciseData["quantity"] : 10}' style='font-size: 1.8em; width: 23vw; text-align: right' >
 						</div>
 						<div class='units' style='display: inline-block' >
-							<select name='quantityUnit' id='quantityUnit' size='1' style='font-size: 1.2em; width: 6vw; text-align: left'>
+							<select name='quantityUnit' id='quantityUnit' size='1' style='font-size: 1.2em; width: 5vw; text-align: left'>
 								<option value='{currentExerciseData["quantityUnit"] ? currentExerciseData["quantityUnit"] : "kg"}' selected>
 									{currentExerciseData["quantityUnit"] ? currentExerciseData["quantityUnit"] : "kg"}
 								</option>
@@ -278,12 +258,12 @@
 							</select>
 						</div>
 					</div>
-					<div class='rest' style='width: 30vw; display: inline-block;>
+					<div class='rest' style='width: 30vw; display: inline-block; text-align: left'>
 						<div style='display: inline-block'>
-							<input type='number' name='rest' id='rest' min='0' max='240' placeholder='{currentExerciseData["rest"] ? currentExerciseData["rest"] : 60}' style='font-size: 1.8em; width: 22vw; text-align: right' required>
+							<input type='number' name='rest' id='rest' min='0' max='240' placeholder='{currentExerciseData["rest"] ? currentExerciseData["rest"] : 60}' style='font-size: 1.8em; width: 23vw; text-align: right' required>
 						</div>
-						<div style='font-size: 1.2em; width: 6vw; text-align: left; display: inline-block' >
-							s
+						<div style='display: inline-block' >
+							<span style='font-size: 1.2em; width: 5vw; text-align: left'>s</span>
 						</div>
 					</div>
 				</div>
