@@ -1,111 +1,241 @@
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width'>
-<link rel='preconnect' href='https://fonts.googleapis.com'>
-<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-<link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
-<style>
-        body \{
-                color: #323036;
-                font-family: 'Overpass',
-                sans-serif
-        }
+<html>
+	<head>
+	<!--
+	Focus screen for qSelf project
+	Creator: Gugulethu Hlekwayo
+	URL: qself.gugulet.hu
+	This screen is for manually entering focus sessions. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses a Google Fonts as an external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML.
+	-->
 
-        form \{ text-align: center
-        }
+		<!-- Google Fonts: import Overpass -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        div.container \{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-                padding: 0 10px
-        }
+		<!-- Styling and stylesheets -->
+		<link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
+		<style>
+			body \{
+				color: #323036;
+				font-family: 'Overpass', sans-serif
+			}
 
-        div#itemCopy \{
-                text-align: center;
-                color: #E6E6E6;
-        }
+			select \{
+				border: none;
+				outline: none;
+				background-color: transparent;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-family: inherit;
+			}
 
-        select, input \{
-                border: none;
-                font-size: 1em;
-                padding: 2em;
-                outline: none;
-                background-color: transparent;
-                -moz-appearance: none;
-                -webkit-appearance: none;
-                text-align: center;
-                text-align-last: center;
-        }
+			select:focus \{
+				border: none;
+				outline: none
+			}
 
-        input:focus \{
-                outline: none;
-        }
+			input \{
+				font-weight: 700;
+				font-size: 1em;
+				background-color: transparent;
+				border: none;
+				text-align: center;
+				float: left;
+				width: 80%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				font-family: inherit;
+			}
 
-        input::-webkit-calendar-picker-indicator \{
-                display: none !important;
-        }
+			input:focus \{
+				outline: none
+			}
 
-        .options \{
-                colour: #323036;
-                font-size: 1em;
-                border: none;
-                text-align: center;
-                width: 100%;
-        }
-</style>
-<script>
-        function copytext() \{document.getElementById('itemCopy').innerHTML = document.getElementById('item').value}
-</script>
-<body>
-        <div class='container'>
-                <form method='get' action='http://localhost/ok' name='focus' >
-                        <div class='wrapper'>
-                                <div id='itemCopy'>
-                                </div>
-                                <div class='time'>
-                                        <h2>Time</h2>
-                                        <select name='time' id='time' size='3' placeholder='Enter session time' required >
-                                                <option value='{focus["time"] ? focus["time"] : "15"}' selected>{focus["time"] ? focus["time"] : "15"}m</option>
-                                                <option value='15'>15m</option>
-                                                <option value='20'>20m</option>
-                                                <option value='25'>25m</option>
-                                                <option value='30'>30m</option>
-                                        </select>
-                                </div>
-                                <div class='rest'>
-                                        <h2>Rest</h2>
-                                        <select name='rest' id='rest' size='3' placeholder='Enter sessionrest' required >
-                                                <option value='{focus["rest"] ? focus["rest"] : "5"}' selected>{focus["rest"] ? focus["rest"] : "5"}m</option>
-                                                <option value='5' selected>5m</option>
-                                                <option value='10'>10m</option>
-                                                <option value='15'>15m</option>
-                                        </select>
-                                </div>
-                                <div class='subcategory'>
-                                        <select name='subcategory' id='subcategory' placeholder='Enter subcategory' required >
-                                                <option value='{focus["subcategory"] ? focus["subcategory"] : "Technical"}' selected>{focus["subcategory"] ? focus["subcategory"] : "🖱️ Technical"}</option>
-                                                <option value='Art'>🎨 Art</option>
-                                                <option value='Design'>🍥 Design</option>
-                                                <option value='Games'>🎮 Games</option>
-                                                <option value='Learning'>🎓 Learning</option>
-                                                <option value='Media'>📷 Media</option>
-                                                <option value='Meditation'>🧘🏽 Meditation</option>
-                                                <option value='Piano'>🎹 Piano</option>
-                                                <option value='Reading'>📖 Reading</option>
-                                                <option value='Technical'>🖱️ Technical</option>
-                                                <option value='Writing'>🖋️ Writing</option>
-                                        </select>
-                                </div>
-                                <div class='item'>
-                                        <input type='text' name='item' id='item' list='itemsList' placeholder='Enter activity description...' onkeyup='copytext()' value='{focus["item"] ? focus["item"] : ""}' required>
-                                        <datalist id='itemsList'>
-                                                {focusLists["item"]}
-                                        </datalist>
-                                </div>
-                        </div>
-                        <input type='submit' action='http://localhost/ok' hidden />
-                </form>
-        </div>
-</body>
+			input::-webkit-calendar-picker-indicator \{
+				display: none !important;
+			}
+
+			input[type="range"]::-webkit-slider-runnable-track \{
+				background: #828089;
+				height: 14px;
+				border-radius: 2px;
+			}
+
+			input[type="range"]::-moz-range-track \{
+				background: #828089;
+				height: 14px;
+				border-radius: 2px;
+			}
+
+			input[type="range"]::-webkit-slider-thumb \{
+				-webkit-appearance: none; /* Override default look */
+				appearance: none;
+				margin-top: -1px; /* Centers thumb on the track */
+				background-color: #323036;
+				height: 16px;
+				width: 1rem;
+				border-radius: 2px;
+			}
+
+			div.main \{
+				width: 100vw;
+			}
+
+			.awesomplete [hidden] \{
+				display: none;
+			}
+
+			.awesomplete .visually-hidden \{
+				position: absolute;
+				clip: rect(0, 0, 0, 0);
+			}
+
+			.awesomplete \{
+				display: inline-block;
+				position: relative;
+			}
+
+			.awesomplete > input \{
+				display: block;
+			}
+
+			.awesomplete > ul \{
+				position: absolute;
+				left: 0;
+				z-index: 1;
+				min-width: 80%;
+				box-sizing: border-box;
+				list-style: none;
+				padding: 0.3em;
+				background: white;
+			}
+
+			.awesomplete > ul:empty \{
+				display: none;
+			}
+
+			.awesomplete > ul \{
+				border-radius: none;
+				background: #E6E6E6;
+				border: none;
+				box-shadow: none;
+				margin-top: 1.6em;
+				text-shadow: none;
+			}
+
+			.awesomplete > ul:before \{
+				display: none !important;
+			}
+
+			.awesomplete > ul > li \{
+				position: relative;
+				cursor: pointer;
+				text-align: left;
+				margin: 0.7em 0 0.7em 0;
+				padding: 0;
+			}
+
+			.awesomplete > ul > li:hover \{
+				background: hsl(200, 40%, 80%);
+				color: black;
+			}
+
+			.awesomplete > ul > li[aria-selected='true'] \{
+				background: #CECCD2;
+				color: #323036;
+			}
+
+			.awesomplete mark \{
+				text-decoration: underline;
+				background: none !important;
+			}
+
+			.awesomplete li:hover mark \{
+				text-decoration: underline;
+				background: none !important;
+			}
+
+			.awesomplete li[aria-selected='true'] mark \{
+				text-decoration: underline;
+				background: none !important;
+				color: inherit;
+			}
+
+			div.awesomplete \{
+				display: block
+			}
+
+			div.awesomplete ul li p \{
+				display: block;
+				font-size: 0.8em;
+				margin-left: 0.5em
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+			<form method='get' action='http://localhost/ok' name='focus' style='text-align: center' >
+				<div class='main'>
+					<div class='dateTime'>
+						<span class='type' style='float: left; width:46vw'>
+							<select style='font-weight: 900; text-align: right; font-size: 1em; width: 100%' name='subcategory' id='subcategory' required>
+									<option value='\focus["subcategory"] ? focus["subcategory"] : "Technical"}' selected>{focus["subcategory"] ? focus["subcategory"] : "\ud83d\uddb1️ Technical"}</option>
+									<option value='Art'>🎨 Art</option>
+									<option value='Design'>🍥 Design</option>
+									<option value='Games'>🎮 Games</option>
+									<option value='Learning'>🎓 Learning</option>
+									<option value='Media'>📷 Media</option>
+									<option value='Meditation'>🧘🏽 Meditation</option>
+									<option value='Piano'>🎹 Piano</option>
+									<option value='Reading'>📖 Reading</option>
+									<option value='Technical'>🖱️ Technical</option>
+									<option value='Writing'>🖋️ Writing</option>
+							</select>
+						</span><span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='dateTime' style='float: left; width:46vw' >
+							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='datetime-local' id='dateTime' name='dateTime' value='{dateFormat(Now, "yyyy-MM-dd'T'HH:mm")}' required>
+						</span>
+					</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<div class='main'>
+					<div style='margin: 0 5vw'>
+						<h3 style='margin: 0; padding: 0; font-weight: normal; font-size: 0.8em; text-transform: uppercase; color: #CECCD2; text-align: left'>Time</h3>
+						<input type='range' id='time' name='time' min='10' max='60' step='5' value='15' style='border-radius: 5px; width: 70vw' onchange='this.nextElementSibling.value = this.value + "m"' required/>
+						<output style='width: 15vw; padding-bottom: 70px; font-size: 1.2em; display: inline-block; font-weight: 600; vertical-align: middle'>15m<output>
+					</div>
+					<div style='margin: 0 5vw'>
+						<h3 style='margin: 0; padding: 0; font-weight: normal; font-size: 0.8em; text-transform: uppercase; color: #CECCD2; text-align: left'>Rest</h3>
+						<input type='range' id='rest' name='rest' min='5' max='20' step='1' value='5' style='border-radius: 5px; width: 70vw' onchange='this.nextElementSibling.value = this.value + "m"' required/>
+						<output style='width: 15vw; padding-bottom: 70px; font-size: 1.2em; display: inline-block; font-weight: 600; vertical-align: middle'>5m<output>
+					</div>
+				</div>
+
+				<br>
+				<br>
+
+				<div class='main'>
+					<div class='item' style='width: 80vw; margin: auto' >
+						<input class='awesomplete' list='activitiesList' name='item' id='item' placeholder='Enter activity name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' style='width: 80vw; border-bottom: 1px #828089 solid; font-size: 1.2em' required>
+							<datalist id='activitiesList'></datalist>
+					</div>
+				</div>
+				<input type='submit' action='http://localhost/ok' hidden />
+			</form>
+		</div>
+
+		<!-- SCRIPTS -->
+		<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
+		<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
+	</body>
+</html>
