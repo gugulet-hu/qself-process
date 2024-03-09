@@ -206,8 +206,10 @@
 							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='datetime-local' id='dateTime' name='dateTime' value='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? xmlEncode(transaction["dateTime"]) : xmlEncode(dateFormat(Now,"yyyy-MM-dd'T'HH:mm"))}' class='{todayRecurringTransaction["dateTime"] ? xmlEncode(todayRecurringTransaction["dateTime"]) : transaction["dateTime"] ? "pre-filled" : ""}' required>
 						</span>
 					</div>
+
 					<br>
 					<br>
+
 					<div class='accounts'>
 						<span class='accountFrom' style='float: left; width:46%' >
 							<input name='accountFrom' id='accountFrom' class='awesomplete' list='accountTo' style='text-align:right; font-weight: 700 !important; font-size: 1em; width: 100%; text-decoration: underline dotted #CECCD2' value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required />
