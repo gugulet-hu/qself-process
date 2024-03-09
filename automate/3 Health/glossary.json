@@ -1,611 +1,571 @@
 {
-  "anionGap": [
-    {
-      "term": "Anion Gap",
-      "shortTerm": "anionGap",
-      "definition": "The anion gap test tells you how much acid is in your blood. Too much acid in your blood can be a sign of short-term problems like dehydration and diarrhea, or long-term conditions like diabetes. It's not common, but too little acid may point to a serious problem like heart disease.\n",
-      "unit": "mEq/L",
-      "low": 3,
-      "high": 15
-    }
-  ],
-  "awake": [
-    {
-      "term": "Awake",
-      "shortTerm": "awake",
-      "definition": "The first stage is the wake stage or stage W, which further depends on whether the eyes are open or closed. During eye-open wakefulness, beta waves predominate. As individuals become drowsy and close their eyes, alpha waves become the predominant pattern.",
-      "unit": "min",
-      "low": 0,
-      "high": 30
-    }
-  ],
-  "avgSpo2": [
-    {
-      "term": "SpO2",
-      "shortTerm": "spo2",
-      "definition": "Oxygen saturation (SpO2) is a measurement of how much oxygen your blood is carrying as a percentage of the maximum it could carry.",
-      "unit": "percentage",
-      "low": 94,
-      "high": 99
-    }
-  ],
-  "axisLeft": [
-    {
-      "term": "Axis",
-      "shortTerm": "axisLeft",
-      "definition": "Measures the orientation of the astigmatism: a condition in which the eye is not completely round.",
-      "unit": "degrees",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "axisRight": [
-    {
-      "term": "Axis",
-      "shortTerm": "axisRight",
-      "definition": "Measures the orientation of the astigmatism: a condition in which the eye is not completely round.",
-      "unit": "degrees",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "b12": [
-    {
-      "term": "Vitamin B12",
-      "shortTerm": "b12",
-      "definition": "Vitamin B-12 is an important vitamin for many bodily functions. It is often used as a test for Pernicious Anemia. Pernicious anemia is a reduction in red blood cells. It occurs when your intestines can’t absorb vitamin B-12, which is necessary for red blood cell production.",
-      "low": 221,
-      "high": 1000
-    }
-  ],
-  "basophils": [
-    {
-      "term": "Basophils",
-      "shortTerm": "basophils",
-      "definition": "Basophils are a type of white blood cell. They play a role in both parasitic infections and allergies. f your basophil level is low, it may be due to a severe allergic reaction. If you develop an infection, it may take longer to heal. In some cases, having too many basophils can result from certain blood cancers.",
-      "unit": "pmol/L",
-      "low": 0,
-      "high": 0.1
-    }
-  ],
-  "bicarbonate": [
-    {
-      "term": "Bicarbonate",
-      "shortTerm": "bicarbonate",
-      "definition": "Bicarbonate belongs to a group of electrolytes, which help keep your body hydrated and make sure your blood has the right amount of acidity. Too much or too little bicarbonate can be a sign of a number of conditions, including diarrhea, liver failure, kidney disease, and anorexia. A bicarbonate test measures how much carbon dioxide is in your blood.",
-      "unit": "mEq/L",
-      "low": 21,
-      "high": 31
-    }
-  ],
-  "bodyFat": [
-    {
-      "term": "Body Fat",
-      "shortTerm": "bodyFat",
-      "definition": "The percentage of a person's body that is not composed of water, muscle, bone, and vital organs. Body fat imeasures essential body fat and storage body fat. High body fat increases the risk of heart disease and diabetes.",
-      "unit": "percentage",
-      "low": 6,
-      "high": 17
-    }
-  ],
-  "bodyWater": [
-    {
-      "term": "Body Water",
-      "shortTerm": "bodyWater",
-      "definition": "Body water is the water content of a body that is contained in the tissues, the blood, the bones, and elsewhere.",
-      "unit": "percentage",
-      "low": 0,
-      "high": 100
-    }
-  ],
-  "chestCircumference": [
-    {
-      "term": "Chest Circumference",
-      "shortTerm": "chestCircumference",
-      "definition": "Circumference is the maximum circumference of the chest at the fullest part of the breast region.",
-      "unit": "cm",
-      "low": 80,
-      "high": 100
-    }
-  ],
-  "chloride": [
-    {
-      "term": "Chloride",
-      "shortTerm": "chloride",
-      "definition": "Chloride helps balance acids and bases in your body. It also helps move fluid in and out of your cells. So if your chloride levels drop, you can become sick and dehydrated. If your levels are too high, it often means your kidneys aren’t working properly.",
-      "unit": "mEq/L",
-      "low": 101,
-      "high": 109
-    }
-  ],
-  "ckdEpiEgfr": [
-    {
-      "term": "CKD-EPI eGFR",
-      "shortTerm": "ckdEpiEgfr",
-      "definition": "The estimated glomerular filtration rate (eGFR) is a test that measures your level of kidney function and determines your stage of kidney disease.",
-      "unit": "",
-      "low": 90,
-      "high": 1000
-    }
-  ],
-  "creatinine": [
-    {
-      "term": "Creatinine",
-      "shortTerm": "creatinine",
-      "definition": "Creatinine is a waste product from the normal breakdown of muscle tissue. As creatinine is produced, it's filtered through the kidneys and excreted in urine. Doctors measure the blood creatinine level as a test of kidney function.",
-      "unit": "umol/L",
-      "low": 59,
-      "high": 104
-    }
-  ],
-  "cylinderLeft": [
-    {
-      "term": "Cylinder",
-      "shortTerm": "cylinderLeft",
-      "definition": "Amount of correction to remove visual distortion, caused by an irregularly shaped cornea known as an astigmatism.",
-      "unit": "",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "cylinderRight": [
-    {
-      "term": "Cylinder",
-      "shortTerm": "cylinderRight",
-      "definition": "Amount of correction to remove visual distortion, caused by an irregularly shaped cornea known as an astigmatism.",
-      "unit": "",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "deepSleep": [
-    {
-      "term": "Deep Sleep",
-      "shortTerm": "deepSleep",
-      "definition": "This stage represents deeper sleep as your heart rate and body temperate drop. It is characterized by the presence of sleep spindles, K-complexes, or both. Sleep spindles are brief, powerful bursts of neuronal firing in the superior temporal gyri, anterior cingulate, insular cortices, and thalamus, inducing calcium influx into cortical pyramidal cells. ",
-      "unit": "min",
-      "low": 100,
-      "high": 400
-    }
-  ],
-  "diastolic": [
-    {
-      "term": "Blood Pressure (Diastolic)",
-      "shortTerm": "diastolic",
-      "definition": "Blood pressure is the measure of the force of blood pushing against blood vessel walls. The diastolic reading, or the bottom number, is the pressure in the arteries when the heart rests between beats.",
-      "unit": "mmHg",
-      "low": 60,
-      "high": 80
-    }
-  ],
-  "eosinophils": [
-    {
-      "term": "Eosinophils",
-      "shortTerm": "eosinophils",
-      "definition": "Eosinophils do two important things in your immune system: curb infections and boost inflammation. A high count may be indicate an allerguc reaction, an autoimmune disease, asthma, eczema and other causes. Alow count may indictae that your body is producing too much of certain steroids.",
-      "unit": "10^9/L",
-      "low": 0,
-      "high": 0.4
-    }
-  ],
-  "esr": [
-    {
-      "term": "Erythrocyte Sedimentation Rate",
-      "shortTerm": "esr",
-      "definition": "An ESR test measures the rate at which your red blood cells (RBCs) fall to the bottom of a test tube to test for inflammation.",
-      "unit": "",
-      "low": 0,
-      "high": 22
-    }
-  ],
-  "ferritin": [
-    {
-      "term": "Ferritin",
-      "shortTerm": "ferritin",
-      "definition": "This blood test checks for a protein called ferritin, which stores iron. It can be used to diagnose iron deficiency aenemia.",
-      "unit": "ng/mL",
-      "low": 15,
-      "high": 300
-    }
-  ],
-  "freeT4": [
-    {
-      "term": "Free Thyroxine",
-      "shortTerm": "freeT4",
-      "definition": "This test measures the level of free T 4, or free thyroxine, in your blood. A free T 4 test is used to find out how well your thyroid gland is working.",
-      "unit": "pmol/L",
-      "low": 12,
-      "high": 30
-    }
-  ],
-  "haemoglobin": [
-    {
-      "term": "Haemoglobin Count",
-      "shortTerm": "haemoglobin",
-      "definition": "The hemoglobin test measures the amount of hemoglobin in blood and is a measure of the blood's ability to carry oxygen through the body. Haemoglobin is the protein in your blood that holds oxygen.",
-      "unit": "g/dL",
-      "low": 12.5,
-      "high": 17.3
-    }
-  ],
-  "haemotocrit": [
-    {
-      "term": "Haemotocrit",
-      "shortTerm": "haemotocrit",
-      "definition": "Haemotocrit measures the amount of space (volume) red blood cells take up in the blood.",
-      "unit": "l/L",
-      "low": 0.4,
-      "high": 0.5
-    }
-  ],
-  "hdlCholesterol": [
-    {
-      "term": "HDL Cholesterol",
-      "shortTerm": "hdlCholesterol",
-      "definition": "High Density Lipoprotein cholesterol protects against heart disease by taking the \"bad\" cholesterol out of your blood and keeping it from building up in your arteries.",
-      "unit": "mmol/L",
-      "low": 0,
-      "high": 1
-    }
-  ],
-  "height": [
-    {
-      "term": "Height",
-      "shortTerm": "height",
-      "definition": "A reading of how tall you are. Medically relevant when compared to weight for proper proportions.",
-      "unit": "cm",
-      "low": 0,
-      "high": 200
-    }
-  ],
-  "hipCircumference": [
-    {
-      "term": "Hip Circumference",
-      "shortTerm": "hipCircumference",
-      "definition": "The distance around the human body at the level of maximum posterior extension of the buttocks.",
-      "unit": "cm",
-      "low": 70,
-      "high": 100
-    }
-  ],
-  "ldlCholesterol": [
-    {
-      "term": "LDL Cholestorol",
-      "shortTerm": "ldlCholesterol",
-      "definition": "Low Density Lipoprotein cholesterol can build up on the walls of your arteries and increase your chances of getting heart disease.",
-      "unit": "mmol/L",
-      "low": 0,
-      "high": 3
-    }
-  ],
-  "lightSleep": [
-    {
-      "term": "Light Sleep",
-      "shortTerm": "lightSleep",
-      "definition": "This is the lightest stage of sleep and begins when more than 50% of the alpha waves are replaced with low-amplitude mixed-frequency (LAMF) activity. Muscle tone is present in the skeletal muscle, and breathing tends to occur at a regular rate. ",
-      "unit": "min",
-      "low": 0,
-      "high": 200
-    }
-  ],
-  "lymphocytes": [
-    {
-      "term": "Lymphoctyes",
-      "shortTerm": "lymphocytes",
-      "definition": "A small white blood cell that plays a large role in defending the body against disease.",
-      "unit": "10^9/L",
-      "low": 1,
-      "high": 4
-    }
-  ],
-  "meanCellHaemoglobin": [
-    {
-      "term": "Mean Cell Haemoglobin",
-      "shortTerm": "meanCellHaemoglobin",
-      "definition": "The mean corpuscular hemoglobin, or \"mean cell hemoglobin\" (MCH), is the average mass of hemoglobin per red blood cell in a sample of blood.",
-      "unit": "pg",
-      "low": 28,
-      "high": 35
-    }
-  ],
-  "meanCellVolume": [
-    {
-      "term": "Mean Cell Volume",
-      "shortTerm": "meanCellVolume",
-      "definition": "The mean corpuscular volume, or \"mean cell volume\" (MCV), is a measure of the average red blood cell size",
-      "unit": "fl",
-      "low": 81,
-      "high": 95
-    }
-  ],
-  "meanCorpuscularHaemoglobin": [
-    {
-      "term": "Mean Corpuscular Haemoglobin",
-      "shortTerm": "meanCorpuscularHaemoglobin",
-      "definition": "The mean corpuscular hemoglobin concentration, or MCHC, is a measure of the concentration of hemoglobin in a given volume of packed red blood cells.",
-      "unit": "g/dL",
-      "low": 32,
-      "high": 36
-    }
-  ],
-  "monocytes": [
-    {
-      "term": "Monocytes",
-      "shortTerm": "monocytes",
-      "definition": "A white blood cell that has a single nucleus and can ingest foreign materials.",
-      "unit": "10^9/L",
-      "low": 0,
-      "high": 0.8
-    }
-  ],
-  "neutrophils": [
-    {
-      "term": "Neutrophils",
-      "shortTerm": "neutrophils",
-      "definition": "Neutrophils are one of the first-responders of inflammatory cells to migrate towards the site of inflammation.",
-      "unit": "10^9/L",
-      "low": 2,
-      "high": 7.5
-    }
-  ],
-  "pGlucoseFasting": [
-    {
-      "term": "P-Glucose Fasting",
-      "shortTerm": "pGlucoseFasting",
-      "definition": "Postprandial blood sugar measures blood glucose exactly two hours after you start eating a meal.",
-      "unit": "mmol/L",
-      "low": 3.5,
-      "high": 5.5
-    }
-  ],
-  "plateletCount": [
-    {
-      "term": "Platelet Count",
-      "shortTerm": "plateletCount",
-      "definition": "Platelets are building blocks of blood clots.",
-      "unit": "10^9/L",
-      "low": 140,
-      "high": 420
-    }
-  ],
-  "potassium": [
-    {
-      "term": "Potassium",
-      "shortTerm": "potassium",
-      "definition": "This test checks your blood for abnormal levels of the important mineral potassium. ",
-      "unit": "mmol/L",
-      "low": 3.5,
-      "high": 5.1
-    }
-  ],
-  "ratio": [
-    {
-      "term": "Cholesterol Ratio",
-      "shortTerm": "ratio",
-      "definition": "The total cholesterol to HDL cholesterol ratio is a number that is helpful in predicting an individual's risk of developing atherosclerosis. Atherosclerosis is a disease of the arteries caused by deposits of cholesterol in the arterial walls. These so-called \"plaques\" can build up and cause narrowing of the arteries, which decreases the supply of oxygen-rich blood to the hear. The plaques could also can become fragile and break off, leading to the formation of blood clots that cause heart attacks and strokes.",
-      "unit": "",
-      "low": 0,
-      "high": 4
-    }
-  ],
-  "redBloodWidth": [
-    {
-      "term": "Red Blood Width",
-      "shortTerm": "redBloodWidth",
-      "definition": "The red blood cell distribution width (RDW) is a measure of the variation of red blood cell width.",
-      "unit": "percentage",
-      "low": 10,
-      "high": 15
-    }
-  ],
-  "redCellCount": [
-    {
-      "term": "Red Cell Count",
-      "shortTerm": "redCellCount",
-      "definition": "Red blood cells carry oxygen from the lungs to the rest of the body. They also carry carbon dioxide back to the lungs so it can be exhaled.",
-      "unit": "10^12/L",
-      "low": 4.5,
-      "high": 5.9
-    }
-  ],
-  "remSleep": [
-    {
-      "term": "REM Sleep",
-      "shortTerm": "remSleep",
-      "definition": "Rapid eye movement sleep (REM sleep or REMS) is a unique phase of sleep in mammals and birds, characterized by random rapid movement of the eyes, accompanied by low muscle tone throughout the body, and the propensity of the sleeper to dream vividly.",
-      "unit": "min",
-      "low": 15,
-      "high": 100
-    }
-  ],
-  "restingHeartRate": [
-    {
-      "term": "Resting Heart Rate",
-      "shortTerm": "restingHeartRate",
-      "definition": "Your heart rate is the number of times each minute that your heart beats, which is normally between 60 and 100 times per minute for adults.",
-      "unit": "bpm",
-      "low": 40,
-      "high": 80
-    }
-  ],
-  "skeletalMuscleMass": [
-    {
-      "term": "Skeletal Muscle Mass",
-      "shortTerm": "skeletalMuscleMass",
-      "definition": "Skeletal muscles comprise 30 to 40% of your total body mass. They're the muscles that connect to your bones and allow you to perform a wide range of movements and functions. Skeletal muscles are voluntary, meaning you control how and when they work.",
-      "unit": "percentage",
-      "low": 0,
-      "high": 100
-    }
-  ],
-  "sodium": [
-    {
-      "term": "Sodium",
-      "shortTerm": "sodium",
-      "definition": "A sodium blood test is a routine test that allows your doctor to see how much sodium is in your blood. Sodium is particularly important for nerve and muscle function. Your body keeps sodium in balance through a variety of mechanisms. Sodium gets into your blood through food and drink. It leaves the blood through urine, stool, and sweat.",
-      "unit": "mEq/L",
-      "low": 136,
-      "high": 146
-    }
-  ],
-  "spermCount": [
-    {
-      "term": "Sperm Count",
-      "shortTerm": "spermCount",
-      "definition": "Counts the number of sperm to determine fertility.",
-      "unit": "million/ml",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "spermMotility": [
-    {
-      "term": "Sperm Motility",
-      "shortTerm": "spermMotility",
-      "definition": "Healthy sperm motility is defined as sperm with forward progressions of at least 25 micrometers per second. If a man has poor sperm mobility, it’s called asthenospermia or asthenozoospermia. ",
-      "unit": "percentage",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "sphereLeft": [
-    {
-      "term": "Sphere",
-      "shortTerm": "sphereLeft",
-      "definition": "The amount of power required to correct your vision.",
-      "unit": "diopters",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "sphereRight": [
-    {
-      "term": "Sphere",
-      "shortTerm": "sphereRight",
-      "definition": "The amount of power required to correct your vision.",
-      "unit": "diopters",
-      "low": 0,
-      "high": 0
-    }
-  ],
-  "systolic": [
-    {
-      "term": "Blood Pressure (Systolic)",
-      "shortTerm": "systolic",
-      "definition": "Blood pressure is the measure of the force of blood pushing against blood vessel walls. When your heart beats, it squeezes and pushes blood through your arteries to the rest of your body. This force creates pressure on those blood vessels, and that's your systolic blood pressure.",
-      "unit": "mmHg",
-      "low": 90,
-      "high": 120
-    }
-  ],
-  "totalCholesterol": [
-    {
-      "term": "Total Cholestorol",
-      "shortTerm": "totalCholesterol",
-      "definition": "A measure of total cholestorol.",
-      "unit": "mmol/L",
-      "low": 0,
-      "high": 5
-    }
-  ],
-  "thighCircumference": [
-    {
-      "term": "Thigh Circumference",
-      "shortTerm": "thighCircumference",
-      "definition": "The measurement around the thigh of the left leg midway between the crotch and the knee when the subject is in a standing position. Thigh circumference is an important indicator of muscle atrophy due to disease or injury. In addition, it may be a useful indicator of adiposity.",
-      "unit": "cm",
-      "low": 45,
-      "high": 65
-    }
-  ],
-  "thyroidPeroxidase": [
-    {
-      "term": "Thyroid Peroxidase",
-      "shortTerm": "thyroidPeroxidase",
-      "definition": "The thyroid peroxidase antibodies test is primarily used to help diagnose and monitor autoimmune conditions involving the thyroid gland, such as Hashimoto's thyroiditis and Graves disease.",
-      "unit": "Iu/mL",
-      "low": 0,
-      "high": 34
-    }
-  ],
-  "triglyceride": [
-    {
-      "term": "Triglyceride",
-      "shortTerm": "triglyceride",
-      "definition": "Triglycerides are lipids. They are a main component of fat and are used to store energy. They circulate in the blood so that your body can easily access them. Your blood triglyceride levels rise after you eat food. They decrease when you’ve gone a while without food.",
-      "unit": "mmol/L",
-      "low": 0,
-      "high": 1.7
-    }
-  ],
-  "tsh": [
-    {
-      "term": "Thyroid-stimulating Hormone",
-      "shortTerm": "tsh",
-      "definition": "TSH stands for thyroid stimulating hormone. A TSH test is a blood test that measures this hormone. The thyroid is a small, butterfly-shaped gland located near your throat. Your thyroid makes hormones that regulate the way your body uses energy. It also plays an important role in regulating your weight, body temperature, muscle strength, and even your mood.",
-      "unit": "mIU/L",
-      "low": 0.5,
-      "high": 5.0
-    }
-  ],
-  "urea": [
-    {
-      "term": "Urea",
-      "shortTerm": "urea",
-      "definition": "A urea test is used to determine protein levels in the body. The test can determine how much protein you’re eating, and if it’s an adequate amount. In addition, your urea nitrogen levels may rise if you’re going through heart failure or dehydration.",
-      "unit": "mmol/L",
-      "low": 2.1,
-      "high": 7.1
-    }
-  ],
-  "visceralFat": [
-    {
-      "term": "Visceral Fat",
-      "shortTerm": "visceralFat",
-      "definition": "Visceral body fat, also known as 'hidden' fat, is fat stored deep inside the belly, wrapped around the organs, including the liver and intestines.",
-      "unit": "",
-      "low": 1,
-      "high": 12
-    }
-  ],
-  "vo2Max": [
-    {
-      "term": "VO2 Max",
-      "shortTerm": "vo2Max",
-      "definition": "VO2 max is the maximum capacity of an individual's body to transport and use oxygen during incremental exercise, which reflects the physical fitness of the individual.",
-      "unit": "l/kg/min",
-      "low": 40,
-      "high": 60
-    }
-  ],
-  "waistCircumference": [
-    {
-      "term": "Waist Circumference",
-      "shortTerm": "waistCircumference",
-      "definition": "Waist circumference is the measurement taken around the abdomen at the level of the umbilicus (belly button). Health experts commonly use waist measurement to screen patients for possible weight-related health problems.",
-      "unit": "cm",
-      "low": 70,
-      "high": 90
-    }
-  ],
-  "weight": [
-    {
-      "term": "Weight",
-      "shortTerm": "weight",
-      "definition": "Measure of a healthy body weight, with shoes in most cases.",
-      "unit": "kg",
-      "low": 63,
-      "high": 73
-    }
-  ],
-  "whiteCellCount": [
-    {
-      "term": "White Cell Count",
-      "shortTerm": "whiteCellCount",
-      "definition": "White blood cells are cells of the immune system that defend the body against both infectious disease and foreign materials.",
-      "unit": "10^9/L",
-      "low": 4,
-      "high": 11
-    }
-  ]
+	"anionGap": [
+		{
+			"term": "Anion Gap",
+			"shortTerm": "anionGap",
+			"definition": "The anion gap test tells you how much acid is in your blood. Too much acid in your blood can be a sign of short-term problems like dehydration and diarrhea, or long-term conditions like diabetes. It's not common, but too little acid may point to a serious problem like heart disease.\n",
+			"unit": "mEq/L",
+			"low": 3,
+			"high": 15
+		}
+	],
+	"avgSpo2": [
+		{
+			"term": "SpO2",
+			"shortTerm": "spo2",
+			"definition": "Oxygen saturation (SpO2) is a measurement of how much oxygen your blood is carrying as a % of the maximum it could carry.",
+			"unit": "%",
+			"low": 94,
+			"high": 99
+		}
+	],
+	"axisLeft": [
+		{
+			"term": "Axis",
+			"shortTerm": "axisLeft",
+			"definition": "Measures the orientation of the astigmatism: a condition in which the eye is not completely round.",
+			"unit": "degrees",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"axisRight": [
+		{
+			"term": "Axis",
+			"shortTerm": "axisRight",
+			"definition": "Measures the orientation of the astigmatism: a condition in which the eye is not completely round.",
+			"unit": "degrees",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"b12": [
+		{
+			"term": "Vitamin B12",
+			"shortTerm": "b12",
+			"definition": "Vitamin B-12 is an important vitamin for many bodily functions. It is often used as a test for Pernicious Anemia. Pernicious anemia is a reduction in red blood cells. It occurs when your intestines can’t absorb vitamin B-12, which is necessary for red blood cell production.",
+			"low": 221,
+			"high": 1000
+		}
+	],
+	"basophils": [
+		{
+			"term": "Basophils",
+			"shortTerm": "basophils",
+			"definition": "Basophils are a type of white blood cell. They play a role in both parasitic infections and allergies. f your basophil level is low, it may be due to a severe allergic reaction. If you develop an infection, it may take longer to heal. In some cases, having too many basophils can result from certain blood cancers.",
+			"unit": "pmol/L",
+			"low": 0,
+			"high": 0.1
+		}
+	],
+	"bicarbonate": [
+		{
+			"term": "Bicarbonate",
+			"shortTerm": "bicarbonate",
+			"definition": "Bicarbonate belongs to a group of electrolytes, which help keep your body hydrated and make sure your blood has the right amount of acidity. Too much or too little bicarbonate can be a sign of a number of conditions, including diarrhea, liver failure, kidney disease, and anorexia. A bicarbonate test measures how much carbon dioxide is in your blood.",
+			"unit": "mEq/L",
+			"low": 21,
+			"high": 31
+		}
+	],
+	"bodyFat": [
+		{
+			"term": "Body Fat",
+			"shortTerm": "bodyFat",
+			"definition": "The % of a person's body that is not composed of water, muscle, bone, and vital organs. Body fat imeasures essential body fat and storage body fat. High body fat increases the risk of heart disease and diabetes.",
+			"unit": "%",
+			"low": 6,
+			"high": 17
+		}
+	],
+	"bodyWater": [
+		{
+			"term": "Body Water",
+			"shortTerm": "bodyWater",
+			"definition": "Body water is the water content of a body that is contained in the tissues, the blood, the bones, and elsewhere.",
+			"unit": "%",
+			"low": 0,
+			"high": 100
+		}
+	],
+	"chestCircumference": [
+		{
+			"term": "Chest Circumference",
+			"shortTerm": "chestCircumference",
+			"definition": "Circumference is the maximum circumference of the chest at the fullest part of the breast region.",
+			"unit": "cm",
+			"low": 80,
+			"high": 100
+		}
+	],
+	"chloride": [
+		{
+			"term": "Chloride",
+			"shortTerm": "chloride",
+			"definition": "Chloride helps balance acids and bases in your body. It also helps move fluid in and out of your cells. So if your chloride levels drop, you can become sick and dehydrated. If your levels are too high, it often means your kidneys aren’t working properly.",
+			"unit": "mEq/L",
+			"low": 101,
+			"high": 109
+		}
+	],
+	"ckdEpiEgfr": [
+		{
+			"term": "CKD-EPI eGFR",
+			"shortTerm": "ckdEpiEgfr",
+			"definition": "The estimated glomerular filtration rate (eGFR) is a test that measures your level of kidney function and determines your stage of kidney disease.",
+			"unit": "",
+			"low": 90,
+			"high": 1000
+		}
+	],
+	"creatinine": [
+		{
+			"term": "Creatinine",
+			"shortTerm": "creatinine",
+			"definition": "Creatinine is a waste product from the normal breakdown of muscle tissue. As creatinine is produced, it's filtered through the kidneys and excreted in urine. Doctors measure the blood creatinine level as a test of kidney function.",
+			"unit": "umol/L",
+			"low": 59,
+			"high": 104
+		}
+	],
+	"cylinderLeft": [
+		{
+			"term": "Cylinder",
+			"shortTerm": "cylinderLeft",
+			"definition": "Amount of correction to remove visual distortion, caused by an irregularly shaped cornea known as an astigmatism.",
+			"unit": "",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"cylinderRight": [
+		{
+			"term": "Cylinder",
+			"shortTerm": "cylinderRight",
+			"definition": "Amount of correction to remove visual distortion, caused by an irregularly shaped cornea known as an astigmatism.",
+			"unit": "",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"diastolic": [
+		{
+			"term": "Blood Pressure (Diastolic)",
+			"shortTerm": "diastolic",
+			"definition": "Blood pressure is the measure of the force of blood pushing against blood vessel walls. The diastolic reading, or the bottom number, is the pressure in the arteries when the heart rests between beats.",
+			"unit": "mmHg",
+			"low": 60,
+			"high": 80
+		}
+	],
+	"eosinophils": [
+		{
+			"term": "Eosinophils",
+			"shortTerm": "eosinophils",
+			"definition": "Eosinophils do two important things in your immune system: curb infections and boost inflammation. A high count may be indicate an allerguc reaction, an autoimmune disease, asthma, eczema and other causes. Alow count may indictae that your body is producing too much of certain steroids.",
+			"unit": "10^9/L",
+			"low": 0,
+			"high": 0.4
+		}
+	],
+	"esr": [
+		{
+			"term": "Erythrocyte Sedimentation Rate",
+			"shortTerm": "esr",
+			"definition": "An ESR test measures the rate at which your red blood cells (RBCs) fall to the bottom of a test tube to test for inflammation.",
+			"unit": "",
+			"low": 0,
+			"high": 22
+		}
+	],
+	"ferritin": [
+		{
+			"term": "Ferritin",
+			"shortTerm": "ferritin",
+			"definition": "This blood test checks for a protein called ferritin, which stores iron. It can be used to diagnose iron deficiency aenemia.",
+			"unit": "ng/mL",
+			"low": 15,
+			"high": 300
+		}
+	],
+	"freeT4": [
+		{
+			"term": "Free Thyroxine",
+			"shortTerm": "freeT4",
+			"definition": "This test measures the level of free T 4, or free thyroxine, in your blood. A free T 4 test is used to find out how well your thyroid gland is working.",
+			"unit": "pmol/L",
+			"low": 12,
+			"high": 30
+		}
+	],
+	"haemoglobin": [
+		{
+			"term": "Haemoglobin Count",
+			"shortTerm": "haemoglobin",
+			"definition": "The hemoglobin test measures the amount of hemoglobin in blood and is a measure of the blood's ability to carry oxygen through the body. Haemoglobin is the protein in your blood that holds oxygen.",
+			"unit": "g/dL",
+			"low": 12.5,
+			"high": 17.3
+		}
+	],
+	"haemotocrit": [
+		{
+			"term": "Haemotocrit",
+			"shortTerm": "haemotocrit",
+			"definition": "Haemotocrit measures the amount of space (volume) red blood cells take up in the blood.",
+			"unit": "l/L",
+			"low": 0.4,
+			"high": 0.5
+		}
+	],
+	"hdlCholesterol": [
+		{
+			"term": "HDL Cholesterol",
+			"shortTerm": "hdlCholesterol",
+			"definition": "High Density Lipoprotein cholesterol protects against heart disease by taking the \"bad\" cholesterol out of your blood and keeping it from building up in your arteries.",
+			"unit": "mmol/L",
+			"low": 0,
+			"high": 1
+		}
+	],
+	"height": [
+		{
+			"term": "Height",
+			"shortTerm": "height",
+			"definition": "A reading of how tall you are. Medically relevant when compared to weight for proper proportions.",
+			"unit": "cm",
+			"low": 0,
+			"high": 200
+		}
+	],
+	"hipCircumference": [
+		{
+			"term": "Hip Circumference",
+			"shortTerm": "hipCircumference",
+			"definition": "The distance around the human body at the level of maximum posterior extension of the buttocks.",
+			"unit": "cm",
+			"low": 70,
+			"high": 100
+		}
+	],
+	"ldlCholesterol": [
+		{
+			"term": "LDL Cholestorol",
+			"shortTerm": "ldlCholesterol",
+			"definition": "Low Density Lipoprotein cholesterol can build up on the walls of your arteries and increase your chances of getting heart disease.",
+			"unit": "mmol/L",
+			"low": 0,
+			"high": 3
+		}
+	],
+	"lymphocytes": [
+		{
+			"term": "Lymphoctyes",
+			"shortTerm": "lymphocytes",
+			"definition": "A small white blood cell that plays a large role in defending the body against disease.",
+			"unit": "10^9/L",
+			"low": 1,
+			"high": 4
+		}
+	],
+	"meanCellHaemoglobin": [
+		{
+			"term": "Mean Cell Haemoglobin",
+			"shortTerm": "meanCellHaemoglobin",
+			"definition": "The mean corpuscular hemoglobin, or \"mean cell hemoglobin\" (MCH), is the average mass of hemoglobin per red blood cell in a sample of blood.",
+			"unit": "pg",
+			"low": 28,
+			"high": 35
+		}
+	],
+	"meanCellVolume": [
+		{
+			"term": "Mean Cell Volume",
+			"shortTerm": "meanCellVolume",
+			"definition": "The mean corpuscular volume, or \"mean cell volume\" (MCV), is a measure of the average red blood cell size",
+			"unit": "fl",
+			"low": 81,
+			"high": 95
+		}
+	],
+	"meanCorpuscularHaemoglobin": [
+		{
+			"term": "Mean Corpuscular Haemoglobin",
+			"shortTerm": "meanCorpuscularHaemoglobin",
+			"definition": "The mean corpuscular hemoglobin concentration, or MCHC, is a measure of the concentration of hemoglobin in a given volume of packed red blood cells.",
+			"unit": "g/dL",
+			"low": 32,
+			"high": 36
+		}
+	],
+	"monocytes": [
+		{
+			"term": "Monocytes",
+			"shortTerm": "monocytes",
+			"definition": "A white blood cell that has a single nucleus and can ingest foreign materials.",
+			"unit": "10^9/L",
+			"low": 0,
+			"high": 0.8
+		}
+	],
+	"neutrophils": [
+		{
+			"term": "Neutrophils",
+			"shortTerm": "neutrophils",
+			"definition": "Neutrophils are one of the first-responders of inflammatory cells to migrate towards the site of inflammation.",
+			"unit": "10^9/L",
+			"low": 2,
+			"high": 7.5
+		}
+	],
+	"pGlucoseFasting": [
+		{
+			"term": "P-Glucose Fasting",
+			"shortTerm": "pGlucoseFasting",
+			"definition": "Postprandial blood sugar measures blood glucose exactly two hours after you start eating a meal.",
+			"unit": "mmol/L",
+			"low": 3.5,
+			"high": 5.5
+		}
+	],
+	"plateletCount": [
+		{
+			"term": "Platelet Count",
+			"shortTerm": "plateletCount",
+			"definition": "Platelets are building blocks of blood clots.",
+			"unit": "10^9/L",
+			"low": 140,
+			"high": 420
+		}
+	],
+	"potassium": [
+		{
+			"term": "Potassium",
+			"shortTerm": "potassium",
+			"definition": "This test checks your blood for abnormal levels of the important mineral potassium. ",
+			"unit": "mmol/L",
+			"low": 3.5,
+			"high": 5.1
+		}
+	],
+	"ratio": [
+		{
+			"term": "Cholesterol Ratio",
+			"shortTerm": "ratio",
+			"definition": "The total cholesterol to HDL cholesterol ratio is a number that is helpful in predicting an individual's risk of developing atherosclerosis. Atherosclerosis is a disease of the arteries caused by deposits of cholesterol in the arterial walls. These so-called \"plaques\" can build up and cause narrowing of the arteries, which decreases the supply of oxygen-rich blood to the hear. The plaques could also can become fragile and break off, leading to the formation of blood clots that cause heart attacks and strokes.",
+			"unit": "",
+			"low": 0,
+			"high": 4
+		}
+	],
+	"redBloodWidth": [
+		{
+			"term": "Red Blood Width",
+			"shortTerm": "redBloodWidth",
+			"definition": "The red blood cell distribution width (RDW) is a measure of the variation of red blood cell width.",
+			"unit": "%",
+			"low": 10,
+			"high": 15
+		}
+	],
+	"redCellCount": [
+		{
+			"term": "Red Cell Count",
+			"shortTerm": "redCellCount",
+			"definition": "Red blood cells carry oxygen from the lungs to the rest of the body. They also carry carbon dioxide back to the lungs so it can be exhaled.",
+			"unit": "10^12/L",
+			"low": 4.5,
+			"high": 5.9
+		}
+	],
+	"restingHeartRate": [
+		{
+			"term": "Resting Heart Rate",
+			"shortTerm": "restingHeartRate",
+			"definition": "Your heart rate is the number of times each minute that your heart beats, which is normally between 60 and 100 times per minute for adults.",
+			"unit": "bpm",
+			"low": 40,
+			"high": 80
+		}
+	],
+	"skeletalMuscleMass": [
+		{
+			"term": "Skeletal Muscle Mass",
+			"shortTerm": "skeletalMuscleMass",
+			"definition": "Skeletal muscles comprise 30 to 40% of your total body mass. They're the muscles that connect to your bones and allow you to perform a wide range of movements and functions. Skeletal muscles are voluntary, meaning you control how and when they work.",
+			"unit": "%",
+			"low": 0,
+			"high": 100
+		}
+	],
+	"sodium": [
+		{
+			"term": "Sodium",
+			"shortTerm": "sodium",
+			"definition": "A sodium blood test is a routine test that allows your doctor to see how much sodium is in your blood. Sodium is particularly important for nerve and muscle function. Your body keeps sodium in balance through a variety of mechanisms. Sodium gets into your blood through food and drink. It leaves the blood through urine, stool, and sweat.",
+			"unit": "mEq/L",
+			"low": 136,
+			"high": 146
+		}
+	],
+	"spermCount": [
+		{
+			"term": "Sperm Count",
+			"shortTerm": "spermCount",
+			"definition": "Counts the number of sperm to determine fertility.",
+			"unit": "million/ml",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"spermMotility": [
+		{
+			"term": "Sperm Motility",
+			"shortTerm": "spermMotility",
+			"definition": "Healthy sperm motility is defined as sperm with forward progressions of at least 25 micrometers per second. If a man has poor sperm mobility, it’s called asthenospermia or asthenozoospermia. ",
+			"unit": "%",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"sphereLeft": [
+		{
+			"term": "Sphere",
+			"shortTerm": "sphereLeft",
+			"definition": "The amount of power required to correct your vision.",
+			"unit": "diopters",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"sphereRight": [
+		{
+			"term": "Sphere",
+			"shortTerm": "sphereRight",
+			"definition": "The amount of power required to correct your vision.",
+			"unit": "diopters",
+			"low": 0,
+			"high": 0
+		}
+	],
+	"systolic": [
+		{
+			"term": "Blood Pressure (Systolic)",
+			"shortTerm": "systolic",
+			"definition": "Blood pressure is the measure of the force of blood pushing against blood vessel walls. When your heart beats, it squeezes and pushes blood through your arteries to the rest of your body. This force creates pressure on those blood vessels, and that's your systolic blood pressure.",
+			"unit": "mmHg",
+			"low": 90,
+			"high": 120
+		}
+	],
+	"totalCholesterol": [
+		{
+			"term": "Total Cholestorol",
+			"shortTerm": "totalCholesterol",
+			"definition": "A measure of total cholestorol.",
+			"unit": "mmol/L",
+			"low": 0,
+			"high": 5
+		}
+	],
+	"thighCircumference": [
+		{
+			"term": "Thigh Circumference",
+			"shortTerm": "thighCircumference",
+			"definition": "The measurement around the thigh of the left leg midway between the crotch and the knee when the subject is in a standing position. Thigh circumference is an important indicator of muscle atrophy due to disease or injury. In addition, it may be a useful indicator of adiposity.",
+			"unit": "cm",
+			"low": 45,
+			"high": 65
+		}
+	],
+	"thyroidPeroxidase": [
+		{
+			"term": "Thyroid Peroxidase",
+			"shortTerm": "thyroidPeroxidase",
+			"definition": "The thyroid peroxidase antibodies test is primarily used to help diagnose and monitor autoimmune conditions involving the thyroid gland, such as Hashimoto's thyroiditis and Graves disease.",
+			"unit": "Iu/mL",
+			"low": 0,
+			"high": 34
+		}
+	],
+	"triglyceride": [
+		{
+			"term": "Triglyceride",
+			"shortTerm": "triglyceride",
+			"definition": "Triglycerides are lipids. They are a main component of fat and are used to store energy. They circulate in the blood so that your body can easily access them. Your blood triglyceride levels rise after you eat food. They decrease when you’ve gone a while without food.",
+			"unit": "mmol/L",
+			"low": 0,
+			"high": 1.7
+		}
+	],
+	"tsh": [
+		{
+			"term": "Thyroid-stimulating Hormone",
+			"shortTerm": "tsh",
+			"definition": "TSH stands for thyroid stimulating hormone. A TSH test is a blood test that measures this hormone. The thyroid is a small, butterfly-shaped gland located near your throat. Your thyroid makes hormones that regulate the way your body uses energy. It also plays an important role in regulating your weight, body temperature, muscle strength, and even your mood.",
+			"unit": "mIU/L",
+			"low": 0.5,
+			"high": 5.0
+		}
+	],
+	"urea": [
+		{
+			"term": "Urea",
+			"shortTerm": "urea",
+			"definition": "A urea test is used to determine protein levels in the body. The test can determine how much protein you’re eating, and if it’s an adequate amount. In addition, your urea nitrogen levels may rise if you’re going through heart failure or dehydration.",
+			"unit": "mmol/L",
+			"low": 2.1,
+			"high": 7.1
+		}
+	],
+	"visceralFat": [
+		{
+			"term": "Visceral Fat",
+			"shortTerm": "visceralFat",
+			"definition": "Visceral body fat, also known as 'hidden' fat, is fat stored deep inside the belly, wrapped around the organs, including the liver and intestines.",
+			"unit": "",
+			"low": 1,
+			"high": 12
+		}
+	],
+	"vo2Max": [
+		{
+			"term": "VO2 Max",
+			"shortTerm": "vo2Max",
+			"definition": "VO2 max is the maximum capacity of an individual's body to transport and use oxygen during incremental exercise, which reflects the physical fitness of the individual.",
+			"unit": "l/kg/min",
+			"low": 40,
+			"high": 60
+		}
+	],
+	"waistCircumference": [
+		{
+			"term": "Waist Circumference",
+			"shortTerm": "waistCircumference",
+			"definition": "Waist circumference is the measurement taken around the abdomen at the level of the umbilicus (belly button). Health experts commonly use waist measurement to screen patients for possible weight-related health problems.",
+			"unit": "cm",
+			"low": 70,
+			"high": 90
+		}
+	],
+	"weight": [
+		{
+			"term": "Weight",
+			"shortTerm": "weight",
+			"definition": "Measure of a healthy body weight, with shoes in most cases.",
+			"unit": "kg",
+			"low": 63,
+			"high": 73
+		}
+	],
+	"whiteCellCount": [
+		{
+			"term": "White Cell Count",
+			"shortTerm": "whiteCellCount",
+			"definition": "White blood cells are cells of the immune system that defend the body against both infectious disease and foreign materials.",
+			"unit": "10^9/L",
+			"low": 4,
+			"high": 11
+		}
+	]
 }
