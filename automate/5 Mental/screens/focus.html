@@ -184,7 +184,7 @@
 					<div class='dateTime'>
 						<span class='type' style='float: left; width:46vw'>
 							<select style='font-weight: 900; text-align: right; font-size: 1em; width: 100%' name='subcategory' id='subcategory' required>
-									<option value='\focus["subcategory"] ? focus["subcategory"] : "Technical"}' selected>{focus["subcategory"] ? focus["subcategory"] : "\ud83d\uddb1️ Technical"}</option>
+									<option value='Reading' selected>📖 Reading</option>
 									<option value='Art'>🎨 Art</option>
 									<option value='Design'>🍥 Design</option>
 									<option value='Games'>🎮 Games</option>
@@ -226,8 +226,8 @@
 
 				<div class='main'>
 					<div class='item' style='width: 80vw; margin: auto' >
-						<input class='awesomplete' list='activitiesList' name='item' id='item' placeholder='Enter activity name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' style='width: 80vw; border-bottom: 1px #828089 solid; font-size: 1.2em' required>
-							<datalist id='activitiesList'></datalist>
+						<input class='awesomplete' list='activitiesList' name='item' id='item' placeholder='Enter activity name' data-maxitems='1' data-autofirst='true' data-tabSelect='true' style='width: 85vw; border-bottom: 1px #828089 solid; font-size: 1.3em' required>
+							<datalist id='activitiesList'>{focusLists["item"]}</datalist>
 					</div>
 				</div>
 				<input type='submit' action='http://localhost/ok' hidden />
