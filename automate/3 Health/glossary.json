@@ -258,6 +258,16 @@
 			"high": 3
 		}
 	],
+	"log": [
+		{
+			"term": "Log",
+			"shortTerm": "log",
+			"definition": "A log of medical events, such as: docotor visits, examinations, injections, injuries, illnesses and other medical events.",
+			"unit": "",
+			"low": "",
+			"high": ""
+		}
+	],
 	"lymphocytes": [
 		{
 			"term": "Lymphoctyes",
