@@ -1,464 +1,707 @@
 <html>
-<head>
-     <!--
+  <head>
+    <!--
      Transaction screen for qSelf project
      Creator: Gugulethu Hlekwayo
      URL: qself.gugulet.hu
      This screen is for manually entering financial transactions. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses the mapbox API, Google Fonts, restCountries to resolve currencies, and awesomplete as external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML. Please note, the minified version of this page breaks functionality.
      -->
 
-     <!-- Google Fonts: import Overpass -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
-           rel="stylesheet">
+    <!-- Google Fonts: import Overpass -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-     <!-- Styling and stylesheets -->
-     <link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
-     <style type='text/css'>
-          body \{
-          font-family: 'Overpass', sans-serif;
-          color: #323036;
-          }
+    <!-- Styling and stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css"
+    />
+    <style type="text/css">
+             body \{
+             font-family: 'Overpass', sans-serif;
+             color: #323036;
+             }
 
-          .visuallyhidden \{
-				position: absolute;
-               overflow: hidden;
-               clip: rect(0 0 0 0);
-               height: 1px; width: 1px;
-               margin: -1px; padding: 0; border: 0;
-          }
+             .visuallyhidden \{
+      	position: absolute;
+                  overflow: hidden;
+                  clip: rect(0 0 0 0);
+                  height: 1px; width: 1px;
+                  margin: -1px; padding: 0; border: 0;
+             }
 
-          select \{
-          border: none;
-               outline: none;
-               background-color: transparent;
-               -moz-appearance: none;
-               -webkit-appearance: none;
-               text-overflow: ellipsis;
-               overflow: hidden;
-               font-family: inherit;
-          }
+             select \{
+             border: none;
+                  outline: none;
+                  background-color: transparent;
+                  -moz-appearance: none;
+                  -webkit-appearance: none;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  font-family: inherit;
+             }
 
-          select:focus \{
-          border: none;
-               outline: none
-          }
+             select:focus \{
+             border: none;
+                  outline: none
+             }
 
-          input \{
-          font-weight: 700;
-               font-size: 1em;
-               background-color: transparent;
-               border: none;
-               text-align: center;
-               float: left;
-               width: 80%;
-               text-overflow: ellipsis;
-               overflow: hidden;
-               -moz-appearance: none;
-               -webkit-appearance: none;
-               font-family: inherit;
-          }
+             input \{
+             font-weight: 700;
+                  font-size: 1em;
+                  background-color: transparent;
+                  border: none;
+                  text-align: center;
+                  float: left;
+                  width: 80%;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  -moz-appearance: none;
+                  -webkit-appearance: none;
+                  font-family: inherit;
+             }
 
-          input:focus \{
-          outline: none
-          }
+             input:focus \{
+             outline: none
+             }
 
-               input::-webkit-calendar-picker-indicator \{
-          display: none !important;
-          }
+                  input::-webkit-calendar-picker-indicator \{
+             display: none !important;
+             }
 
-          div.main \{
-				width: 100%
-          }
+             div.main \{
+      	width: 100%
+             }
 
-          div#details > div \{
-				padding-left: 10%;
-               width: 110%;
-          }
+             div#details > div \{
+      	padding-left: 10%;
+                  width: 110%;
+             }
 
-          div#details > div input \{
-				font-size: 1.2em;
-               font-weight: 400;
-               text-align: left;
-               border-bottom: 0.5px solid #E6E6E6;
-               padding: none;
-               margin: none;
-               border-left: none;
-               border-right: none;
-          }
+             div#details > div input \{
+      	font-size: 1.2em;
+                  font-weight: 400;
+                  text-align: left;
+                  border-bottom: 0.5px solid #E6E6E6;
+                  padding: none;
+                  margin: none;
+                  border-left: none;
+                  border-right: none;
+             }
 
-          div#numbers > div \{
-				width: 90%;
-          }
+             div#numbers > div \{
+      	width: 90%;
+             }
 
-          .pre-filled \{
-				text-decoration: underline dotted #CECCD2;
-          }
+             .pre-filled \{
+      	text-decoration: underline dotted #CECCD2;
+             }
 
-          .awesomplete [hidden] \{
-				display: none;
-          }
+             .awesomplete [hidden] \{
+      	display: none;
+             }
 
-          .awesomplete .visually-hidden \{
-				position: absolute;
-               clip: rect(0, 0, 0, 0);
-          }
+             .awesomplete .visually-hidden \{
+      	position: absolute;
+                  clip: rect(0, 0, 0, 0);
+             }
 
-          .awesomplete \{
-				display: inline-block;
-               position: relative;
-          }
+             .awesomplete \{
+      	display: inline-block;
+                  position: relative;
+             }
 
-          .awesomplete > input \{
-				display: block;
-          }
+             .awesomplete > input \{
+      	display: block;
+             }
 
-          .awesomplete > ul \{
-				position: absolute;
-               left: 0;
-               z-index: 1;
-               min-width: 80%;
-               box-sizing: border-box;
-               list-style: none;
-               padding: 0.3em;
-               background: white;
-          }
+             .awesomplete > ul \{
+      	position: absolute;
+                  left: 0;
+                  z-index: 1;
+                  min-width: 80%;
+                  box-sizing: border-box;
+                  list-style: none;
+                  padding: 0.3em;
+                  background: white;
+             }
 
-          .awesomplete > ul:empty \{
-				display: none;
-          }
+             .awesomplete > ul:empty \{
+      	display: none;
+             }
 
-          .awesomplete > ul \{
-				border-radius: none;
-               background: #E6E6E6;
-               border: none;
-               box-shadow: none;
-               margin-top: 1.6em;
-               text-shadow: none;
-          }
+             .awesomplete > ul \{
+      	border-radius: none;
+                  background: #E6E6E6;
+                  border: none;
+                  box-shadow: none;
+                  margin-top: 1.6em;
+                  text-shadow: none;
+             }
 
-          .awesomplete > ul:before \{
-				display: none !important;
-          }
+             .awesomplete > ul:before \{
+      	display: none !important;
+             }
 
-          .awesomplete > ul > li \{
-				position: relative;
-               cursor: pointer;
-               text-align: left;
-               margin: 0.7em 0 0.7em 0;
-               padding: 0;
-          }
+             .awesomplete > ul > li \{
+      	position: relative;
+                  cursor: pointer;
+                  text-align: left;
+                  margin: 0.7em 0 0.7em 0;
+                  padding: 0;
+             }
 
-          .awesomplete > ul > li:hover \{
-				background: hsl(200, 40%, 80%);
-               color: black;
-          }
+             .awesomplete > ul > li:hover \{
+      	background: hsl(200, 40%, 80%);
+                  color: black;
+             }
 
-          .awesomplete > ul > li[aria-selected='true'] \{
-				background: #CECCD2;
-               color: #323036;
-          }
+             .awesomplete > ul > li[aria-selected='true'] \{
+      	background: #CECCD2;
+                  color: #323036;
+             }
 
-          .awesomplete mark \{
-				text-decoration: underline;
-               background: none !important;
-          }
+             .awesomplete mark \{
+      	text-decoration: underline;
+                  background: none !important;
+             }
 
-          .awesomplete li:hover mark \{
-				text-decoration: underline;
-               background: none !important;
-          }
+             .awesomplete li:hover mark \{
+      	text-decoration: underline;
+                  background: none !important;
+             }
 
-          .awesomplete li[aria-selected='true'] mark \{
-				text-decoration: underline;
-               background: none !important;
-               color: inherit;
-          }
+             .awesomplete li[aria-selected='true'] mark \{
+      	text-decoration: underline;
+                  background: none !important;
+                  color: inherit;
+             }
 
-          div.awesomplete \{
-				display: block
-			}
+             div.awesomplete \{
+      	display: block
+      }
 
-			div.awesomplete ul li p \{
-				display: block;
-               font-size: 0.8em;
-               margin-left: 0.5em
-          }
-     </style>
-</head>
+      div.awesomplete ul li p \{
+      	display: block;
+                  font-size: 0.8em;
+                  margin-left: 0.5em
+             }
+    </style>
+  </head>
 
-<body>
-<div class='container'
-     style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);'>
-     <form method='get' action='http://localhost/ok' name='transactions' autocomplete='off'>
-
-          <div class='main' id='meta'>
-               <div class='dateTime'>
-						<span class='frequency' style='float: left; width:46%'>
-							<select style='font-weight: 900; text-align: right; font-size: 1em; text-transform: uppercase; width: 100%'
-                                           name='frequency' id='frequency'>
-									<option value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
-                                                     selected>
-										Once
-									</option>
-									<option value='Weekly'>Weekly</option>
-									<option value='Monthly'>Monthly</option>
-							</select>
-						</span><span
-                       style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-                    <span class='dateTime' style='float: left; width:46%'>
-							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;'
-                                          type='datetime-local' id='dateTime' name='dateTime'
-                                          value='{todayRecurringTransaction["dateTime"] ? todayRecurringTransaction["dateTime"] : transaction["dateTime"] ? transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd'
-                                          T'HH:mm")}' class='{todayRecurringTransaction["dateTime"] ? "pre-filled" : ""}' required>
-						</span>
-               </div>
-
-               <br>
-               <br>
-
-               <div class='accounts'>
-						<span class='accountFrom' style='float: left; width:46%'>
-							<input name='accountFrom' id='accountFrom' class='awesomplete' list='accountTo'
-                                          style='text-align:right; font-weight: 700 !important; font-size: 1em; width: 100%; text-decoration: underline dotted #CECCD2'
-                                          value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}'
-                                          data-maxitems='1' data-autofirst='true' data-tabSelect='true' required/>
-								<datalist id='accountTo'>{transactionLists["accountTo"]}</datalist>
-						</span>
-                    <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-                    <span class='accountTo' style='float: left; width:46%'>
-							<input name='accountTo' id='accountTo' class='awesomplete' list='accountTo'
-                                          style='text-align:left; font-weight: 700 !important; font-size: 1em; text-decoration: underline dotted #CECCD2'
-                                          value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
-                                          data-maxitems='1' data-autofirst='true' data-tabSelect='true' required/>
-								<datalist id='accountTo'>{transactionLists["accountTo"]}</datalist>
-						</span>
-               </div>
-               <br>
-               <br>
-               <div class='details'>
-						<span class='type' style='float: left; width: 46%'>
-							<select name='type' id='type' onblur='showInvestment()'
-                                           style='text-align: right; font-size: 1em; width: 100%; padding: 0'
-                                           class='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}'
-                                           required>
-								<option value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}'
-                                                selected>{todayRecurringTransaction["category"] ?todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}</option>
-								{transactionLists["category"]}
-							</select>
-						</span>
-                    <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-                    <span class='group' style='float: left; width: 46%'>
-							<input name='group' id='group' class='awesomplete' list='transactionGroup'
-                                          style='text-align: left; font-size: 1em; font-weight: 400 !important'
-                                          class='{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}'
-                                          placeholder='Enter subcategory' data-maxitems='1' data-autofirst='true'
-                                          data-tabSelect='true' required/>
-								<datalist id='transactionGroup'>{transactionLists["subcategory"]}</datalist>
-						</span>
-               </div>
-               <br>
-               <br>
-               <div id='investmentDetails' style='display: none'>
-						<span class='group' style='float: left; width: 46%'>
-							<input name='investmentRegion' id='investmentRegion' class='awesomplete'
-                                          list='investmentRegions'
-                                          style='text-align: right; font-size: 1em; width: 100%; font-weight: 400 !important'
-                                          placeholder='Enter region' data-maxitems='1' data-autofirst='true'
-                                          data-tabSelect='true'/>
-								<datalist id='investmentRegions'>{investmentLists["location"]}</datalist>
-						</span>
-                    <span style='float: left; width: 8%; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-                    <span class='type' style='float: left; width: 46%'>
-							<select name='investmentType' class='awesomplete' id='investmentType'
-                                           style='text-align: left; font-size: 1em; padding: 0'>
-								<option value='Equity' selected>Equity</option>
-								{investmentLists["subcategory"]}
-							</select>
-						</span>
-               </div>
+  <body>
+    <div
+      class="container"
+      style="
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <form
+        method="get"
+        action="http://localhost/ok"
+        name="transactions"
+        autocomplete="off"
+      >
+        <div class="main" id="meta">
+          <div class="dateTime">
+            <span class="frequency" style="float: left; width: 46%">
+              <select
+                style="
+                  font-weight: 900;
+                  text-align: right;
+                  font-size: 1em;
+                  text-transform: uppercase;
+                  width: 100%;
+                "
+                name="frequency"
+                id="frequency"
+              >
+                <option
+                  value='{todayRecurringTransaction["frequency"] ? todayRecurringTransaction["frequency"] : transaction["frequency"] ? transaction["frequency"] : "Once Off"}'
+                  selected
+                >
+                  Once
+                </option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+              </select> </span
+            ><span
+              style="
+                float: left;
+                width: 8%;
+                font-size: 1em;
+                color: #ceccd2;
+                text-align: center;
+              "
+              >::</span
+            >
+            <span class="dateTime" style="float: left; width: 46%">
+              <input style='border: none; text-align: left; font-size: 1em;
+              width: 100%; font-weight: 400;' type='datetime-local'
+              id='dateTime' name='dateTime' onblur='resetLocation()'
+              value='{todayRecurringTransaction["dateTime"] ?
+              todayRecurringTransaction["dateTime"] : transaction["dateTime"] ?
+              transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd' T'HH:mm")}'
+              class='{todayRecurringTransaction["dateTime"] ? "pre-filled" :
+              ""}' required>
+            </span>
           </div>
-          <br>
-          <br>
-          <br>
-          <br>
 
-          <div id='details' class='main'>
-               <div class='brand'>
-                    <input class='awesomplete'
-                           class='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? "pre-filled" : ""}'
-                           list='transactionBrand' name='brand' id='brand'
-                           placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
-                           value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
-                           data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
-                    <datalist id='transactionBrand'>{transactionLists["brand"]}</datalist>
-               </div>
-               <br>
-               <br>
-               <br>
-               <div class='item'>
-                    <input class='awesomplete'
-                           class='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? "pre-filled" : ""}'
-                           list='transactionItem' name='item' id='item'
-                           value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}'
-                           placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}'
-                           data-maxitems='5' data-autofirst='true' data-tabSelect='true' required>
-                    <datalist id='transactionItem'>{transactionLists["item"]}</datalist>
-               </div>
-               <br>
-               <br>
-               <br>
-               <div class='location'>
-                    <input name='address'
-                           placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Address"}'
-                           value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'
-                           type='text'
-                           class='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}'
-                           autocomplete='address-line1' onblur='setCurrency()' required/>
-                    <input name='city'
-                           placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}'
-                           value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}'
-                           type='text' class='visuallyhidden' autocomplete='address-level2'/>
-                    <input name='country' id='country'
-                           placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}'
-                           value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}'
-                           type='text' class='visuallyhidden' autocomplete='country'/>
-                    <input name='postcode'
-                           placeholder='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}'
-                           value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}'
-                           type='text' class='visuallyhidden' autocomplete='postal-code'/>
-               </div>
-               <br>
-               <br>
-               <br>
-               <div id='serialNumber' style='display: none'>
-                    <input name='serial' id='serial' style='text-transform: uppercase'
-                           placeholder='Enter serial number'>
-                    <br>
-                    <br>
-               </div>
+          <br />
+          <br />
+
+          <div class="accounts">
+            <span class="accountFrom" style="float: left; width: 46%">
+              <input
+                name="accountFrom"
+                id="accountFrom"
+                class="awesomplete"
+                list="accountTo"
+                style="
+                  text-align: right;
+                  font-weight: 700 !important;
+                  font-size: 1em;
+                  width: 100%;
+                  text-decoration: underline dotted #ceccd2;
+                "
+                value='{todayRecurringTransaction["accountFrom"] ? todayRecurringTransaction["accountFrom"] : transaction["accountFrom"] ? transaction["accountFrom"] : "Revolut Current"}'
+                data-maxitems="1"
+                data-autofirst="true"
+                data-tabSelect="true"
+                required
+              />
+              <datalist id="accountTo">
+                {transactionLists["accountTo"]}
+              </datalist>
+            </span>
+            <span
+              style="
+                float: left;
+                width: 8%;
+                font-size: 1em;
+                color: #ceccd2;
+                text-align: center;
+              "
+              >::</span
+            >
+            <span class="accountTo" style="float: left; width: 46%">
+              <input
+                name="accountTo"
+                id="accountTo"
+                class="awesomplete"
+                list="accountTo"
+                style="
+                  text-align: left;
+                  font-weight: 700 !important;
+                  font-size: 1em;
+                  text-decoration: underline dotted #ceccd2;
+                "
+                value='{todayRecurringTransaction["accountTo"] ? todayRecurringTransaction["accountTo"] : transaction["accountTo"] ? transaction["accountTo"] : "Expenses"}'
+                data-maxitems="1"
+                data-autofirst="true"
+                data-tabSelect="true"
+                required
+              />
+              <datalist id="accountTo">
+                {transactionLists["accountTo"]}
+              </datalist>
+            </span>
           </div>
-          <br>
-
-          <div id='numbers' class='main'>
-               <div class='quantity' style='margin-bottom: 0.8em; text-align: right'>
-						<span class='quantityNumber'>
-							<input type='number' id='quantity'
-                                          class='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? "pre-filled" : ""}'
-                                          style='float: none; font-weight: 400 !important; font-size: 1.2em; text-align: right;width: 70%'
-                                          step='.01' name='quantity' min='0.01'
-                                          placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}'
-                                          value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}'
-                                          required>
-						</span>
-                    <span class='quantityUnit'>
-							<select name='quantityUnit' required>
-								<option value='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}'
-                                                class='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? "pre-filled" : ""}'
-                                                selected>
-									{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}
-								</option>
-								{transactionLists["quantityUnit"]}
-							</select>
-						</span>
-               </div>
-               <div class='costs' style='width: 100%'>
-						<span class='currency' style='float: left; width: 30%'>
-							<input name='currency' id='currency'
-                                          class='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? "pre-filled" : ""}'
-                                          style='font-weight: 700; font-size: 0.8em; text-transform: uppercase; text-align: right'
-                                          value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : flowConfig["currencies"][0]}'>
-						</span>
-                    <span class='amount' style='float: left; width: 70%'>
-							<input type='number' id='amount'
-                                          class='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? "pre-filled" : ""}'
-                                          style='font-weight: 900; font-size: 2.8em; text-align: right; padding-bottom: 10px'
-                                          step='.01' name='amount' min='0.01'
-                                          placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : numberFormat(available, "#.00")}'
-                                          value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
-                                          required>
-						</span>
-                    <div id='availableLabel'
-                         style='width: 85%; text-align: right; text-transform: uppercase; font-size: 0.5em; color: #e6e6e6'>
-                         Available
-                    </div>
-               </div>
-               <input type='submit' action='http://localhost/ok' hidden/>
+          <br />
+          <br />
+          <div class="details">
+            <span class="type" style="float: left; width: 46%">
+              <select
+                name="type"
+                id="type"
+                onblur="showInvestment()"
+                style="
+                  text-align: right;
+                  font-size: 1em;
+                  width: 100%;
+                  padding: 0;
+                "
+                class="{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? "pre-filled" : ""}"
+                required
+              >
+                <option
+                  value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}'
+                  selected
+                >
+                  {todayRecurringTransaction["category"]
+                  ?todayRecurringTransaction["category"] :
+                  transaction["category"] ? transaction["category"] : "Food"}
+                </option>
+                {transactionLists["category"]}
+              </select>
+            </span>
+            <span
+              style="
+                float: left;
+                width: 8%;
+                font-size: 1em;
+                color: #ceccd2;
+                text-align: center;
+              "
+              >::</span
+            >
+            <span class="group" style="float: left; width: 46%">
+              <input
+                name="group"
+                id="group"
+                class="awesomplete"
+                list="transactionGroup"
+                style="
+                  text-align: left;
+                  font-size: 1em;
+                  font-weight: 400 !important;
+                "
+                class="{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}"
+                placeholder="Enter subcategory"
+                data-maxitems="1"
+                data-autofirst="true"
+                data-tabSelect="true"
+                required
+              />
+              <datalist id="transactionGroup">
+                {transactionLists["subcategory"]}
+              </datalist>
+            </span>
           </div>
-     </form>
-</div>
+          <br />
+          <br />
+          <div id="investmentDetails" style="display: none">
+            <span class="group" style="float: left; width: 46%">
+              <input
+                name="investmentRegion"
+                id="investmentRegion"
+                class="awesomplete"
+                list="investmentRegions"
+                style="
+                  text-align: right;
+                  font-size: 1em;
+                  width: 100%;
+                  font-weight: 400 !important;
+                "
+                placeholder="Enter region"
+                data-maxitems="1"
+                data-autofirst="true"
+                data-tabSelect="true"
+              />
+              <datalist id="investmentRegions">
+                {investmentLists["location"]}
+              </datalist>
+            </span>
+            <span
+              style="
+                float: left;
+                width: 8%;
+                font-size: 1em;
+                color: #ceccd2;
+                text-align: center;
+              "
+              >::</span
+            >
+            <span class="type" style="float: left; width: 46%">
+              <select
+                name="investmentType"
+                class="awesomplete"
+                id="investmentType"
+                style="text-align: left; font-size: 1em; padding: 0"
+              >
+                <option value="Equity" selected>Equity</option>
+                {investmentLists["subcategory"]}
+              </select>
+            </span>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
 
-<!-- SCRIPTS -->
-<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
-<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
+        <div id="details" class="main">
+          <div class="brand">
+            <input
+              class="awesomplete"
+              class="{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? "pre-filled" : ""}"
+              list="transactionBrand"
+              name="brand"
+              id="brand"
+              placeholder='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : "Brand"}'
+              value='{todayRecurringTransaction["brand"] ? todayRecurringTransaction["brand"] : transaction["brand"] ? transaction["brand"] : ""}'
+              data-maxitems="1"
+              data-autofirst="true"
+              data-tabSelect="true"
+              required
+            />
+            <datalist id="transactionBrand">
+              {transactionLists["brand"]}
+            </datalist>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div class="item">
+            <input
+              class="awesomplete"
+              class="{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? "pre-filled" : ""}"
+              list="transactionItem"
+              name="item"
+              id="item"
+              value='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : ""}'
+              placeholder='{todayRecurringTransaction["item"] ? todayRecurringTransaction["item"] : transaction["item"] ? transaction["item"] : "Item"}'
+              data-maxitems="5"
+              data-autofirst="true"
+              data-tabSelect="true"
+              required
+            />
+            <datalist id="transactionItem">{transactionLists["item"]}</datalist>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div class="location">
+            <input
+              name="address"
+              id="address"
+              placeholder='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : "Address"}'
+              value='{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? transaction["address"] : ""}'
+              type="text"
+              class="{todayRecurringTransaction["address"] ? todayRecurringTransaction["address"] : transaction["address"] ? "pre-filled" : ""}"
+              autocomplete="address-line1"
+              onblur="setCurrency()"
+              required
+            />
+            <input
+              name="city"
+              placeholder='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : "City"}'
+              value='{todayRecurringTransaction["city"] ? todayRecurringTransaction["city"] : transaction["city"] ? transaction["city"] : ""}'
+              type="text"
+              class="visuallyhidden"
+              autocomplete="address-level2"
+            />
+            <input
+              name="country"
+              id="country"
+              placeholder='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : "Country"}'
+              value='{todayRecurringTransaction["country"] ? todayRecurringTransaction["country"] : transaction["country"] ? transaction["country"] : ""}'
+              type="text"
+              class="visuallyhidden"
+              autocomplete="country"
+            />
+            <input
+              name="postcode"
+              placeholder='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : "Postcode"}'
+              value='{todayRecurringTransaction["postcode"] ? todayRecurringTransaction["postcode"] : transaction["postcode"] ? transaction["postcode"] : ""}'
+              type="text"
+              class="visuallyhidden"
+              autocomplete="postal-code"
+            />
+          </div>
+          <br />
+          <br />
+          <br />
+          <div id="serialNumber" style="display: none">
+            <input
+              name="serial"
+              id="serial"
+              style="text-transform: uppercase"
+              placeholder="Enter serial number"
+            />
+            <br />
+            <br />
+          </div>
+        </div>
+        <br />
 
-<!-- Mapbox location search script -->
-<script id='search-js' defer src='https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js'></script>
-<script>
-     const script = document.getElementById('search-js');
-     script.onload = function () \{
-          mapboxsearch.autofill(\{
-               accessToken: '{flowConfig["mapboxAPIKey"]}'
-          });
-     };
-</script>
+        <div id="numbers" class="main">
+          <div class="quantity" style="margin-bottom: 0.8em; text-align: right">
+            <span class="quantityNumber">
+              <input
+                type="number"
+                id="quantity"
+                class="{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? "pre-filled" : ""}"
+                style="
+                  float: none;
+                  font-weight: 400 !important;
+                  font-size: 1.2em;
+                  text-align: right;
+                  width: 70%;
+                "
+                step=".01"
+                name="quantity"
+                min="0.01"
+                placeholder='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : "0.00"}'
+                value='{todayRecurringTransaction["quantity"] ? todayRecurringTransaction["quantity"] : transaction["quantity"] ? transaction["quantity"] : ""}'
+                required
+              />
+            </span>
+            <span class="quantityUnit">
+              <select name="quantityUnit" required>
+                <option
+                  value='{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}'
+                  class="{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? "pre-filled" : ""}"
+                  selected
+                >
+                  {todayRecurringTransaction["quantityUnit"] ?
+                  todayRecurringTransaction["quantityUnit"] :
+                  transaction["quantityUnit"] ? transaction["quantityUnit"] :
+                  "x"}
+                </option>
+                {transactionLists["quantityUnit"]}
+              </select>
+            </span>
+          </div>
+          <div class="costs" style="width: 100%">
+            <span class="currency" style="float: left; width: 30%">
+              <input
+                name="currency"
+                id="currency"
+                class="{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? "pre-filled" : ""}"
+                style="
+                  font-weight: 700;
+                  font-size: 0.8em;
+                  text-transform: uppercase;
+                  text-align: right;
+                "
+                value='{todayRecurringTransaction["currency"] ? todayRecurringTransaction["currency"] : transaction["currency"] ? transaction["currency"] : flowConfig["currencies"][0]}'
+              />
+            </span>
+            <span class="amount" style="float: left; width: 70%">
+              <input
+                type="number"
+                id="amount"
+                class="{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? "pre-filled" : ""}"
+                style="
+                  font-weight: 900;
+                  font-size: 2.8em;
+                  text-align: right;
+                  padding-bottom: 10px;
+                "
+                step=".01"
+                name="amount"
+                min="0.01"
+                placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : numberFormat(available, "#.00")}'
+                value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
+                required
+              />
+            </span>
+            <div
+              id="availableLabel"
+              style="
+                width: 85%;
+                text-align: right;
+                text-transform: uppercase;
+                font-size: 0.5em;
+                color: #e6e6e6;
+              "
+            >
+              Available
+            </div>
+          </div>
+          <input type="submit" action="http://localhost/ok" hidden />
+        </div>
+      </form>
+    </div>
 
-<!-- Script that shows the Investment details section or the serial number input field when Assets or Investment categories are selected -->
-<script>
-     function showInvestment() \{
-          let category = document.getElementById('type').value;
-          const investmentDetails = document.getElementById('investmentDetails');
-          const serialNumber = document.getElementById('serialNumber');
+    <!-- SCRIPTS -->
+    <script
+      src="https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js"
+      async
+    ></script>
+    <script
+      src="https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js"
+      async
+    ></script>
 
-          if (category === 'Investment') \{
-               investmentDetails.style.display = 'block';
-               serialNumber.style.display = 'none'
-          } else if (category === 'Assets') \{
-               serialNumber.style.display = 'block';
-               investmentDetails.style.display = 'none';
-          } else \{
-               investmentDetails.style.display = 'none';
-               serialNumber.style.display = 'none';
-          }
-     }
-</script>
+    <!-- Mapbox location search script -->
+    <script
+      id="search-js"
+      defer
+      src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"
+    ></script>
+    <script>
+      const script = document.getElementById('search-js');
+      script.onload = function () \{
+           mapboxsearch.autofill(\{
+                accessToken: '{flowConfig["mapboxAPIKey"]}'
+           });
+      };
+    </script>
 
-<!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. -->
-<script>
-     function setCurrency() \{
-          let countryCode = document.getElementById('country').value;
-          let accountFrom = document.getElementById('accountFrom').value;
-          const zarAccount = 'FNB Cheque';
-          const currencyElement = document.getElementById('currency');
-          const availableElement = document.getElementById('availableLabel');
+    <!-- Script that shows the Investment details section or the serial number input field when Assets or Investment categories are selected -->
+    <script>
+      function showInvestment() \{
+           let category = document.getElementById('type').value;
+           const investmentDetails = document.getElementById('investmentDetails');
+           const serialNumber = document.getElementById('serialNumber');
 
-          availableElement.style.display = 'none';
+           if (category === 'Investment') \{
+                investmentDetails.style.display = 'block';
+                serialNumber.style.display = 'none'
+           } else if (category === 'Assets') \{
+                serialNumber.style.display = 'block';
+                investmentDetails.style.display = 'none';
+           } else \{
+                investmentDetails.style.display = 'none';
+                serialNumber.style.display = 'none';
+           }
+      }
+    </script>
 
-          fetch('https://restcountries.com/v3.1/alpha/' + countryCode)
-               .then(response => \{
-               if (response.ok) \{
-                    return response.json();
-               } else \{
-                    throw new Error('API request failed');
-               }
-          })
-               .then(data => \{
-               if (accountFrom != zarAccount) \{
-                    let keys = Object.keys(data[0].currencies)
-                    currencyElement.value = keys[0];
-                    currencyElement.style.color = '#323036';
-               } else \{
-                    currencyElement.value = '{flowConfig["currencies"][1]}';
-                    currencyElement.style.color = '#323036';
-               }
-          })
-               .catch(error => \{
-               currencyElement.value = '{flowConfig["currencies"][0]}';
-               currencyElement.style.color = 'red';
-               console.error(error);
-          });
-     }
-</script>
-</body>
+    <!-- Script that resets location when the date changes -->
+    <script>
+      function resetLocation() \{
+      	let locationSelector = document.getElementById('address');
+
+      	locationSelector.value = '';
+      }
+    </script>
+
+    <!-- Script that gets the country code from Mapbox API, and returns the currency code from the Countries API. Initiated by onblur. -->
+    <script>
+      function setCurrency() \{
+           let countryCode = document.getElementById('country').value;
+           let accountFrom = document.getElementById('accountFrom').value;
+           const zarAccount = 'FNB Cheque';
+           const currencyElement = document.getElementById('currency');
+           const availableElement = document.getElementById('availableLabel');
+
+           availableElement.style.display = 'none';
+
+           fetch('https://restcountries.com/v3.1/alpha/' + countryCode)
+                .then(response => \{
+                if (response.ok) \{
+                     return response.json();
+                } else \{
+                     throw new Error('API request failed');
+                }
+           })
+                .then(data => \{
+                if (accountFrom != zarAccount) \{
+                     let keys = Object.keys(data[0].currencies)
+                     currencyElement.value = keys[0];
+                     currencyElement.style.color = '#323036';
+                } else \{
+                     currencyElement.value = '{flowConfig["currencies"][1]}';
+                     currencyElement.style.color = '#323036';
+                }
+           })
+                .catch(error => \{
+                currencyElement.value = '{flowConfig["currencies"][0]}';
+                currencyElement.style.color = 'red';
+                console.error(error);
+           });
+      }
+    </script>
+  </body>
 </html>
