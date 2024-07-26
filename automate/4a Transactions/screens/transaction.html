@@ -247,11 +247,8 @@
               <input style='border: none; text-align: left; font-size: 1em;
               width: 100%; font-weight: 400;' type='datetime-local'
               id='dateTime' name='dateTime' onblur='resetLocation()'
-              value='{todayRecurringTransaction["dateTime"] ?
-              todayRecurringTransaction["dateTime"] : transaction["dateTime"] ?
-              transaction["dateTime"] : dateFormat(Now,"yyyy-MM-dd' T'HH:mm")}'
-              class='{todayRecurringTransaction["dateTime"] ? "pre-filled" :
-              ""}' required>
+              value='{todayRecurringTransaction["dateTime"] ? todayRecurringTransaction["dateTime"] : transaction["dateTime"] ? transaction["dateTime"] : dateFormat(Now, "yyyy-MM-dd' T'HH:mm")}'
+              class='{todayRecurringTransaction["dateTime"] ? "pre-filled" : ""}' required>
             </span>
           </div>
 
@@ -336,9 +333,7 @@
                   value='{todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}'
                   selected
                 >
-                  {todayRecurringTransaction["category"]
-                  ?todayRecurringTransaction["category"] :
-                  transaction["category"] ? transaction["category"] : "Food"}
+                  {todayRecurringTransaction["category"] ? todayRecurringTransaction["category"] : transaction["category"] ? transaction["category"] : "Food"}
                 </option>
                 {transactionLists["category"]}
               </select>
@@ -355,8 +350,8 @@
             >
             <span class="group" style="float: left; width: 46%">
               <input
-                name="group"
-                id="group"
+                name="subcategory"
+                id="subcategory"
                 class="awesomplete"
                 list="transactionGroup"
                 style="
@@ -364,7 +359,7 @@
                   font-size: 1em;
                   font-weight: 400 !important;
                 "
-                class="{todayRecurringTransaction["group"] ? todayRecurringTransaction["group"] : transaction["group"] ? "pre-filled" : ""}"
+                class="{todayRecurringTransaction["subcategory"] ? todayRecurringTransaction["subcategory"] : transaction["subcategory"] ? "pre-filled" : ""}"
                 placeholder="Enter subcategory"
                 data-maxitems="1"
                 data-autofirst="true"
@@ -552,10 +547,7 @@
                   class="{todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? "pre-filled" : ""}"
                   selected
                 >
-                  {todayRecurringTransaction["quantityUnit"] ?
-                  todayRecurringTransaction["quantityUnit"] :
-                  transaction["quantityUnit"] ? transaction["quantityUnit"] :
-                  "x"}
+                  {todayRecurringTransaction["quantityUnit"] ? todayRecurringTransaction["quantityUnit"] : transaction["quantityUnit"] ? transaction["quantityUnit"] : "x"}
                 </option>
                 {transactionLists["quantityUnit"]}
               </select>
