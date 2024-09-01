@@ -1,6 +1,6 @@
 <html>
 	<head>
-	<!--
+		<!--
 	Exercise screen for qSelf project
 	Creator: Gugulethu Hlekwayo
 	URL: qself.gugulet.hu
@@ -8,12 +8,16 @@
 	-->
 
 		<!-- Google Fonts: import Overpass -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 
 		<!-- Styling and stylesheets -->
-		<link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
+		<link
+			rel="stylesheet"
+			href="https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css" />
 		<style>
 			body \{
 				color: #323036;
@@ -180,103 +184,257 @@
 	</head>
 
 	<body>
-		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
-			<form method='get' action='http://localhost/ok' name='exercise' autocomplete='off'>
-				<div class='main'>
-					<div class='item' style='text-align: center;' >
-						<input type='text' style='font-size: 2em; width: 100%' class='awesomplete' name='item' id='item' list='exerciseItem' value='{currentExerciseData["item"]}' placeholder='Exercise' data-maxitems='1' data-autofirst='true' data-tabSelect='true' required>
-							<datalist id='exerciseItem'>{exerciseLists["item"]}</datalist>
+		<div
+			class="container"
+			style="
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				margin-right: -50%;
+				transform: translate(-50%, -50%);
+			">
+			<form
+				method="get"
+				action="http://localhost/ok"
+				name="exercise"
+				autocomplete="off">
+				<div class="main">
+					<div class="item" style="text-align: center">
+						<input
+							type="text"
+							style="font-size: 2em; width: 100%"
+							class="awesomplete"
+							name="item"
+							id="item"
+							list="exerciseItem"
+							value='{currentExerciseData["item"]}'
+							placeholder="Exercise"
+							data-maxitems="1"
+							data-autofirst="true"
+							data-tabSelect="true"
+							required />
+						<datalist id="exerciseItem">
+							{exerciseLists["item"]}
+						</datalist>
 					</div>
 
-					<br>
-					<br>
+					<br />
+					<br />
 
-					<div class='meta'>
-						<span class='category'>
-							<select name='category' id='category' size='1' required>
-								<option value='{currentExerciseData["category"] ? currentExerciseData["category"] : "Mobility"}'
+					<div class="meta">
+						<span class="category">
+							<select
+								name="category"
+								id="category"
+								size="1"
+								required>
+								<option
+									value='{currentExerciseData["category"] ? currentExerciseData["category"] : "Mobility"}'
 									selected>
-									{currentExerciseData["category"] ? currentExerciseData["category"] : "Mobility"}
+									{currentExerciseData["category"] ?
+									currentExerciseData["category"] :
+									"Mobility"}
 								</option>
 								{exerciseLists["category"]}
 							</select>
 						</span>
-						<span class='subcategory'>
-							<select name='subcategory' id='subcategory' size='1' required>
-								<option value='{currentExerciseData["subcategory"] ? currentExerciseData["subcategory"] : "Body"}'
+						<span class="subcategory">
+							<select
+								name="subcategory"
+								id="subcategory"
+								size="1"
+								required>
+								<option
+									value='{currentExerciseData["subcategory"] ? currentExerciseData["subcategory"] : "Body"}'
 									selected>
-									{currentExerciseData["subcategory"] ? currentExerciseData["subcategory"] : "Body"}
+									{currentExerciseData["subcategory"]
+									?
+									currentExerciseData["subcategory"]
+									: "Body"}
 								</option>
 								{exerciseLists["subcategory"]}
 							</select>
 						</span>
-						<span class='equipment'>
-							<select name='equipment' id='equipment' size='1' placeholder='Equipment' required>
-								<option value='{currentExerciseData["equipment"] ? currentExerciseData["equipment"] : "Body"}'
-									selected>{currentExerciseData["equipment"] ? currentExerciseData["equipment"] : "Body"}
+						<span class="equipment">
+							<select
+								name="equipment"
+								id="equipment"
+								size="1"
+								placeholder="Equipment"
+								required>
+								<option
+									value='{currentExerciseData["equipment"] ? currentExerciseData["equipment"] : "Body"}'
+									selected>
+									{currentExerciseData["equipment"] ?
+									currentExerciseData["equipment"] :
+									"Body"}
 								</option>
 								{exerciseLists["equipment"]}
 							</select>
 						</span>
 					</div>
 
-					<br>
+					<br />
 
-					<div class='data-box'>
-						<div class='heartRate'>
+					<div class="data-box">
+						<div class="heartRate">
 							<div>&#129728;</div>
-							<br>
+							<br />
 							{heartrate} bpm
 						</div>
 					</div>
 				</div>
 
-				<br>
-				<br>
-				<br>
+				<br />
+				<br />
+				<br />
 
-				<div class='main' >
-					<div class='amount' style='width: 30vw; display: inline-block; text-align: left' >
-						<div style='display: inline-block'>
-							<input type='number' id='amount' step='.01' name='amount' min='0' placeholder='{currentExerciseData["amount"] ? currentExerciseData["amount"] : 12}' style='font-size: 1.8em; width: 23vw; text-align: right' required>
+				<div class="main">
+					<div
+						class="amount"
+						style="
+							width: 30vw;
+							display: inline-block;
+							text-align: left;
+						">
+						<div style="display: inline-block">
+							<input
+								type="number"
+								id="amount"
+								step=".01"
+								name="amount"
+								min="0"
+								placeholder='{currentExerciseData["amount"] ? currentExerciseData["amount"] : 12}'
+								style="
+									font-size: 1.8em;
+									width: 23vw;
+									text-align: right;
+								"
+								onblur="setQuantityUnit()"
+								required />
 						</div>
-						<div class='units' style='display: inline-block'>
-							<select name='amountUnit' id='amountUnit' size='1' style='font-size: 1.2em; width: 5vw; text-align: left'>
-								<option value='{currentExerciseData["amountUnit"] ? currentExerciseData["amountUnit"] : "x"}' selected>
-									{currentExerciseData["amountUnit"] ? currentExerciseData["amountUnit"] : "x"}
+						<div class="units" style="display: inline-block">
+							<select
+								name="amountUnit"
+								id="amountUnit"
+								size="1"
+								style="
+									font-size: 1.2em;
+									width: 5vw;
+									text-align: left;
+								">
+								<option
+									value='{currentExerciseData["amountUnit"] ? currentExerciseData["amountUnit"] : "x"}'
+									selected>
+									{currentExerciseData["amountUnit"]
+									? currentExerciseData["amountUnit"]
+									: "x"}
 								</option>
 								{exerciseLists["amountUnit"]}
 							</select>
 						</div>
 					</div>
-					<div class='quantity' style='width: 30vw; display: inline-block; text-align: left'>
-						<div style='display: inline-block'>
-							<input type='number' id='quantity' step='.01' name='quantity' min='0' placeholder='{currentExerciseData["quantity"] ? currentExerciseData["quantity"] : 10}' style='font-size: 1.8em; width: 23vw; text-align: right' >
+					<div
+						class="quantity"
+						style="
+							width: 30vw;
+							display: inline-block;
+							text-align: left;
+						">
+						<div style="display: inline-block">
+							<input
+								type="number"
+								id="quantity"
+								step=".01"
+								name="quantity"
+								min="0"
+								placeholder='{currentExerciseData["quantity"] ? currentExerciseData["quantity"] : 10}'
+								style="
+									font-size: 1.8em;
+									width: 23vw;
+									text-align: right;
+								" />
 						</div>
-						<div class='units' style='display: inline-block' >
-							<select name='quantityUnit' id='quantityUnit' size='1' style='font-size: 1.2em; width: 5vw; text-align: left'>
-								<option value='{currentExerciseData["quantityUnit"] ? currentExerciseData["quantityUnit"] : "kg"}' selected>
-									{currentExerciseData["quantityUnit"] ? currentExerciseData["quantityUnit"] : "kg"}
+						<div class="units" style="display: inline-block">
+							<select
+								name="quantityUnit"
+								id="quantityUnit"
+								size="1"
+								style="
+									font-size: 1.2em;
+									width: 5vw;
+									text-align: left;
+								">
+								<option
+									value='{currentExerciseData["quantityUnit"] ? currentExerciseData["quantityUnit"] : ""}'
+									selected>
+									{currentExerciseData["quantityUnit"]
+									?
+									currentExerciseData["quantityUnit"]
+									: ""}
 								</option>
 								{exerciseLists["quantityUnit"]}
 							</select>
 						</div>
 					</div>
-					<div class='rest' style='width: 30vw; display: inline-block; text-align: left'>
-						<div style='display: inline-block'>
-							<input type='number' name='rest' id='rest' min='0' max='240' placeholder='{currentExerciseData["rest"] ? currentExerciseData["rest"] : 60}' style='font-size: 1.8em; width: 23vw; text-align: right' required>
+					<div
+						class="rest"
+						style="
+							width: 30vw;
+							display: inline-block;
+							text-align: left;
+						">
+						<div style="display: inline-block">
+							<input
+								type="number"
+								name="rest"
+								id="rest"
+								min="0"
+								max="240"
+								placeholder='{currentExerciseData["rest"] ? currentExerciseData["rest"] : 60}'
+								style="
+									font-size: 1.8em;
+									width: 23vw;
+									text-align: right;
+								"
+								required />
 						</div>
-						<div style='display: inline-block' >
-							<span style='font-size: 1.2em; width: 5vw; text-align: left'>s</span>
+						<div style="display: inline-block">
+							<span
+								style="
+									font-size: 1.2em;
+									width: 5vw;
+									text-align: left;
+								"
+								>s</span
+							>
 						</div>
 					</div>
 				</div>
-				<input type='submit' action='http://localhost/ok' hidden />
+				<input type="submit" action="http://localhost/ok" hidden />
 			</form>
 		</div>
 
 		<!-- SCRIPTS -->
-		<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
-		<script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
+		<script
+			src="https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js"
+			async></script>
+		<script
+			src="https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js"
+			async></script>
+
+		<!-- Script that sets the quantity unit to "" or "kg" depending on the equipment used -->
+		<script>
+			function setQuantityUnit() \{
+				let equipmentElement = document.getElementById('equipment').value;
+				let quantityUnitElement = document.getElementById('quantityUnit').value;
+
+				if (equipmentElement === 'Body' ) \{
+					quantityUnitElement.value = "";
+				} else \{
+					quantityUnitElement.value = "kg";
+				}
+			}
+		</script>
 	</body>
 </html>
