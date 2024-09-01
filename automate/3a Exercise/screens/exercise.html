@@ -367,6 +367,8 @@
 								">
 								<option
 									value='{currentExerciseData["quantityUnit"] ? currentExerciseData["quantityUnit"] : ""}'
+									id="selectedQuantityUnit"
+									placeholder="x"
 									selected>
 									{currentExerciseData["quantityUnit"]
 									?
@@ -426,13 +428,17 @@
 		<!-- Script that sets the quantity unit to "" or "kg" depending on the equipment used -->
 		<script>
 			function setQuantityUnit() \{
-				let equipmentElement = document.getElementById('equipment').value;
-				let quantityUnitElement = document.getElementById('quantityUnit').value;
+				let equipmentElement = document.getElementById('equipment');
+				let equipmentElementValue = equipmentElement.options[equipmentElement.selectedIndex].value
 
-				if (equipmentElement === 'Body' ) \{
+				let quantityUnitElement = document.getElementById('selectedQuantityUnit');
+
+				if (equipmentElementValue === 'Body' ) \{
 					quantityUnitElement.value = "";
+					quantityUnitElement.innerHTML = "";
 				} else \{
 					quantityUnitElement.value = "kg";
+					quantityUnitElement.innerHTML = "kg";
 				}
 			}
 		</script>
