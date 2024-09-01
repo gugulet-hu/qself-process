@@ -583,23 +583,11 @@
                 step=".01"
                 name="amount"
                 min="0.01"
-                placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : numberFormat(available, "#.00")}'
+                placeholder='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : "0.01"}'
                 value='{todayRecurringTransaction["amount"] ? todayRecurringTransaction["amount"] : transaction["amount"] ? transaction["amount"] : ""}'
                 required
               />
             </span>
-            <div
-              id="availableLabel"
-              style="
-                width: 85%;
-                text-align: right;
-                text-transform: uppercase;
-                font-size: 0.5em;
-                color: #e6e6e6;
-              "
-            >
-              Available
-            </div>
           </div>
           <input type="submit" action="http://localhost/ok" hidden />
         </div>
@@ -667,9 +655,6 @@
            let accountFrom = document.getElementById('accountFrom').value;
            const zarAccount = 'FNB Cheque';
            const currencyElement = document.getElementById('currency');
-           const availableElement = document.getElementById('availableLabel');
-
-           availableElement.style.display = 'none';
 
            fetch('https://restcountries.com/v3.1/alpha/' + countryCode)
                 .then(response => \{
