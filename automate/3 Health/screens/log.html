@@ -1,0 +1,137 @@
+<html>
+	<head>
+	<!--
+	Health screen for qSelf project
+	Creator: Gugulethu Hlekwayo
+	URL: qself.gugulet.hu
+	This screen is for manually entering health events, such as illness, doctor vosotis, and injections. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses a Google Fonts as an external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML.
+	-->
+
+		<!-- Google Fonts: import Overpass -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+		<!-- Styling and stylesheets -->
+		<style>
+			body \{
+				color: #323036;
+				font-family: 'Overpass', sans-serif;
+			}
+
+			select \{
+				border: none;
+				outline: none;
+				background-color: transparent;
+			}
+
+			select \{
+				border: none;
+				outline: none;
+				background-color: transparent;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-family: inherit;
+			}
+
+			select:focus \{
+				border: none;
+				outline: none;
+			}
+
+			input \{
+				font-weight: 700;
+				font-size: 1em;
+				background-color: transparent;
+				border: none;
+				text-align: center;
+				float: left;
+				width: 80%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				font-family: inherit;
+			}
+
+			input:focus \{
+				outline: none
+			}
+
+			input::-webkit-calendar-picker-indicator \{
+				display: none !important;
+			}
+
+			div.main \{
+				width: 100vw;
+			}
+
+			.pre-filled \{
+				text-decoration: underline dotted #CECCD2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+			<form method='get' action='http://localhost/ok' name='medicalReading' style='text-align: center' >
+				<div class='main'>
+					<div class='dateTime'>
+						<span class='type' style='float: left; width:46vw'>
+							<select style='font-weight: 900; text-align: right; font-size: 1em; width: 100%' name='readingType' id='readingType'>
+									<option value='{healthType}' selected >{healthType}</option>
+							</select>
+						</span><span style='float: left; width: 8vw; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='dateTime' style='float: left; width:46vw' >
+							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='datetime-local' id='dateTime' name='dateTime' value='{health["dateTime"] ? health["dateTime"] : dateFormat(Now, "yyyy-MM-dd'T'HH:mm")}' class='{health["dateTime"] ? "pre-filled" : ""}' required>
+						</span>
+					</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+
+				<div class='main' style='text-align: center' >
+					<div class='description' style='text-align: center'>
+						<div id='descriptionTitle' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >{healthType}</div>
+						<br>
+						<div style='font-size: 0.8em; text-align: justify; text-align-last: left; width: 80vw; margin: auto'>
+							<span id='descriptionText'>A log of medical events, such as: docotor visits, examinations, injections, injuries, illnesses and other medical events.</span>.
+						</div>
+
+					</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+
+				<div class='main' style='text-align: right'>
+					<div class='source' style='width: 80vw; text-align: right; font-size: 0.5em; color: #e6e6e6' >
+						<input type='text' id='readingSource' style='float: right; font-weight: 400 !important; font-size: 1em; text-align: right; width: 80vw' name='readingSource' placeholder='Source' value='{health["readingSource"] ? health["readingSource"] : ""}' class='{health["readingSource"] ? "pre-filled" : ""}' required>
+					</div>
+
+					<br>
+					<br>
+
+
+
+					<div class='readingValue' >
+						<span class='quantityNumber'>
+							<input type='number' id='quantity' style='float: none; font-weight: 400 !important; font-size: 2.8em; text-align: right;width: 50vw' step='.01' name='quantity' min='-1000' placeholder='0.00' required>
+						</span>
+						<span class='quantityUnit'>
+							<input type='text' id='quantityUnit' style='float: none; font-weight: 400 !important; font-size: 1em; text-align: left; width: 30vw' name='quantityUnit' value='{healthGlossary[healthType][0]["unit"]}'>
+						</span>
+					</div>
+				</div>
+
+				<input type='submit' action='http://localhost/ok' hidden />
+				</div>
+			</form>
+		</div>
+	</body>
+<html>
