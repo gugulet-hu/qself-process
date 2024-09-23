@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<!--
+     Reconcilitation screen for qSelf project
+     Creator: Gugulethu Hlekwayo
+     URL: qself.gugulet.hu
+     This screen is for reconiciling accounts. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses the mapbox API, Google Fonts, restCountries to resolve currencies, and awesomplete as external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML. Please note, the minified version of this page breaks functionality.
+     -->
+
+		<!-- Google Fonts: import Overpass -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
+
+		<!-- Styling and stylesheets -->
+		<link
+			rel="stylesheet"
+			href="https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css" />
+	</head>
+
+	<body>
+		<div>
+			<form
+				method="get"
+				action="http://localhost/ok"
+				name="reconcilitation"
+				id="reconcilitation"
+				autocomplete="off"></form>
+		</div>
+
+		<!-- SCRIPTS -->
+		<script>
+			function createReconcilitationInputs({balancesArray}) {
+				let i = 0;
+
+				do \{
+					let balance = {balancesArray[i]["balance"]};
+					let name = {balancesArray[i]["name"]};
+					createBalances(name, balance);
+					i++;
+				}
+				while ( i < {length(balancesArray)})
+			}
+
+
+			function createBalances(name, balance) {
+				document.getElementById('reconcilitation').insertAdjacentHTML('beforeend', '<div class="label">{name}</div><input type="number" class="amount" id="{name}" value="€{balance}"><br>');
+			}
+		</script>
+	</body>
+</html>
