@@ -98,26 +98,28 @@ This screen is for manually entering book, film, TV, and event reviews. Inline s
 
 				<div class='main' style='text-align: center' >
 					<div class='description' style='text-align: center'>
-						<div id='title' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >
-							<input type='text' placeholder='Title' id='title' name='title' required ></input>
+						<div id='title' style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
+							<input type='text' placeholder='Title' id='title' name='title' style='text-decoration: underline;' required ></input>
 						</div>
 						<br>
-						<div id='creator' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >
+						<div id='creator' style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
 							<input type='text' placeholder='Creator' id='creator' name='creator' required ></input>
 						</div>
 						<br>
-						<div id='genre' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >
+						<div id='genre' style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
 							<input type='text' placeholder='Genre' id='genre' name='genre' required ></input>
 						</div>
 						<br>
 						<div style='font-size: 0.8em; text-align: justify; text-align-last: left; width: 80vw; margin: auto'>
-							<textarea name='review' id='review' cols='40' row='8'></textarea>
+							<textarea name='review' id='review' cols='40' row='8' style='border: 1px solid grey;' ></textarea>
 						</div>
 						<br>
 						<br>
 						<br>
-						<input name='rating' id='rating' type='range' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value">
-						<output>0</output>
+						<div style='font-size: 0.8em; text-align: justify; text-align-last: left; width: 80vw; margin: auto'>
+							<input name='rating' id='rating' type='range' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value">
+							<output>0</output>
+						</div>
 					</div>
 				</div>
 
