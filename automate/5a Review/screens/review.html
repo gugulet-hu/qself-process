@@ -1,3 +1,4 @@
+<html>
 <head>
 <!--
 Review screen for qSelf project
@@ -6,129 +7,123 @@ URL: qself.gugulet.hu
 This screen is for manually entering book, film, TV, and event reviews. Inline styling is used intentionally to keep that styling close to the elements it affects. The screen uses the OMDb API, Google Fonts, and awesomplete as external resources. The opening curly brace needs to be escaped to work in Automate. Double quotes are used for Automate variables and single quotes for HTML. Please note, the minified version of this page breaks functionality.
 -->
 
-        <!-- Google Fonts: import Overpass -->
-        <link rel='preconnect' href='https://fonts.googleapis.com'>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-        <link href='https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap' rel='stylesheet'>
+		<!-- Google Fonts: import Overpass -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <!-- Awesomplete plugin -->
-        <link rel='stylesheet' href='https://nico-amsterdam.github.io/awesomplete-util/css/awesomplete.css'>
-        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete.min.js' async></script>
-        <script src='https://nico-amsterdam.github.io/awesomplete-util/js/awesomplete-util.min.js' async></script>
+		<!-- Styling and stylesheets -->
+		<style>
+			body \{
+				color: #323036;
+				font-family: 'Overpass', sans-serif;
+			}
 
-	<style>
-		body \{
-			color: #323036;
-			font-family: 'Overpass',
-			sans-serif
-		}
+			select \{
+				border: none;
+				outline: none;
+				background-color: transparent;
+			}
 
-		form \{ text-align: center
-		}
+			select \{
+				border: none;
+				outline: none;
+				background-color: transparent;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-family: inherit;
+			}
 
-		div.container \{
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin-right: -50%;
-			transform: translate(-50%, -50%);
-			padding: 0 10px
-		}
+			select:focus \{
+				border: none;
+				outline: none;
+			}
 
-		div#itemCopy \{
-			text-align: center;
-			color: #E6E6E6;
-		}
+			input \{
+				font-weight: 700;
+				font-size: 1em;
+				background-color: transparent;
+				border: none;
+				text-align: center;
+				float: left;
+				width: 80%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				font-family: inherit;
+			}
 
-		ul \{
-			list-style-type: none;
-		}
+			input:focus \{
+				outline: none
+			}
 
-		ul#categoryMenu li div \{
-			display: inline !important;
-		}
+			input::-webkit-calendar-picker-indicator \{
+				display: none !important;
+			}
 
-		li > div \{
-			font-size: 3em;
-			margin: 0.5em;
-		}
+			div.main \{
+				width: 100vw;
+			}
 
-		input[type="radio"] \{
-			display: none;
-		}
+			.pre-filled \{
+				text-decoration: underline dotted #CECCD2;
+			}
+		</style>
+	</head>
 
-		select, input \{
-			border: none;
-			font-size: 1em;
-			padding: 2em;
-			outline: none;
-			background-color: transparent;
-			-moz-appearance: none;
-			-webkit-appearance: none;
-			text-align: center;
-			text-align-last: center;
-		}
+	<body>
+		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
+			<form method='get' action='http://localhost/ok' name='medicalReading' style='text-align: center' >
+				<div class='main'>
+					<div class='dateTime'>
+						<span class='category' style='float: left; width:46vw'>
+							<select style='font-weight: 900; text-align: right; font-size: 1em; width: 100%' name='category' id='category' required>
+									<option value='Books' selected >📚 Books</option>
+									<option value='Film' >🎬 Film</option>
+									<option value='Television' >📺 Television</option>
+							</select>
+						</span><span style='float: left; width: 8vw; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
+						<span class='date' style='float: left; width:46vw' >
+							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='date' id='date' name='date' value='{dateFormat(Now, "yyyy-MM-dd")}' required>
+						</span>
+					</div>
+				</div>
 
-		input:focus \{
-			outline: none;
-		}
+				<br>
+				<br>
+				<br>
 
-		input::-webkit-calendar-picker-indicator \{
-			display: none !important;
-		}
+				<div class='main' style='text-align: center' >
+					<div class='description' style='text-align: center'>
+						<div id='title' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >
+							<input type='text' placeholder='Title' id='title' name='title' required ></input>
+						</div>
+						<br>
+						<div id='creator' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >
+							<input type='text' placeholder='Creator' id='creator' name='creator' required ></input>
+						</div>
+						<br>
+						<div id='genre' style='font-weight: 900; font-size: 2em; text-align: center; width: 80vw; margin: auto' >
+							<input type='text' placeholder='Genre' id='genre' name='genre' required ></input>
+						</div>
+						<br>
+						<div style='font-size: 0.8em; text-align: justify; text-align-last: left; width: 80vw; margin: auto'>
+							<textarea name='review' id='review' cols='40' row='8'></textarea>
+						</div>
+						<br>
+						<br>
+						<br>
+						<input name='rating' id='rating' type='range' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+					</div>
+				</div>
 
-		.options \{
-			colour: #323036;
-			font-size: 1em;
-			border: none;
-			text-align: center;
-			width: 100%;
-		}
-	</style>
-	<script>
-		function copytext() \{document.getElementById('itemCopy').innerHTML = document.getElementById('item').value}
-	</script>
-<body>
-        <div class='container'>
-                <form method='get' action='http://localhost/ok' name='review' >
-                        <div class='wrapper'>
-                                <div id='itemCopy'>
-                                </div>
-                                <div class='category'>
-                                        <ul id='categoryMenu'>
-                                                <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Books'>📚</div></label></li>
-                                                <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Film'><label for='category'>🎬</div></label></li>
-                                                <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Music'><label for='category'>🎧</label></div></label></li>
-                                                <li><label for='category'><div class='button'><input type='radio' name='category' id='category' class='category-radio' value='Performance'><label for='category'>🎭</label></div></label></li>
-                                        </ul>
-                                </div>
-
-                                <div class="font-awesome">
-
-                                <div class='subcategory'>
-                                        <span class='label'>Subcategory</span>
-                                        <select name='rest' id='rest' size='3' placeholder='Enter sessionrest' required >
-                                                <option value='5' selected>5m</option>
-                                                <option value='10'>10m</option>
-                                                <option value='15'>15m</option>
-                                        </select>
-                                </div>
-                                <div class='subcategory'>
-                                        <select name='subcategory' id='subcategory' placeholder='Enter subcategory' required >
-                                                <option value='Art'>🎨 Art</option>
-                                                <option value='Design'>🍥 Design</option>
-                                                <option value='Games'>🎮 Games</option>
-                                                <option value='Learning'>🎓 Learning</option>
-                                                <option value='Media'>📷 Media</option>
-                                                <option value='Meditation'>🧘🏽 Meditation</option>
-                                                <option value='Piano'>🎹 Piano</option>
-                                                <option value='Reading'>📖 Reading</option>
-                                                <option value='Technical'>🖱️ Technical</option>
-                                                <option value='Writing'>🖋️ Writing</option>
-                                        </select>
-                                </div>
-                        </div>
-                        <input type='submit' action='http://localhost/ok' hidden />
-                </form>
-        </div>
-</body>
+				<input type='submit' action='http://localhost/ok' hidden />
+				</div>
+			</form>
+		</div>
+	</body>
+<html>
