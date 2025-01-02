@@ -120,7 +120,7 @@
 						<br>
 						<br>
 						<div style='font-size: 0.8em; text-align: justify; text-align: center; width: 80vw; margin: auto'>
-							<span style='width: 20vw'>by </span><input style='width: 60vw' name='creator' class='textInput' type='text' placeholder='Creator' required />
+							<input name='creator' class='textInput' type='text' placeholder='by' required />
 						</div>
 						<br>
 						<br>
@@ -138,8 +138,8 @@
 
 				<div class='main' style='text-align: center'>
 					<div class='rating' style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto' >
-						<input type='range' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value" style='width: 60vw'>
-						<output>0</output>
+						<input type='range' class='slider' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value" style='width: 60vw'>
+						<output style='margin-left: 8px; font-size: 0.5em; font-weight: bold'>0</output>
 					</div>
 				</div>
 				<input type='submit' action='http://localhost/ok' hidden />
