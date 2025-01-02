@@ -79,11 +79,20 @@
 				-webkit-appearance: none;  /* Override default CSS styles */
 				appearance: none;
 				height: 25px; /* Specified height */
-				background: #ffffff; /* Grey background */
+				background: #ceccd2; /* Grey background */
 				outline: none; /* Remove outline */
 				opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
 				-webkit-transition: .2s; /* 0.2 seconds transition on hover */
 				transition: opacity .2s;
+			}
+
+			.slider::-webkit-slider-thumb \{
+				-webkit-appearance: none; /* Override default look */
+				appearance: none;
+				width: 25px; /* Set a specific slider handle width */
+				height: 25px; /* Slider handle height */
+				background: #323036; /* Green background */
+				cursor: pointer; /* Cursor on hover */
 			}
 		</style>
 	</head>
@@ -138,8 +147,8 @@
 
 				<div class='main' style='text-align: center'>
 					<div class='rating' style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto' >
-						<input type='range' class='slider' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value" style='width: 60vw'>
-						<output style='margin-left: 8px; font-size: 0.5em; font-weight: bold'>0</output>
+						<input type='range' class='slider' value='0' min='-3' max='3' oninput='this.nextElementSibling.value = this.value'>
+						<output style='margin-left: 10px; font-size: 5em; font-weight: bold'>0</output>
 					</div>
 				</div>
 				<input type='submit' action='http://localhost/ok' hidden />
