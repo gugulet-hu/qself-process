@@ -1,6 +1,6 @@
 <html>
-<head>
-<!--
+	<head>
+		<!--
 Review screen for qSelf project
 Creator: Gugulethu Hlekwayo
 URL: qself.gugulet.hu
@@ -8,9 +8,11 @@ This screen is for manually entering book, film, TV, and event reviews. Inline s
 -->
 
 		<!-- Google Fonts: import Overpass -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 
 		<!-- Styling and stylesheets -->
 		<style>
@@ -75,46 +77,74 @@ This screen is for manually entering book, film, TV, and event reviews. Inline s
 	</head>
 
 	<body>
-		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
-			<form method='get' action='http://localhost/ok' name='rveiews' style='text-align: center' >
-				<div class='main'>
-					<div class='dateTime'>
-						<span class='category' style='float: left; width:46vw'>
-							<select style='font-weight: 900; text-align: right; font-size: 1em; width: 100%' name='category' id='category' required>
-									<option value='Books' selected >📚 Books</option>
-									<option value='Film' >🎬 Film</option>
-									<option value='Television' >📺 Television</option>
-							</select>
-						</span><span style='float: left; width: 8vw; font-size: 1em; color: #CECCD2; text-align: center'>::</span>
-						<span class='date' style='float: left; width:46vw' >
-							<input style='border: none; text-align: left; font-size: 1em; width: 100%; font-weight: 400;' type='date' id='date' name='date' value='{dateFormat(Now, "yyyy-MM-dd")}' required>
+		<div
+			class="container"
+			style="
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				margin-right: -50%;
+				transform: translate(-50%, -50%);
+			">
+			<form
+				method="get"
+				action="http://localhost/ok"
+				name="rveiews"
+				style="text-align: center">
+				<div class="main">
+					<div class="dateTime">
+						<span
+							class="category"
+							style="float: left; width: 46vw">
+							<select
+								style="
+									font-weight: 900;
+									text-align: right;
+									font-size: 1em;
+									width: 100%;
+								"
+								name="category"
+								id="category"
+								required>
+								<option value="Books" selected>
+									📚 Books
+								</option>
+								<option value="Film">🎬 Film</option>
+								<option value="Television">
+									📺 Television
+								</option>
+							</select> </span
+						><span
+							style="
+								float: left;
+								width: 8vw;
+								font-size: 1em;
+								color: #ceccd2;
+								text-align: center;
+							"
+							>::</span
+						>
+						<span
+							class="date"
+							style="float: left; width: 46vw">
+							<input
+								style="
+									border: none;
+									text-align: left;
+									font-size: 1em;
+									width: 100%;
+									font-weight: 400;
+								"
+								type="date"
+								id="date"
+								name="date"
+								value='{dateFormat(Now, "yyyy-MM-dd")}'
+								required />
 						</span>
 					</div>
 				</div>
-
-				<br>
-				<br>
-				<br>
-
-				<div class='main' style='float: left; width:46vw' >
-					<div class='description' style='text-align: left'>
-						<div id='title' style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
-							<input type='text' placeholder='Title' id='title' name='title' style='text-decoration: underline;' required ></input>
-						</div>
-						<br>
-						<div id='creator' style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
-							<input type='text' placeholder='Creator' id='creator' name='creator' required ></input>
-						</div>
-						<br>
-						<div id='genre' style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
-							<input type='text' placeholder='Genre' id='genre' name='genre' required ></input>
-						</div>
-						<br>
-					</div>
-				</div>
-
-				<input type='submit' action='http://localhost/ok' hidden />
 			</form>
 		</div>
 	</body>
-<html>
+	<html></html>
+</html>
