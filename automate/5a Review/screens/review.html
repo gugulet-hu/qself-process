@@ -66,10 +66,14 @@
 			input::-webkit-calendar-picker-indicator \{
 				display: none !important;
 			}
-/*
+
 			div.main \{
 				width: 100vw;
-			} */
+			}
+
+			textarea:focus {
+				outline: none;
+			}
 
 			.pre-filled \{
 				text-decoration: underline dotted #CECCD2;
@@ -146,12 +150,12 @@
 				<br>
 
 				<div class='main' style='text-align: center'>
-					<div class='rating' style='font-size: 0.8em; text-align: justify; text-align: left; vertical-align: middle; width: 80vw; margin: auto' >
+					<div class='rating' style='font-size: 0.8em; text-align: justify; text-align: left; vertical-align: middle !important; width: 80vw; margin: auto' >
 						<input type='range' class='slider' value='0' min='-3' max='3' oninput='this.nextElementSibling.value = this.value' style='width: 75%'>
 						<output style='margin-left: 10px; font-size: 5em; font-weight: bold'>0</output>
 					</div>
 				</div>
-				<input type='submit' action='http://localhost/ok' hidden />
+				<input type='submit' action='http://localhost/ok' />
 				</div>
 			</form>
 		</div>
