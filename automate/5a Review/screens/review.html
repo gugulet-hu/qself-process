@@ -108,14 +108,14 @@
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto'>
-							<input name='creator' class='textInput' type='text' placeholder='Creator' required />
+						<div style='font-size: 0.8em; text-align: justify; text-align: center; width: 80vw; margin: auto'>
+							<span style='width: 20vw'>by </span><input style='width: 60vw' name='creator' class='textInput' type='text' placeholder='Creator' required />
 						</div>
 						<br>
 						<br>
 						<br>
 						<div style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto'>
-							<textarea name='review' style='border: 1px solid #323036' cols='50' rows='50' placeholder='Review text here...' required /></textarea>
+							<textarea name='review' style='border: 0.5px solid #ceccd2' cols='45' rows='12' placeholder='Review text here...' required /></textarea>
 						</div>
 
 					</div>
@@ -127,10 +127,10 @@
 
 				<div class='main' style='text-align: right'>
 					<div class='rating' >
-
+						<input type='range' value='0' min='-3' max='3' oninput="this.nextElementSibling.value = this.value" style='width: 60vw'>
+						<output>24</output>
 					</div>
 				</div>
-
 				<input type='submit' action='http://localhost/ok' hidden />
 				</div>
 			</form>
