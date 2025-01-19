@@ -51,7 +51,6 @@
 				border: none;
 				text-align: center;
 				float: left;
-				width: 80%;
 				text-overflow: ellipsis;
 				overflow: hidden;
 				-moz-appearance: none;
@@ -124,27 +123,27 @@
 				<br>
 				<br>
 
-				<div class='main' style='text-align: center' >
-					<div style='text-align: center'>
-						<div style='font-weight: 900; font-size: 2em; text-align: left; width: 80vw; margin: auto' >
+				<div class='main' >
+					<div>
+						<div style='font-weight: 900; font-size: 1.3em; width: 100%' >
 							<input name='title' class='textInput' type='text' placeholder='Title' required />
 						</div>
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto'>
+						<div style='font-size: 0.8em; text-align: justify'>
 							<input name='creator' class='textInput' type='text' placeholder='Creator' required />
 						</div>
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto'>
+						<div style='font-size: 0.8em; text-align: justify'>
 							<input name='genre' class='textInput' type='text' placeholder='Genre' required />
 						</div>
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify; text-align: left; width: 80vw; margin: auto'>
+						<div style='font-size: 0.8em; text-align: justify'>
 							<textarea name='review' style='border-left: 0.5px solid #ceccd2; border-top: none; border-right: none; border-bottom: none' cols='45' rows='12' placeholder='Review text here...' required /></textarea>
 						</div>
 
@@ -159,9 +158,8 @@
 					<div class='rating' style='font-size: 0.8em; text-align: justify; text-align: left; vertical-align: middle !important; width: 80vw; margin: auto' >
 						<input name='rating' type='range' class='slider' value='0' min='-3' max='3' oninput='this.nextElementSibling.value = this.value' style='width: 75%'>
 						<output style='margin-left: 10px; font-size: 5em; font-weight: bold'>0</output>
-					</div>
-				</div>
-				<input type='submit' action='http://localhost/ok' />
+                                                <br>
+				                <input style='font-weight: bold; font-size: 2em; text-transform: uppercase' type='submit' action='http://localhost/ok' />
 				</div>
 			</form>
 		</div>
