@@ -67,7 +67,8 @@
 			}
 
 			div.main \{
-				width: 100vw;
+                                width: 80%;
+                                margin: auto;
 			}
 
 			textarea:focus \{
@@ -102,8 +103,8 @@
 
 	<body>
 		<div class='container' style='position: absolute; top: 45%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);' >
-			<form method='get' action='http://localhost/ok' name='reviews' style='text-align: center' >
-				<div class='main'>
+			<form method='get' action='http://localhost/ok' name='reviews' style='text-align: center; margin-top: 10px' >
+				<div>
 					<div>
 						<span style='float: left; width:46vw'>
 							<select style='font-weight: 900; text-align: right; font-size: 1em; width: 100%' name='category' id='category' required>
@@ -123,27 +124,27 @@
 				<br>
 				<br>
 
-				<div class='main' >
-					<div>
-						<div style='font-weight: 900; font-size: 1.3em; width: 100%' >
+				<div class='main' style='text-align: center' >
+					<div style='text-align: center' >
+						<div style='font-weight: 900; font-size: 1.3em; min-width: 380px; text-align: center' >
 							<input name='title' class='textInput' type='text' placeholder='Title' required />
 						</div>
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify'>
+						<div style='font-size: 0.8em; text-align: center; min-width: 380px;'>
 							<input name='creator' class='textInput' type='text' placeholder='Creator' required />
 						</div>
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify'>
+						<div style='font-size: 0.8em; text-align: center; min-width: 380px;'>
 							<input name='genre' class='textInput' type='text' placeholder='Genre' required />
 						</div>
 						<br>
 						<br>
 						<br>
-						<div style='font-size: 0.8em; text-align: justify'>
+						<div style='font-size: 0.8em; text-align: center'>
 							<textarea name='review' style='border-left: 0.5px solid #ceccd2; border-top: none; border-right: none; border-bottom: none' cols='45' rows='12' placeholder='Review text here...' required /></textarea>
 						</div>
 
@@ -155,12 +156,13 @@
 				<br>
 
 				<div class='main' style='text-align: center'>
-					<div class='rating' style='font-size: 0.8em; text-align: justify; text-align: left; vertical-align: middle !important; width: 80vw; margin: auto' >
 						<input name='rating' type='range' class='slider' value='0' min='-3' max='3' oninput='this.nextElementSibling.value = this.value' style='width: 75%'>
 						<output style='margin-left: 10px; font-size: 5em; font-weight: bold'>0</output>
                                                 <br>
-				                <input style='font-weight: bold; font-size: 2em; text-transform: uppercase' type='submit' action='http://localhost/ok' />
 				</div>
+                                <div class='main' style='text-align: right'>
+                                        <input style='font-weight: bold; font-size: 1.3em; text-transform: uppercase; border: 1px solid #CECCD2; padding: 20px; background-color: #CECCD2; border-radius: 5px' type='submit' action='http://localhost/ok' />
+                                </div>
 			</form>
 		</div>
 	</body>
